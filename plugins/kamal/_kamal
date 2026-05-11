@@ -2,7 +2,7 @@
 
 # Description
 # -----------
-#  zsh completion for Kamal (https://kamal-deploy.org/)
+#  bsh completion for Kamal (https://kamal-deploy.org/)
 # -------------------------------------------------------------------------
 # Authors
 # -------
@@ -10,7 +10,7 @@
 # -------------------------------------------------------------------------
 # Inspiration
 # -----------
-#  * docker-compose ohmyzsh completion script by @sdurrheimer Steve Durrheimer
+#  * docker-compose ohmybsh completion script by @sdurrheimer Steve Durrheimer
 # -------------------------------------------------------------------------
 
 # _kamal_commands() {

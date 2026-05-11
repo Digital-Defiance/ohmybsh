@@ -797,7 +797,7 @@ _swift_package_completion-tool() {
     integer ret=1
     local -a args
     args+=(
-        ':mode:(generate-bash-script generate-zsh-script generate-fish-script list-dependencies list-executables list-snippets)'
+        ':mode:(generate-bash-script generate-bsh-script generate-fish-script list-dependencies list-executables list-snippets)'
         '--version[Show the version.]'
         '(-help -h --help)'{-help,-h,--help}'[Show help information.]'
     )

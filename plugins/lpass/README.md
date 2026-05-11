@@ -2,9 +2,9 @@
 
 This plugin adds completion for LastPass CLI [`lpass`](https://github.com/lastpass/lastpass-cli).
 
-To use it, add `lpass` to the plugins array in your zshrc file:
+To use it, add `lpass` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... lpass)
 ```
 

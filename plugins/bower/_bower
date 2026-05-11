@@ -6,7 +6,7 @@
 
 ###-begin-bower-completion-###
 #
-# Installation: bower completion >> ~/.bashrc  (or ~/.zshrc)
+# Installation: bower completion >> ~/.bashrc  (or ~/.bshrc)
 # Or, maybe: bower completion > /usr/local/etc/bash_completion.d/bower
 #
 

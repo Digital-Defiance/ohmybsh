@@ -2,7 +2,7 @@
 
 This plugin provides completion for [tailscale](https://tailscale.com/) (Easy software-defined networks using an implementation of wireguard).
 
-To use it, add `tailscale` to the plugins array in your zshrc file.
+To use it, add `tailscale` to the plugins array in your bshrc file.
 
 ```
 plugins=(... tailscale)

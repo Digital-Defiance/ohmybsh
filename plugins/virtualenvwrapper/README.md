@@ -2,9 +2,9 @@
 
 This plugin loads Python's [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) shell tools.
 
-To use it, add `virtualenvwrapper` to the plugins array in your zshrc file:
+To use it, add `virtualenvwrapper` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... virtualenvwrapper)
 ```
 
@@ -30,9 +30,10 @@ myvirtualenv
 ➜  github $
 ```
 
-We can disable this behaviour by setting `DISABLE_VENV_CD=1` before Oh My Zsh is sourced:
-```zsh
+We can disable this behaviour by setting `DISABLE_VENV_CD=1` before Oh My Bsh is sourced:
+
+```bsh
 DISABLE_VENV_CD=1
 plugins=(... virtualenvwrapper)
-source $ZSH/oh-my-zsh.sh
+source $BSH/oh-my-bsh.sh
 ```

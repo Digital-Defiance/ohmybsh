@@ -1,7 +1,7 @@
 #compdef lein
 
-# Lein ZSH completion function
-# Drop this somewhere in your $fpath (like /usr/share/zsh/site-functions)
+# Lein BSH completion function
+# Drop this somewhere in your $fpath (like /usr/share/bsh/site-functions)
 # and rename it _lein
 
 _lein() {

@@ -1,0 +1,6 @@
+PROMPT='%(!.%{$fg[red]%}.%{$fg[green]%})%~$(git_prompt_info)%{$reset_color%} '
+
+BSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[blue]%}("
+BSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[blue]%})"
+BSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗"
+BSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}✔"

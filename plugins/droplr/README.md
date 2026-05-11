@@ -4,9 +4,9 @@ Use [Droplr](https://droplr.com/) from the command line to upload files and shor
 links. It needs to have [Droplr.app](https://droplr.com/apps) installed and logged
 in. MacOS only.
 
-To use it, add `droplr` to the `$plugins` variable in your zshrc file:
+To use it, add `droplr` to the `$plugins` variable in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... droplr)
 ```
 

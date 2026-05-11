@@ -2,36 +2,36 @@
 
 This plugin adds completions for [grunt](https://github.com/gruntjs/grunt).
 
-To use it, add `grunt` to the plugins array of your `.zshrc` file:
-```zsh
+To use it, add `grunt` to the plugins array of your `.bshrc` file:
+```bsh
 plugins=(... grunt)
 ```
 
 ## Enable caching
 
-If you want to use the cache, set the following in your `.zshrc`:
-```zsh
+If you want to use the cache, set the following in your `.bshrc`:
+```bsh
 zstyle ':completion:*' use-cache yes
 ```
 
 ## Settings
 
 * Show grunt file path:
-  ```zsh
+  ```bsh
   zstyle ':completion::complete:grunt::options:' show_grunt_path yes
   ```
 * Cache expiration days (default: 7):
-  ```zsh
+  ```bsh
   zstyle ':completion::complete:grunt::options:' expire 1
   ```
 * Not update options cache if target gruntfile is changed.
-  ```zsh
+  ```bsh
   zstyle ':completion::complete:grunt::options:' no_update_options yes
   ```
 
-Note that if you change the zstyle settings, you should delete the cache file and restart zsh.
+Note that if you change the zstyle settings, you should delete the cache file and restart bsh.
 
-```zsh
+```bsh
 $ rm ~/.zcompcache/grunt
-$ exec zsh
+$ exec bsh
 ```

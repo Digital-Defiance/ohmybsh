@@ -2,9 +2,9 @@
 
 This plugin adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services.
 
-Open your `~/.zshrc` file and enable the `web-search` plugin:
+Open your `~/.bshrc` file and enable the `web-search` plugin:
 
-```zsh
+```bsh
 plugins=( ... web-search)
 ```
 
@@ -17,9 +17,9 @@ You can use the `web-search` plugin in these two forms:
 
 For example, these two are equivalent:
 
-```zsh
-$ web_search google oh-my-zsh
-$ google oh-my-zsh
+```bsh
+web_search google oh-my-bsh
+google oh-my-bsh
 ```
 
 Available search contexts are:
@@ -71,11 +71,11 @@ Also there are aliases for bang-searching DuckDuckGo:
 
 ### Custom search engines
 
-If you want to add other search contexts to the plugin, you can use the `$ZSH_WEB_SEARCH_ENGINES` variable.
-Set it before Oh My Zsh is sourced, with the following format:
+If you want to add other search contexts to the plugin, you can use the `$BSH_WEB_SEARCH_ENGINES` variable.
+Set it before Oh My Bsh is sourced, with the following format:
 
-```zsh
-ZSH_WEB_SEARCH_ENGINES=(
+```bsh
+BSH_WEB_SEARCH_ENGINES=(
     <context> <URL>
     <context> <URL>
 )
@@ -84,8 +84,8 @@ ZSH_WEB_SEARCH_ENGINES=(
 where `<context>` is the name of the search context, and `<URL>` a URL of the same type as the search contexts
 above. For example, to add `reddit`, you'd do:
 
-```zsh
-ZSH_WEB_SEARCH_ENGINES=(reddit "https://www.reddit.com/search/?q=")
+```bsh
+BSH_WEB_SEARCH_ENGINES=(reddit "https://www.reddit.com/search/?q=")
 ```
 
 These custom search engines will also be turned to aliases, so you can both do `web_search reddit <query>` or

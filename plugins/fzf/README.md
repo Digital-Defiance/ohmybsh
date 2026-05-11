@@ -3,21 +3,21 @@
 This plugin tries to find [junegunn's fzf](https://github.com/junegunn/fzf) based on where
 it's been installed, and enables its fuzzy auto-completion and key bindings.
 
-To use it, add `fzf` to the plugins array in your zshrc file:
+To use it, add `fzf` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... fzf)
 ```
 
 ## Settings
 
-All these settings should go in your zshrc file, before Oh My Zsh is sourced.
+All these settings should go in your bshrc file, before Oh My Bsh is sourced.
 
 ### `FZF_BASE`
 
 Set to fzf installation directory path:
 
-```zsh
+```bsh
 export FZF_BASE=/path/to/fzf/install/dir
 ```
 
@@ -25,7 +25,7 @@ export FZF_BASE=/path/to/fzf/install/dir
 
 Set default command to use when input is tty:
 
-```zsh
+```bsh
 export FZF_DEFAULT_COMMAND='<your fzf default command>'
 ```
 
@@ -39,7 +39,7 @@ If not set, the plugin will try to set it to these, in the order in which they'r
 
 Set whether to load fzf auto-completion:
 
-```zsh
+```bsh
 DISABLE_FZF_AUTO_COMPLETION="true"
 ```
 
@@ -47,6 +47,6 @@ DISABLE_FZF_AUTO_COMPLETION="true"
 
 Set whether to disable key bindings (CTRL-T, CTRL-R, ALT-C):
 
-```zsh
+```bsh
 DISABLE_FZF_KEY_BINDINGS="true"
 ```

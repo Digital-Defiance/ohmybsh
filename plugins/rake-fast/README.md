@@ -8,7 +8,7 @@ checks the file modification time to see if it needs to regenerate the cache
 file.
 
 This is entirely based on [this pull request by Ullrich Schäfer](https://github.com/robb/.dotfiles/pull/10/),
-which is inspired by [this Ruby on Rails trick from 2006](https://weblog.rubyonrails.org/2006/3/9/fast-rake-task-completion-for-zsh/).
+which is inspired by [this Ruby on Rails trick from 2006](https://weblog.rubyonrails.org/2006/3/9/fast-rake-task-completion-for-bsh/).
 
 Think about that. 2006.
 
@@ -20,9 +20,9 @@ cache file needs to be regenerated.
 
 ## Installation
 
-Just add the plugin to your `.zshrc`:
+Just add the plugin to your `.bshrc`:
 
-```zsh
+```bsh
 plugins=(... rake-fast)
 ```
 

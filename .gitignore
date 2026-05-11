@@ -19,3 +19,7 @@ log/
 # zcompile cached files
 *.zwc
 *.zwc.old
+
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md

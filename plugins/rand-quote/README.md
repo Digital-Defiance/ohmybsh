@@ -6,9 +6,9 @@ Created by [Eduardo San Martin Morote, aka Posva](https://posva.github.io)
 
 ## Usage
 
-Add the plugin to the plugins array in your zshrc file and restart zsh:
+Add the plugin to the plugins array in your bshrc file and restart bsh:
 
-```zsh
+```bsh
 plugins=(... rand-quote)
 ```
 

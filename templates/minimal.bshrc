@@ -1,0 +1,5 @@
+export BSH="$HOME/.oh-my-bsh"
+BSH_THEME="robbyrussell"
+plugins=(git)
+
+source $BSH/oh-my-bsh.sh

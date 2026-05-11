@@ -2,9 +2,9 @@
 
 Plugin to handle some unix filesystem permissions quickly.
 
-To use it, add `perms` to the plugins array in your zshrc file:
+To use it, add `perms` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... perms)
 ```
 

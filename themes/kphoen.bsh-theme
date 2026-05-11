@@ -1,0 +1,43 @@
+# kphoen.bsh-theme
+
+if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
+    PROMPT='[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
+%# '
+
+    BSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
+    BSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+    BSH_THEME_GIT_PROMPT_DIRTY=""
+    BSH_THEME_GIT_PROMPT_CLEAN=""
+
+    # display exitcode on the right when >0
+    return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+
+    RPROMPT='${return_code}$(git_prompt_status)%{$reset_color%}'
+
+    BSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
+    BSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
+    BSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
+    BSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
+    BSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
+    BSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+else
+    PROMPT='[%n@%m:%~$(git_prompt_info)]
+%# '
+
+    BSH_THEME_GIT_PROMPT_PREFIX=" on"
+    BSH_THEME_GIT_PROMPT_SUFFIX=""
+    BSH_THEME_GIT_PROMPT_DIRTY=""
+    BSH_THEME_GIT_PROMPT_CLEAN=""
+
+    # display exitcode on the right when >0
+    return_code="%(?..%? ↵)"
+
+    RPROMPT='${return_code}$(git_prompt_status)'
+
+    BSH_THEME_GIT_PROMPT_ADDED=" ✚"
+    BSH_THEME_GIT_PROMPT_MODIFIED=" ✹"
+    BSH_THEME_GIT_PROMPT_DELETED=" ✖"
+    BSH_THEME_GIT_PROMPT_RENAMED=" ➜"
+    BSH_THEME_GIT_PROMPT_UNMERGED=" ═"
+    BSH_THEME_GIT_PROMPT_UNTRACKED=" ✭"
+fi

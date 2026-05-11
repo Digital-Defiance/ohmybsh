@@ -3,9 +3,9 @@
 This plugin displays the current Git or Mercurial branch, fast. If in a Mercurial repository,
 also display the current bookmark, if present.
 
-To use it, add `branch` to the plugins array in your zshrc file:
+To use it, add `branch` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... branch)
 ```
 
@@ -21,27 +21,27 @@ plugins=(... branch)
 - branch plugin:
 
   ```console
-  $ time zsh /tmp/branch_prompt_info_test.zsh
+  $ time bsh /tmp/branch_prompt_info_test.bsh
   0.00s user 0.01s system 78% cpu 0.014 total
   ```
 
 ## Usage
 
-Copy your theme to `$ZSH_CUSTOM/themes/` and modify it to add `$(branch_prompt_info)` in your prompt.
+Copy your theme to `$BSH_CUSTOM/themes/` and modify it to add `$(branch_prompt_info)` in your prompt.
 This example is for the `robbyrussell` theme:
 
 ```diff
-diff --git a/themes/robbyrussell.zsh-theme b/themes/robbyrussell.zsh-theme
+diff --git a/themes/robbyrussell.bsh-theme b/themes/robbyrussell.bsh-theme
 index 2fd5f2cd..9d89a464 100644
---- a/themes/robbyrussell.zsh-theme
-+++ b/themes/robbyrussell.zsh-theme
+--- a/themes/robbyrussell.bsh-theme
++++ b/themes/robbyrussell.bsh-theme
 @@ -1,5 +1,5 @@
  PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 -PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 +PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(branch_prompt_info)'
 
- ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
- ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ BSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ BSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ```
 
 ## Maintainer

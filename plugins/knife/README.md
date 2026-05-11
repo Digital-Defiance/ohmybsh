@@ -4,8 +4,8 @@ This plugin adds completion for [knife](https://docs.chef.io/knife.html), a comm
 to interact with [Chef](https://chef.io), a platform to automate and manage infrastructure via
 code.
 
-To use it, add `knife` to the plugins array in your zshrc file:
-```zsh
+To use it, add `knife` to the plugins array in your bshrc file:
+```bsh
 plugins=(... knife)
 ```
 

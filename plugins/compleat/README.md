@@ -2,8 +2,8 @@
 
 This plugin looks for [compleat](https://github.com/mbrubeck/compleat) and loads its completion.
 
-To use it, add compleat to the plugins array in your zshrc file:
+To use it, add compleat to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... compleat)
 ```

@@ -1,12 +1,12 @@
 name: Feature request
-description: Suggest a feature for Oh My Zsh
+description: Suggest a feature for Oh My Bsh
 labels: ["Feature"]
 body:
   - type: markdown
     attributes:
       value: |
         ## Self Check
-        - Look for similar features in existing [GitHub Issues](https://github.com/ohmyzsh/ohmyzsh/issues?q=is%3Aissue) (open or closed).
+        - Look for similar features in existing [GitHub Issues](https://github.com/Digital-Defiance/ohmybsh/issues?q=is%3Aissue) (open or closed).
   - type: input
     attributes:
       label: If the feature request is for a plugin or theme, specify it here.
@@ -15,7 +15,7 @@ body:
   - type: textarea
     attributes:
       label: If the feature solves a problem you have, specify it here.
-      description: A description of what the problem is. 
+      description: A description of what the problem is.
       placeholder: Ex. I'm always frustrated when...
   - type: textarea
     attributes:
@@ -26,12 +26,18 @@ body:
   - type: textarea
     attributes:
       label: Describe alternatives you've considered
-      description: A description of any alternative solutions or features you've considered. This can also include other plugins or themes.
+      description:
+        A description of any alternative solutions or features you've considered. This can also include other
+        plugins or themes.
   - type: textarea
     attributes:
       label: Additional context
-      description: Add any other context, screenshots or Discord conversations about the feature request here. Also if you have any PRs related to this issue that are already open that you would like us to look at.
+      description:
+        Add any other context, screenshots or Discord conversations about the feature request here. Also if
+        you have any PRs related to this issue that are already open that you would like us to look at.
   - type: textarea
     attributes:
       label: Related Issues
-      description: Is there any open or closed issues that is related to this feature request? If so please link them below!
+      description:
+        Is there any open or closed issues that is related to this feature request? If so please link them
+        below!

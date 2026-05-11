@@ -2,9 +2,9 @@
 
 This plugin provides useful aliases to simplify interaction between the command line and VS Code, VSCodium, or Cursor.
 
-To start using it, add the `vscode` plugin to your `plugins` array in `~/.zshrc`:
+To start using it, add the `vscode` plugin to your `plugins` array in `~/.bshrc`:
 
-```zsh
+```bsh
 plugins=(... vscode)
 ```
 
@@ -40,11 +40,11 @@ For Cursor, open the Command Palette with `F1` or `Cmd+Shift+P`, then search for
 ## Choosing an editor
 
 If you have multiple supported editors installed, e.g., VS Code (stable) and VS Code Insiders, you can manually
-specify which executable the plugin should use. Add the following line to `~/.zshrc` between the `ZSH_THEME`
+specify which executable the plugin should use. Add the following line to `~/.bshrc` between the `BSH_THEME`
 and `plugins=()` lines. This makes the plugin use your manually defined executable.
 
-```zsh
-ZSH_THEME=...
+```bsh
+BSH_THEME=...
 
 # Choose one of `code`, `code-insiders`, `codium`, or `cursor`.
 # The following line makes the plugin open VS Code Insiders.
@@ -53,7 +53,7 @@ VSCODE=code-insiders
 
 plugins=(... vscode)
 
-source $ZSH/oh-my-zsh.sh
+source $BSH/oh-my-bsh.sh
 ```
 
 ## Common aliases

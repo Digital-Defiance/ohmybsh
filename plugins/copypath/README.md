@@ -2,9 +2,9 @@
 
 Copies the path of given directory or file to the system clipboard.
 
-To use it, add `copypath` to the plugins array in your zshrc file:
+To use it, add `copypath` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... copypath)
 ```
 

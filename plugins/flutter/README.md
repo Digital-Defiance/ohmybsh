@@ -2,9 +2,9 @@
 
 The Flutter plugin provides completion and useful aliases
 
-To use it, add `flutter` to the plugins array of your zshrc file:
+To use it, add `flutter` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... flutter)
 ```
 

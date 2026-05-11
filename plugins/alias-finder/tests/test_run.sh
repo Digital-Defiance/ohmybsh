@@ -1,7 +1,7 @@
 #!/usr/bin/env zunit
 
 @setup {
-  load ../alias-finder.plugin.zsh
+  load ../alias-finder.plugin.bsh
 
   set_git_aliases() {
     unalias -a # all

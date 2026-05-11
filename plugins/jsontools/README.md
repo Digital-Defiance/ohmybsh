@@ -2,9 +2,9 @@
 
 Handy command line tools for dealing with json data.
 
-To use it, add `jsontools` to the plugins array in your zshrc file:
+To use it, add `jsontools` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jsontools)
 ```
 

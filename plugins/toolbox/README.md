@@ -2,9 +2,9 @@
 
 Plugin for [toolbox](https://containertoolbx.org), a tool to use containerized CLI environments.
 
-To use it, add `toolbox` to your plugins array in your `.zshrc` file:
+To use it, add `toolbox` to your plugins array in your `.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... toolbox)
 ```
 
@@ -15,7 +15,7 @@ indicator ⬢ (if you are running in a toolbox container), and nothing if not.
 
 You can use it by adding `$(toolbox_prompt_info)` to your `PROMPT` or `RPROMPT` variable:
 
-```zsh
+```bsh
 RPROMPT='$(toolbox_prompt_info)'
 ```
 

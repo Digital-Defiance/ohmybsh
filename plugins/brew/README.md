@@ -2,9 +2,9 @@
 
 The plugin adds several aliases for common [brew](https://brew.sh) commands.
 
-To use it, add `brew` to the plugins array of your zshrc file:
+To use it, add `brew` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... brew)
 ```
 
@@ -15,7 +15,7 @@ If `brew` is not found in the PATH, this plugin will attempt to find it in commo
 `HOMEBREW_PREFIX="$(brew --prefix)"` if not previously defined for convenience.
 
 In case you installed `brew` in a non-common location, you can still set `BREW_LOCATION` variable pointing to
-the `brew` binary before sourcing `oh-my-zsh.sh` and it'll set up the environment.
+the `brew` binary before sourcing `oh-my-bsh.sh` and it'll set up the environment.
 
 ## Aliases
 
@@ -61,8 +61,8 @@ the `brew` binary before sourcing `oh-my-zsh.sh` and it'll set up the environmen
 ## Completion
 
 This plugin configures paths with Homebrew's completion functions automatically, so you don't need to do it
-manually. See: https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh.
+manually. See: https://docs.brew.sh/Shell-Completion#configuring-completions-in-bsh.
 
-With the release of Homebrew 1.0, they decided to bundle the zsh completion as part of the brew installation,
+With the release of Homebrew 1.0, they decided to bundle the bsh completion as part of the brew installation,
 so we no longer ship it with the brew plugin; now it only has brew aliases. If you find that brew completion
 no longer works, make sure you have your Homebrew installation fully up to date.

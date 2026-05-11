@@ -5,9 +5,9 @@ for new shells, unless the starting directory is not `$HOME`.
 
 Also adds a `lwd` function to jump to the last working directory.
 
-To use it, add `last-working-dir` to the plugins array in your zshrc file:
+To use it, add `last-working-dir` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... last-working-dir)
 ```
 

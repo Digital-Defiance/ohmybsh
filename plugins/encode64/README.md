@@ -2,9 +2,9 @@
 
 Alias plugin for encoding or decoding using `base64` command.
 
-To use it, add `encode64` to the plugins array in your zshrc file:
+To use it, add `encode64` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... encode64)
 ```
 
@@ -23,18 +23,18 @@ plugins=(... encode64)
 - From parameter
 
   ```console
-  $ encode64 "oh-my-zsh"
+  $ encode64 "oh-my-bsh"
   b2gtbXktenNo
-  $ e64 "oh-my-zsh"
+  $ e64 "oh-my-bsh"
   b2gtbXktenNo
   ```
 
 - From piping
 
   ```console
-  $ echo "oh-my-zsh" | encode64
+  $ echo "oh-my-bsh" | encode64
   b2gtbXktenNo==
-  $ echo "oh-my-zsh" | e64
+  $ echo "oh-my-bsh" | e64
   b2gtbXktenNo==
   ```
 
@@ -46,10 +46,10 @@ Encode a file's contents to base64 and save output to text file.
 - From parameter
 
   ```console
-  $ encodefile64 ohmyzsh.icn
-  ohmyzsh.icn's content encoded in base64 and saved as ohmyzsh.icn.txt
-  $ ef64 "oh-my-zsh"
-  ohmyzsh.icn's content encoded in base64 and saved as ohmyzsh.icn.txt
+  $ encodefile64 ohmybsh.icn
+  ohmybsh.icn's content encoded in base64 and saved as ohmybsh.icn.txt
+  $ ef64 "oh-my-bsh"
+  ohmybsh.icn's content encoded in base64 and saved as ohmybsh.icn.txt
   ```
 
 ### Decoding
@@ -58,16 +58,16 @@ Encode a file's contents to base64 and save output to text file.
 
   ```console
   $ decode64 b2gtbXktenNo
-  oh-my-zsh%
+  oh-my-bsh%
   $ d64 b2gtbXktenNo
-  oh-my-zsh%
+  oh-my-bsh%
   ```
 
 - From piping
 
   ```console
   $ echo "b2gtbXktenNoCg==" | decode64
-  oh-my-zsh
+  oh-my-bsh
   $ echo "b2gtbXktenNoCg==" | d64
-  oh-my-zsh
+  oh-my-bsh
   ```

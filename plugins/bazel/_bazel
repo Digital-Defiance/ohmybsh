@@ -18,13 +18,13 @@
 # ------------
 #
 # 1. Add this script to a directory on your $fpath:
-#     fpath[1,0]=~/.zsh/completion/
-#     mkdir -p ~/.zsh/completion/
-#     cp scripts/zsh_completion/_bazel ~/.zsh/completion
+#     fpath[1,0]=~/.bsh/completion/
+#     mkdir -p ~/.bsh/completion/
+#     cp scripts/bsh_completion/_bazel ~/.bsh/completion
 #
-# 2. Optionally, add the following to your .zshrc.
+# 2. Optionally, add the following to your .bshrc.
 #     zstyle ':completion:*' use-cache on
-#     zstyle ':completion:*' cache-path ~/.zsh/cache
+#     zstyle ':completion:*' cache-path ~/.bsh/cache
 #
 #   This way, the completion script does not have to parse Bazel's options
 #   repeatedly.  The directory in cache-path must be created manually.

@@ -1,12 +1,12 @@
 name: Report a bug
-description: Report a bug that isn't caused by Oh My Zsh. If unsure, use this form
+description: Report a bug that isn't caused by Oh My Bsh. If unsure, use this form
 body:
   - type: markdown
     attributes:
       value: |
         ## Self Check
-        - Look for similar errors in existing [GitHub Issues](https://github.com/ohmyzsh/ohmyzsh/issues?q=is%3Aissue) (open or closed).
-        - Try reaching out on the [Discord server](https://discord.gg/ohmyzsh) for help.
+        - Look for similar errors in existing [GitHub Issues](https://github.com/Digital-Defiance/ohmybsh/issues?q=is%3Aissue) (open or closed).
+        - Try reaching out on the [Discord server](https://discord.gg/ohmybsh) for help.
   - type: textarea
     validations:
       required: true
@@ -46,8 +46,8 @@ body:
     validations:
       required: true
     attributes:
-      label: Zsh version
-      description: Run `echo $ZSH_VERSION` to check.
+      label: Bsh version
+      description: Run `echo $BSH_VERSION` to check.
       placeholder: "5.6"
   - type: input
     validations:
@@ -65,4 +65,5 @@ body:
   - type: textarea
     attributes:
       label: Additional context
-      description: Add any other context about the problem here. This can be themes, plugins, custom settings...
+      description:
+        Add any other context about the problem here. This can be themes, plugins, custom settings...

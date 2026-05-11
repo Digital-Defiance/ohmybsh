@@ -41,13 +41,13 @@ myargs=(
 _arguments -S -C $myargs && ret=0
 
 
-if [[ "$state" == scd-alias-target && -s ~/.scdalias.zsh ]]; then
+if [[ "$state" == scd-alias-target && -s ~/.scdalias.bsh ]]; then
     local -a scdaliases
     scdaliases=( )
     eval "$(setopt extendedglob
             phome="(#b)(#s)${HOME}(/*)#(#e)"
             builtin hash -dr
-            source ~/.scdalias.zsh &&
+            source ~/.scdalias.bsh &&
             for k v in ${(kv)nameddirs}; do
                 scdaliases+=( $k:${v/${~phome}/"~"${match[1]}} )
             done

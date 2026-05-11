@@ -1,0 +1,12 @@
+# BSH Theme - Preview: https://i.gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
+local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+
+PROMPT='%{$fg[green]%}%~%{$reset_color%} $(ruby_prompt_info) $(git_prompt_info)%{$reset_color%}%B$%b '
+RPROMPT="${return_code}"
+
+BSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
+BSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
+
+
+BSH_THEME_RUBY_PROMPT_PREFIX="%{$fg[red]%}‹"
+BSH_THEME_RUBY_PROMPT_SUFFIX="› %{$reset_color%}"

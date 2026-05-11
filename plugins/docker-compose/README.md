@@ -5,9 +5,9 @@ aliases for frequent docker-compose commands.
 This plugin chooses automatically between the legacy `docker-compose` command and the modern 
 `docker compose` subcommand, preferring `docker-compose` when both are available.
 
-To use it, add docker-compose to the plugins array of your zshrc file:
+To use it, add docker-compose to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... docker-compose)
 ```
 

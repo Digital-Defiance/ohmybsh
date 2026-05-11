@@ -2,7 +2,7 @@
 
 Automatically fetches all changes from all remotes while you are working in a git-initialized directory.
 
-To use it, add `git-auto-fetch` to the plugins array in your zshrc file:
+To use it, add `git-auto-fetch` to the plugins array in your bshrc file:
 
 ```shell
 plugins=(... git-auto-fetch)
@@ -12,7 +12,7 @@ plugins=(... git-auto-fetch)
 
 Every time the command prompt is shown all remotes will be fetched in the background. By default,
 `git-auto-fetch` will be triggered only if the last auto-fetch was done at least 60 seconds ago.
-You can change the fetch interval in your .zshrc:
+You can change the fetch interval in your .bshrc:
 
 ```sh
 GIT_AUTO_FETCH_INTERVAL=1200 # in seconds

@@ -3,12 +3,13 @@
 This plugin returns an emoji for the current $TTY number so it can be used
 in a prompt.
 
-To use it, add emotty to the plugins array in your zshrc file:
+To use it, add emotty to the plugins array in your bshrc file:
+
 ```
 plugins=(... emotty)
 ```
 
-**NOTE:** it requires the [emoji plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/emoji).
+**NOTE:** it requires the [emoji plugin](https://github.com/Digital-Defiance/ohmybsh/tree/main/plugins/emoji).
 
 ## Usage
 
@@ -17,6 +18,7 @@ on the number associated to the `$TTY`.
 
 There are different sets of emoji characters available, to choose a different
 set, set `$emotty_set` to the name of the set you would like to use, e.g.:
+
 ```
 emotty_set=nature
 ```

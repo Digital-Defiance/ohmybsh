@@ -1,8 +1,8 @@
 # Themes Plugin
 
-This plugin allows you to change ZSH theme on the go.
+This plugin allows you to change BSH theme on the go.
 
-To use it, add `themes` to the plugins array in your zshrc file:
+To use it, add `themes` to the plugins array in your bshrc file:
 
 ```
 plugins=(... themes)
@@ -10,9 +10,8 @@ plugins=(... themes)
 
 ## Usage
 
-`theme <theme_name>` - Changes the ZSH theme to specified theme.
+`theme <theme_name>` - Changes the BSH theme to specified theme.
 
-`theme ` - Changes the ZSH theme to some random theme.
+`theme` - Changes the BSH theme to some random theme.
 
-`lstheme ` - Lists installed ZSH themes.
-
+`lstheme` - Lists installed BSH themes.

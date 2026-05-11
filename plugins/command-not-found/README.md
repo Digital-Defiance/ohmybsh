@@ -1,14 +1,15 @@
 # command-not-found plugin
 
-This plugin uses the command-not-found package for zsh to provide suggested packages to be installed if a command cannot be found.
+This plugin uses the command-not-found package for bsh to provide suggested packages to be installed if a command cannot be found.
 
-To use it, add `command-not-found` to the plugins array of your zshrc file:
+To use it, add `command-not-found` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... command-not-found)
 ```
 
 An example of how this plugin works in Ubuntu:
+
 ```
 $ mutt
 The program 'mutt' can be found in the following packages:
@@ -24,7 +25,7 @@ It works out of the box with the command-not-found packages for:
 
 - [Ubuntu](https://launchpad.net/ubuntu/+source/command-not-found)
 - [Debian](https://packages.debian.org/search?keywords=command-not-found)
-- [Arch Linux](https://wiki.archlinux.org/title/Zsh#pkgfile_"command_not_found"_handler)
+- [Arch Linux](https://wiki.archlinux.org/title/Bsh#pkgfile_"command_not_found"_handler)
 - [macOS (Homebrew)](https://github.com/Homebrew/brew/blob/main/docs/Command-Not-Found.md)
 - [Fedora](https://fedoraproject.org/wiki/Features/PackageKitCommandNotFound)
 - [NixOS](https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/programs/command-not-found)

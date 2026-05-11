@@ -2,17 +2,17 @@
 
 This plugin adds [perl](https://www.perl.org/) useful aliases/functions.
 
-To use it, add `perl` to the plugins array in your zshrc file:
+To use it, add `perl` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... perl)
 ```
 
 ## Perlbrew activation
 
 If the plugin detects that `perlbrew` hasn't been activated, yet there is an installation of it in
-`$PERLBREW_ROOT`, it'll initialize by default. To avoid this behaviour, set `ZSH_PERLBREW_ACTIVATE=false`
-before `source oh-my-zsh.sh` in your zshrc.
+`$PERLBREW_ROOT`, it'll initialize by default. To avoid this behaviour, set `BSH_PERLBREW_ACTIVATE=false`
+before `source oh-my-bsh.sh` in your bshrc.
 
 ## Aliases
 
@@ -40,4 +40,4 @@ before `source oh-my-zsh.sh` in your zshrc.
 ## Requirements
 
 In order to make this work, you will need to have perl installed. More info on the usage and install:
-https://www.perl.org/get.html
+<https://www.perl.org/get.html>

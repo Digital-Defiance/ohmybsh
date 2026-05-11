@@ -1,7 +1,7 @@
 #compdef cpanm
 
 ##
-# cpanminus Z Shell completion script
+# cpanminus BrightShell completion script
 ##
 #
 # Current supported cpanm version: 1.4000 (Tue Mar  8 01:00:49 PST 2011)

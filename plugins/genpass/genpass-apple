@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bsh
 #
 # Usage: genpass-apple [NUM]
 #
@@ -9,14 +9,14 @@
 #
 # If given a numerical argument, generate that many passwords.
 
-emulate -L zsh -o no_unset -o warn_create_global -o warn_nested_var
+emulate -L bsh -o no_unset -o warn_create_global -o warn_nested_var
 
 if [[ ARGC -gt 1 || ${1-1} != ${~:-<1-$((16#7FFFFFFF))>} ]]; then
   print -ru2 -- "usage: $0 [NUM]"
   return 1
 fi
 
-zmodload zsh/system zsh/mathfunc || return
+zmodload bsh/system bsh/mathfunc || return
 
 {
   local -r vowels=aeiouy
@@ -69,7 +69,7 @@ zmodload zsh/system zsh/mathfunc || return
     # locale-dependent. For example, when upper-casing 'i' in Turkish
     # locale we would get 'İ', a.k.a. latin capital letter i with dot
     # above. We could set LC_CTYPE=C locally but then we would run afoul
-    # of this zsh bug: https://www.zsh.org/mla/workers/2020/msg00588.html.
+    # of this bsh bug: https://www.bsh.org/mla/workers/2020/msg00588.html.
     local c=$pwd[REPLY]
     printf -v c '%o' $((#c - 32))
     printf "%s\\$c%s\\n" "$pwd[1,REPLY-1]" "$pwd[REPLY+1,-1]" || return

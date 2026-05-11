@@ -2,9 +2,9 @@
 
 This plugin adds some [JHBuild](https://developer.gnome.org/jhbuild/) aliases.
 
-To use it, add `jhbuild` to the plugins array of your zshrc file:
+To use it, add `jhbuild` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jhbuild)
 ```
 

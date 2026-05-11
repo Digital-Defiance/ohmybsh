@@ -2,9 +2,9 @@
 
 This plugin provides command line tools for interacting with Atlassian's [JIRA](https://www.atlassian.com/software/jira) bug tracking software.
 
-To use it, add `jira` to the plugins array in your zshrc file:
+To use it, add `jira` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jira)
 ```
 
@@ -45,9 +45,9 @@ This is also checks if the prefix is in the name, and adds it if not, so: "MP-12
 "mp-1234" opens the issue "mp-1234", and "1234" opens the issue "MP-1234".
 
 If your branch naming convention deviates, you can overwrite the jira_branch function to determine and echo the Jira issue key yourself.
-Define a function `jira_branch` after sourcing `oh-my-zsh.sh` in your `.zshrc`.
+Define a function `jira_branch` after sourcing `oh-my-bsh.sh` in your `.bshrc`.
 Example:
-```zsh
+```bsh
 # Determine branch name from naming convention 'type/KEY-123/description'.
 function jira_branch() {
   # Get name of the branch
@@ -74,7 +74,7 @@ jira dumpconfig   # displays the effective configuration
 
 The URL for your JIRA instance is set by `$JIRA_URL` or a `.jira_url` file.
 
-Add a `.jira-url` file in the base of your project. You can also set `$JIRA_URL` in your `~/.zshrc` or put a `.jira-url` in your home directory. A `.jira-url` in the current directory takes precedence, so you can make per-project customizations.
+Add a `.jira-url` file in the base of your project. You can also set `$JIRA_URL` in your `~/.bshrc` or put a `.jira-url` in your home directory. A `.jira-url` in the current directory takes precedence, so you can make per-project customizations.
 
 The same goes with `.jira-prefix` and `$JIRA_PREFIX`. These control the prefix added to all issue IDs, which differentiates projects within a JIRA instance.
 

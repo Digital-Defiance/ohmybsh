@@ -4,9 +4,9 @@ The [WordPress CLI](https://wp-cli.org/) is a command-line tool for managing Wor
 
 This plugin adds [tab completion](https://wp-cli.org/#tab-completions) for `wp-cli` as well as several aliases for commonly used commands.
 
-To use it, add `wp-cli` to the plugins array in your zshrc file:
+To use it, add `wp-cli` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... wp-cli)
 ```
 

@@ -3,9 +3,9 @@
 This plugin provides completion for [tmuxinator](https://github.com/tmuxinator/tmuxinator),
 as well as aliases for frequent tmuxinator commands.
 
-To use it add `tmuxinator` to the plugins array in your zshrc file.
+To use it add `tmuxinator` to the plugins array in your bshrc file.
 
-```zsh
+```bsh
 plugins=(... tmuxinator)
 ```
 

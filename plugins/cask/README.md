@@ -7,9 +7,9 @@ packaging and more.
 This plugin loads `cask` completion from non-standard locations, such as if installed
 via Homebrew or others. To enable it, add `cask` to your plugins array:
 
-```zsh
+```bsh
 plugins=(... cask)
 ```
 
-Make sure you have the `cask` directory in your `$PATH` before loading Oh My Zsh,
+Make sure you have the `cask` directory in your `$PATH` before loading Oh My Bsh,
 otherwise you'll get a "command not found" error.

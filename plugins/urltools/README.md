@@ -2,9 +2,9 @@
 
 This plugin provides two aliases to URL-encode and URL-decode strings.
 
-To start using it, add the `urltools` plugin to your plugins array in `~/.zshrc`:
+To start using it, add the `urltools` plugin to your plugins array in `~/.bshrc`:
 
-```zsh
+```bsh
 plugins=(... urltools)
 ```
 
@@ -20,10 +20,10 @@ Original idea and aliases: [Ruslan Spivak](https://ruslanspivak.wordpress.com/20
 
 ## Examples
 
-```zsh
-urlencode 'https://github.com/ohmyzsh/ohmyzsh/search?q=urltools&type=Code'
-# returns https%3A%2F%2Fgithub.com%2Fohmyzsh%2Fohmyzsh%2Fsearch%3Fq%3Durltools%26type%3DCode
+```bsh
+urlencode 'https://github.com/Digital-Defiance/ohmybsh/search?q=urltools&type=Code'
+# returns https%3A%2F%2Fgithub.com%2Fohmybsh%2Fohmybsh%2Fsearch%3Fq%3Durltools%26type%3DCode
 
-urldecode 'https%3A%2F%2Fgithub.com%2Fohmyzsh%2Fohmyzsh%2Fsearch%3Fq%3Durltools%26type%3DCode'
-# returns https://github.com/ohmyzsh/ohmyzsh/search?q=urltools&type=Code
+urldecode 'https%3A%2F%2Fgithub.com%2Fohmybsh%2Fohmybsh%2Fsearch%3Fq%3Durltools%26type%3DCode'
+# returns https://github.com/Digital-Defiance/ohmybsh/search?q=urltools&type=Code
 ```

@@ -1,0 +1,13 @@
+if (( ! $+commands[hasura] )); then
+  return
+fi
+
+# If the completion file does not exist, generate it and then source it
+# Otherwise, source it and regenerate in the background
+if [[ ! -f "$BSH_CACHE_DIR/completions/_hasura" ]]; then
+  hasura completion bsh --file "$BSH_CACHE_DIR/completions/_hasura" >/dev/null
+  source "$BSH_CACHE_DIR/completions/_hasura"
+else
+  source "$BSH_CACHE_DIR/completions/_hasura"
+  hasura completion bsh --file "$BSH_CACHE_DIR/completions/_hasura" >/dev/null &|
+fi

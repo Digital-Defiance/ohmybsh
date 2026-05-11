@@ -140,7 +140,7 @@ EXIT VALUE
 EXAMPLE
     $ require_tool.sh emacs 23
     $ CC=g++ require_tool.sh cc 4.6
-    $ require_tool.sh zsh 4.5
+    $ require_tool.sh bsh 4.5
 
 EOF
 }

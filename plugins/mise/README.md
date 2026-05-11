@@ -13,7 +13,7 @@ curl https://mise.jdx.dev/install.sh | sh
 ```
 
 2. [Enable mise](https://github.com/jdx/mise#quickstart) by adding it to your `plugins` definition in
-   `~/.zshrc`.
+   `~/.bshrc`.
 
 ```bash
 plugins=(mise)

@@ -2,7 +2,7 @@
 
 This plugin provides mutual conversion of timestamp and date. 
 
-To use it add tt to the plugins array in your zshrc file.
+To use it add tt to the plugins array in your bshrc file.
 
 ```bash
 plugins=(... tt)

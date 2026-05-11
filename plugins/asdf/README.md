@@ -5,7 +5,7 @@ Adds integration with [asdf](https://github.com/asdf-vm/asdf), the extendable ve
 ## Installation
 
 1. [Install](https://asdf-vm.com/guide/getting-started.html#_1-install-asdf) asdf and ensure that's it's discoverable on `$PATH`;
-2. Enable it by adding it to your `plugins` definition in `~/.zshrc`:
+2. Enable it by adding it to your `plugins` definition in `~/.bshrc`:
 
 ```sh
 plugins=(asdf)

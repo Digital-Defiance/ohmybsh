@@ -2,7 +2,7 @@
 
 This plugin provides completion for [Volta](https://volta.sh/).
 
-To use it add volta to the plugins array in your zshrc file.
+To use it add volta to the plugins array in your bshrc file.
 
 ```bash
 plugins=(... volta)

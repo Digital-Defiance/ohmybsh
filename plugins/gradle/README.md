@@ -2,9 +2,9 @@
 
 This plugin adds completions and aliases for [Gradle](https://gradle.org/).
 
-To use it, add `gradle` to the plugins array in your zshrc file:
+To use it, add `gradle` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... gradle)
 ```
 
@@ -19,7 +19,7 @@ any directory inside the root project directory.
 
 Examples:
 
-```zsh
+```bsh
 gradle test
 gradle build
 ```

@@ -6,8 +6,8 @@ version and gemset information into your prompt.
 Some functionality of this plugin will not work unless you also have the rbenv plugin *gemset* installed.
 https://github.com/jf/rbenv-gemset
 
-To use it, add `rbenv` to the plugins array in your zshrc file:
-```zsh
+To use it, add `rbenv` to the plugins array in your bshrc file:
+```bsh
 plugins=(... rbenv)
 ```
 

@@ -2,9 +2,9 @@
 
 This plugin adds completions for the [Elixir's Mix build tool](https://hexdocs.pm/mix/Mix.html).
 
-To use it, add `mix` to the plugins array in your zshrc file:
+To use it, add `mix` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... mix)
 ```
 ## Supported Task Types

@@ -1,0 +1,24 @@
+
+local user='%{$fg[magenta]%}%n@%{$fg[magenta]%}%m%{$reset_color%}'
+local pwd='%{$fg[blue]%}%~%{$reset_color%}'
+local return_code='%(?..%{$fg[red]%}%? ↵%{$reset_color%})'
+local git_branch='$(git_prompt_status)%{$reset_color%}$(git_prompt_info)%{$reset_color%}'
+
+BSH_THEME_RVM_PROMPT_OPTIONS="i v g"
+BSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
+BSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+BSH_THEME_GIT_PROMPT_DIRTY=""
+BSH_THEME_GIT_PROMPT_CLEAN=""
+
+BSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
+BSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
+BSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
+BSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
+BSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
+BSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+
+BSH_THEME_RUBY_PROMPT_PREFIX="%{$fg[green]%}‹"
+BSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
+
+PROMPT="${user} ${pwd}$ "
+RPROMPT="${return_code} ${git_branch} \$(ruby_prompt_info)"

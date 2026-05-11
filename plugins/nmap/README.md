@@ -2,9 +2,9 @@
 
 Adds some useful aliases for [Nmap](https://nmap.org/) similar to the profiles in zenmap.
 
-To use it, add `nmap` to the plugins array in your zshrc file:
+To use it, add `nmap` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... nmap)
 ```
 

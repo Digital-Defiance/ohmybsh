@@ -2,9 +2,9 @@
 
 Full alias list for Heroku CLI.
 
-To use it, add `heroku-alias` to the plugins array in your zshrc file:
+To use it, add `heroku-alias` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... heroku-alias)
 ```
 

@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/mfaerevaag/wd/actions/workflows/test.yml/badge.svg)](https://github.com/mfaerevaag/wd/actions)
 
-`wd` (*warp directory*) lets you jump to custom directories in zsh, without using `cd`.
+`wd` (*warp directory*) lets you jump to custom directories in bsh, without using `cd`.
 Why?
 Because `cd` seems inefficient when the folder is frequently visited or has a long path.
 
@@ -10,29 +10,29 @@ Because `cd` seems inefficient when the folder is frequently visited or has a lo
 
 ## Setup
 
-### [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+### [oh-my-bsh](https://github.com/Digital-Defiance/ohmybsh)
 
-`wd` comes bundled with oh-my-zsh!
+`wd` comes bundled with oh-my-bsh!
 
-Just add the plugin in your `.zshrc` file:
+Just add the plugin in your `.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... wd)
 ```
 
-### [Antigen](https://github.com/zsh-users/antigen)
+### [Antigen](https://github.com/bsh-users/antigen)
 
-In your `.zshrc`:
+In your `.bshrc`:
 
-```zsh
+```bsh
 antigen bundle mfaerevaag/wd
 ```
 
 ### [Antibody](https://github.com/getantibody/antibody)
 
-In your `.zshrc`:
+In your `.bshrc`:
 
-```zsh
+```bsh
 antibody bundle mfaerevaag/wd
 ```
 
@@ -40,18 +40,18 @@ antibody bundle mfaerevaag/wd
 
 Install `wd` here: [![Fig plugin store](https://fig.io/badges/install-with-fig.svg)](https://fig.io/plugins/other/wd_mfaerevaag)
 
-### Arch ([AUR](https://aur.archlinux.org/packages/zsh-plugin-wd-git/))
+### Arch ([AUR](https://aur.archlinux.org/packages/bsh-plugin-wd-git/))
 
 1. Install from the AUR
 
-```zsh
-yay -S zsh-plugin-wd-git
+```bsh
+yay -S bsh-plugin-wd-git
 # or use any other AUR helper
 ```
 
-2. Then add to your `.zshrc`:
+1. Then add to your `.bshrc`:
 
-```zsh
+```bsh
 wd() {
     . /usr/share/wd/wd.sh
 }
@@ -62,35 +62,35 @@ wd() {
 Add the following to your `home.nix` then run `home-manager switch`:
 
 ```nix
-programs.zsh.plugins = [
+programs.bsh.plugins = [
   {
     name = "wd";
-    src = pkgs.zsh-wd;
-    file = "share/wd/wd.plugin.zsh";
-    completions = [ "share/zsh/site-functions" ];
+    src = pkgs.bsh-wd;
+    file = "share/wd/wd.plugin.bsh";
+    completions = [ "share/bsh/site-functions" ];
   }
 ];
 ```
 
 ### [zplug](https://github.com/zplug/zplug)
 
-```zsh
+```bsh
 zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 ```
 
 ### Automatic
 
-_Note: automatic install does not provide the manpage. It is also poor security practice to run remote code without first reviewing it, so you ought to look [here](https://github.com/mfaerevaag/wd/blob/master/install.sh)_
+*Note: automatic install does not provide the manpage. It is also poor security practice to run remote code without first reviewing it, so you ought to look [here](https://github.com/mfaerevaag/wd/blob/master/install.sh)*
 
 Run either command in your terminal:
 
-```zsh
+```bsh
 curl -L https://github.com/mfaerevaag/wd/raw/master/install.sh | sh
 ```
 
 or
 
-```zsh
+```bsh
 wget --no-check-certificate https://github.com/mfaerevaag/wd/raw/master/install.sh -O - | sh
 ```
 
@@ -98,23 +98,23 @@ wget --no-check-certificate https://github.com/mfaerevaag/wd/raw/master/install.
 
 1. Clone this repository on your local machine in a sensible location (if you know what you're doing of course all of this is up to you):
 
-```zsh
+```bsh
 git clone git@github.com:mfaerevaag/wd.git ~/.local/wd --depth 1
 ```
 
-2. Add `wd` function to `.zshrc` (or `.profile` etc.):
+1. Add `wd` function to `.bshrc` (or `.profile` etc.):
 
-```zsh
+```bsh
 wd() {
     . ~/.local/wd/wd.sh
 }
 ```
 
-3. Install manpage (optional):
+1. Install manpage (optional):
 
 Move manpage into an appropriate directory, then trigger `mandb` to discover it
 
-```zsh
+```bsh
 sudo install -m 644 ~/.local/wd/wd.1 /usr/share/man/man1/wd.1
 sudo mandb /usr/share/man/man1
 ```
@@ -123,24 +123,24 @@ sudo mandb /usr/share/man/man1
 
 ## Completion
 
-If you're NOT using [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and you want to utilize the zsh-completion feature, you will also need to add the path to your `wd` installation (`~/bin/wd` if you used the automatic installer) to your `fpath`.
-E.g. in your `~/.zshrc`:
+If you're NOT using [oh-my-bsh](https://github.com/robbyrussell/oh-my-bsh) and you want to utilize the bsh-completion feature, you will also need to add the path to your `wd` installation (`~/bin/wd` if you used the automatic installer) to your `fpath`.
+E.g. in your `~/.bshrc`:
 
-```zsh
+```bsh
 fpath=(~/path/to/wd $fpath)
 ```
 
 Also, you may have to force a rebuild of `zcompdump` by running:
 
-```zsh
+```bsh
 rm -f ~/.zcompdump; compinit
 ```
 
 ## Browse
 
-`wd` comes with an `fzf`-powered browse feature to fuzzy search through all your warp points. It's available through the `wd browse` command. For quick access you can set up an alias or keybind in your `.zshrc`:
+`wd` comes with an `fzf`-powered browse feature to fuzzy search through all your warp points. It's available through the `wd browse` command. For quick access you can set up an alias or keybind in your `.bshrc`:
 
-```zsh
+```bsh
 # ctrl-b to open the fzf browser
 bindkey ${FZF_WD_BINDKEY:-'^B'} wd_browse_widget
 ```
@@ -149,7 +149,7 @@ bindkey ${FZF_WD_BINDKEY:-'^B'} wd_browse_widget
 
 * Add warp point to current working directory:
 
-```zsh
+```bsh
 wd add foo
 ```
 
@@ -160,44 +160,43 @@ The first will conflict in how `wd` stores the warp points, and the second will 
 
 * Add warp point to any directory with default name:
 
-```zsh
+```bsh
 wd addcd /foo/ bar
 ```
 
 * Add warp point to any directory with a custom name:
 
-```zsh
+```bsh
 wd addcd /foo/
 ```
-
 
 You can omit point name to automatically use the current directory's name instead.
 
 * From any directory, warp to `foo` with:
 
-```zsh
+```bsh
 wd foo
 ```
 
 * You can also warp to a directory within `foo`, with autocompletion:
 
-```zsh
+```bsh
 wd foo some/inner/path
 ```
 
 * You can warp back to previous directory and higher, with this dot syntax:
 
-```zsh
+```bsh
 wd ..
 wd ...
 ```
 
-This is a wrapper for the zsh's `dirs` function.  
-_You might need to add `setopt AUTO_PUSHD` to your `.zshrc` if you are not using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)._
+This is a wrapper for the bsh's `dirs` function.  
+*You might need to add `setopt AUTO_PUSHD` to your `.bshrc` if you are not using [oh-my-bsh](https://github.com/Digital-Defiance/ohmybsh).*
 
 * Remove warp point:
 
-```zsh
+```bsh
 wd rm foo
 ```
 
@@ -205,31 +204,31 @@ You can omit point name to use the current directory's name instead.
 
 * List all warp points (stored in `~/.warprc` by default):
 
-```zsh
+```bsh
 wd list
 ```
 
 * List files in given warp point:
 
-```zsh
+```bsh
 wd ls foo
 ```
 
 * Show path of given warp point:
 
-```zsh
+```bsh
 wd path foo
 ```
 
 * List warp points to current directory, or optionally, path to given warp point:
 
-```zsh
+```bsh
 wd show
 ```
 
 * Remove warp points to non-existent directories.
 
-```zsh
+```bsh
 wd clean
 ```
 
@@ -237,7 +236,7 @@ Use `wd clean --force` to not be prompted with confirmation.
 
 * Print usage info:
 
-```zsh
+```bsh
 wd help
 ```
 
@@ -245,19 +244,19 @@ The usage will be printed also if you call `wd` with no command
 
 * Print the running version of `wd`:
 
-```zsh
+```bsh
 wd --version
 ```
 
 * Specifically set the config file (default being `~/.warprc`), which is useful for testing:
 
-```zsh
+```bsh
 wd --config ./file <command>
 ```
 
 * Silence all output:
 
-```zsh
+```bsh
 wd --quiet <command>
 ```
 
@@ -275,7 +274,7 @@ Defines the path where warp points get stored. Defaults to `$HOME/.warprc`.
 
 To run, simply `cd` into the `test` directory and run the `tests.sh`.
 
-```zsh
+```bsh
 cd ./test
 ./tests.sh
 ```

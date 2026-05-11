@@ -2,9 +2,9 @@
 
 Enables aliases to control a local Apache2 installed via [MacPorts](https://www.macports.org/).
 
-To use it, add `apache2-macports` to the plugins array in your zshrc file:
+To use it, add `apache2-macports` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... apache2-macports)
 ```
 

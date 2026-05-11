@@ -4,9 +4,9 @@ This plugin adds command line functionality for [Dash](https://kapeli.com/dash),
 an API Documentation Browser for macOS. This plugin requires Dash to be installed
 to work.
 
-To use it, add `dash` to the plugins array in your zshrc file:
+To use it, add `dash` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... dash)
 ```
 

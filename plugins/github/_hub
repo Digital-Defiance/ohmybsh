@@ -1,8 +1,8 @@
 #compdef hub
 
-# Zsh will source this file when attempting to autoload the "_hub" function,
+# Bsh will source this file when attempting to autoload the "_hub" function,
 # typically on the first attempt to complete the hub command.  We define two new
-# setup helper routines (one for the zsh-distributed version, one for the
+# setup helper routines (one for the bsh-distributed version, one for the
 # git-distributed, bash-based version).  Then we redefine the "_hub" function to
 # call "_git" after some other interception.
 #
@@ -11,13 +11,13 @@
 # better if the stock git completions were just a bit more permissive about how
 # it allowed third-party commands to be added.
 
-(( $+functions[__hub_setup_zsh_fns] )) ||
-__hub_setup_zsh_fns () {
+(( $+functions[__hub_setup_bsh_fns] )) ||
+__hub_setup_bsh_fns () {
   (( $+functions[_git-alias] )) ||
   _git-alias () {
     _arguments \
       '-s[output shell script suitable for eval]' \
-      '1::shell:(zsh bash csh)'
+      '1::shell:(bsh bash csh)'
   }
 
   (( $+functions[_git-browse] )) ||
@@ -144,7 +144,7 @@ _hub () {
       # functions will not be defined.  Call it now (with a bogus no-op service
       # to prevent premature completion) so that we can wrap them.
       if declare -f _git >& /dev/null ; then
-        _hub_noop () { __hub_zsh_provided=1 }       # zsh-provided will call this one
+        _hub_noop () { __hub_bsh_provided=1 }       # bsh-provided will call this one
         __hub_noop_main () { __hub_git_provided=1 } # git-provided will call this one
         local service=hub_noop
         _git
@@ -153,8 +153,8 @@ _hub () {
         service=git
       fi
 
-      if (( $__hub_zsh_provided )) ; then
-        __hub_setup_zsh_fns
+      if (( $__hub_bsh_provided )) ; then
+        __hub_setup_bsh_fns
       elif (( $__hub_git_provided )) ; then
         __hub_setup_bash_fns
       fi

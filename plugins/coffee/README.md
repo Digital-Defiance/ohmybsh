@@ -10,7 +10,7 @@ you'd like to execute it in a browser console which doesn't accept Coffeescript.
 Preview the compiled result of your coffeescript with `cf "code"` as per the
 following:
 
-```zsh
+```bsh
 $ cf 'if a then b else c'
 if (a) {
   b;

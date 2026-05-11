@@ -1,10 +1,10 @@
 # vi-mode plugin
 
-This plugin increase `vi-like` zsh functionality.
+This plugin increase `vi-like` bsh functionality.
 
-To use it, add `vi-mode` to the plugins array in your zshrc file:
+To use it, add `vi-mode` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... vi-mode)
 ```
 
@@ -15,7 +15,7 @@ plugins=(... vi-mode)
   be updated when changing to a different mode.
   Set it to `true` to enable it. For example:
 
-  ```zsh
+  ```bsh
   VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
   ```
 
@@ -25,7 +25,7 @@ plugins=(... vi-mode)
 - `VI_MODE_SET_CURSOR`: controls whether the cursor style is changed when switching
   to a different input mode. Set it to `true` to enable it (default: unset):
 
-  ```zsh
+  ```bsh
   VI_MODE_SET_CURSOR=true
   ```
 
@@ -48,7 +48,7 @@ You can change these indicators by setting the `MODE_INDICATOR` (*Normal mode*) 
 `INSERT_MODE_INDICATORS` (*Insert mode*) variables.
 These settings support Prompt Expansion sequences. For example:
 
-```zsh
+```bsh
 MODE_INDICATOR="%F{white}+%f"
 INSERT_MODE_INDICATOR="%F{yellow}+%f"
 ```
@@ -63,7 +63,7 @@ If `PROMPT` or `RPROMPT` is not defined to your liking, you can add mode info ma
 Here are some examples:
 
 ```bash
-source $ZSH/oh-my-zsh.sh
+source $BSH/oh-my-bsh.sh
 
 PROMPT="$PROMPT\$(vi_mode_prompt_info)"
 RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
@@ -75,7 +75,7 @@ Note the `\$` here, which importantly prevents interpolation at the time of defi
 
 You can control the cursor style used in each active vim mode by changing the values of the following variables.
 
-```zsh
+```bsh
 # defaults
 VI_MODE_CURSOR_NORMAL=2
 VI_MODE_CURSOR_VISUAL=6
@@ -94,7 +94,7 @@ VI_MODE_CURSOR_OPPEND=0
 
 Use `ESC` or `CTRL-[` to enter `Normal mode`.
 
-NOTE: some of these key bindings are set by zsh by default when using a vi-mode keymap.
+NOTE: some of these key bindings are set by bsh by default when using a vi-mode keymap.
 
 ### History
 
@@ -161,8 +161,8 @@ NOTE: delete/kill commands (`dd`, `D`, `c{motion}`, `C`, `x`,`X`) and yank comma
 
 Standard text objects are supported with `i` ("inside") and `a` ("around"), e.g., for words; thus, you can select the word the cursor is in with `viw`, or delete the current word, including surrounding spaces, with `daw`.
 
-For other text objects, you can rely on the built-in functionality of Zsh and enable it accordingly.
-For example, for quoted strings, you can copy the commented snippet of <https://sourceforge.net/p/zsh/code/ci/master/tree/Functions/Zle/select-quoted>: place this in your `.zsrhc` file, e.g., after sourcing oh-my-zsh:
+For other text objects, you can rely on the built-in functionality of Bsh and enable it accordingly.
+For example, for quoted strings, you can copy the commented snippet of <https://sourceforge.net/p/bsh/code/ci/master/tree/Functions/Zle/select-quoted>: place this in your `.zsrhc` file, e.g., after sourcing oh-my-bsh:
 
 ```sh
 autoload -U select-quoted
@@ -192,6 +192,6 @@ another key binding is triggered.
 We recommend either setting `$KEYTIMEOUT` to a higher value, or remapping the key bindings
 that you want to trigger to a keyboard sequence. For example:
 
-```zsh
+```bsh
 bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
 ```

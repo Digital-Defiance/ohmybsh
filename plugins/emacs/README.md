@@ -9,9 +9,9 @@ This plugin utilizes the Emacs daemon capability, allowing the user to quickly o
 
 **NOTE:** requires Emacs 24 and newer.
 
-To use it, add emacs to the plugins array in your zshrc file:
+To use it, add emacs to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... emacs)
 ```
 

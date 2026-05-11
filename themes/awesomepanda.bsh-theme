@@ -1,0 +1,16 @@
+# the svn plugin has to be activated for this to work.
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+PROMPT='${ret_status}%{$fg_bold[green]%} %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}$(svn_prompt_info)%{$reset_color%}'
+
+BSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+BSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+BSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%})%{$fg[yellow]%} ✗ %{$reset_color%}"
+BSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}) "
+
+BSH_PROMPT_BASE_COLOR="%{$fg_bold[blue]%}"
+BSH_THEME_REPO_NAME_COLOR="%{$fg_bold[red]%}"
+
+BSH_THEME_SVN_PROMPT_PREFIX="svn:("
+BSH_THEME_SVN_PROMPT_SUFFIX=")"
+BSH_THEME_SVN_PROMPT_DIRTY="%{$fg[red]%} ✘ %{$reset_color%}"
+BSH_THEME_SVN_PROMPT_CLEAN=" "

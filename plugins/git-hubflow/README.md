@@ -6,9 +6,9 @@ original gitflow extension for git.
 
 The hubflow tool has to be [installed](https://github.com/datasift/gitflow#installation) separately.
 
-To use it, add `git-hubflow` to the plugins array in your zshrc file:
+To use it, add `git-hubflow` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... git-hubflow)
 ```
 

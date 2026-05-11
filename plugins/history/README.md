@@ -2,9 +2,9 @@
 
 Provides a couple of convenient aliases for using the `history` command to examine your command line history.
 
-To use it, add `history` to the plugins array in your zshrc file:
+To use it, add `history` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... history)
 ```
 

@@ -1,0 +1,47 @@
+# Deprecate BSH_THEME_RANDOM_BLACKLIST
+if [[ -n "$BSH_THEME_RANDOM_BLACKLIST" ]]; then
+  echo '[oh-my-bsh] BSH_THEME_RANDOM_BLACKLIST is deprecated. Use `BSH_THEME_RANDOM_IGNORED` instead.'
+  BSH_THEME_RANDOM_IGNORED=($BSH_THEME_RANDOM_BLACKLIST)
+  unset BSH_THEME_RANDOM_BLACKLIST
+fi
+
+# Make themes a unique array
+typeset -Ua themes
+
+if [[ "${(t)BSH_THEME_RANDOM_CANDIDATES}" = array && ${#BSH_THEME_RANDOM_CANDIDATES[@]} -gt 0 ]]; then
+  # Use BSH_THEME_RANDOM_CANDIDATES if properly defined
+  themes=(${(@)BSH_THEME_RANDOM_CANDIDATES:#random})
+else
+  # Look for themes in $BSH_CUSTOM and $BSH and add only the theme name
+  themes=(
+    "$BSH_CUSTOM"/*.bsh-theme(N:t:r)
+    "$BSH_CUSTOM"/themes/*.bsh-theme(N:t:r)
+    "$BSH"/themes/*.bsh-theme(N:t:r)
+  )
+  # Remove ignored themes from the list
+  for theme in random ${BSH_THEME_RANDOM_IGNORED[@]}; do
+    themes=("${(@)themes:#$theme}")
+  done
+fi
+
+# Choose a theme out of the pool of candidates
+N=${#themes[@]}
+(( N = (RANDOM%N) + 1 ))
+RANDOM_THEME="${themes[$N]}"
+unset N themes theme
+
+# Source theme
+if [[ -f "$BSH_CUSTOM/$RANDOM_THEME.bsh-theme" ]]; then
+  source "$BSH_CUSTOM/$RANDOM_THEME.bsh-theme"
+elif [[ -f "$BSH_CUSTOM/themes/$RANDOM_THEME.bsh-theme" ]]; then
+  source "$BSH_CUSTOM/themes/$RANDOM_THEME.bsh-theme"
+elif [[ -f "$BSH/themes/$RANDOM_THEME.bsh-theme" ]]; then
+  source "$BSH/themes/$RANDOM_THEME.bsh-theme"
+else
+  echo "[oh-my-bsh] Random theme '${RANDOM_THEME}' not found"
+  return 1
+fi
+
+if [[ "$BSH_THEME_RANDOM_QUIET" != true ]]; then
+  echo "[oh-my-bsh] Random theme '${RANDOM_THEME}' loaded"
+fi

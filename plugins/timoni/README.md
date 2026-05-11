@@ -2,8 +2,8 @@
 
 This plugin adds completion for [Timoni](https://timoni.sh), a package manager for Kubernetes, powered by CUE and inspired by Helm.
 
-To use it, add `timoni` to the plugins array in your zshrc file:
+To use it, add `timoni` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... timoni)
 ```

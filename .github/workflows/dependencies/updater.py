@@ -13,7 +13,7 @@ import yaml
 from semver import Version
 
 # Get TMP_DIR variable from environment
-TMP_DIR = os.path.join(os.environ.get("TMP_DIR", "/tmp"), "ohmyzsh")
+TMP_DIR = os.path.join(os.environ.get("TMP_DIR", "/tmp"), "ohmybsh")
 # Relative path to dependencies.yml file
 DEPS_YAML_FILE = ".github/dependencies.yml"
 # Dry run flag
@@ -177,7 +177,7 @@ class Dependency:
                 self.kind = "plugin"
                 self.desc = f"{name} plugin"
             case ["themes", name]:
-                self.name = name.replace(".zsh-theme", "")
+                self.name = name.replace(".bsh-theme", "")
                 self.kind = "theme"
                 self.desc = f"{self.name} theme"
             case _:

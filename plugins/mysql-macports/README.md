@@ -2,9 +2,9 @@
 
 This plugin adds aliases for some of the commonly used [MySQL](https://www.mysql.com/) commands when installed using [MacPorts](https://www.macports.org/) on macOS.
 
-To use it, add `mysql-macports` to the plugins array in your zshrc file:
+To use it, add `mysql-macports` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... mysql-macports)
 ```
 

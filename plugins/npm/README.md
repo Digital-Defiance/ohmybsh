@@ -2,9 +2,9 @@
 
 The npm plugin provides completion as well as adding many useful aliases.
 
-To use it, add npm to the plugins array of your zshrc file:
+To use it, add npm to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... npm)
 ```
 
@@ -38,9 +38,9 @@ The plugin adds a function that toggles between `npm install` and `npm uninstall
 the current command or the last command, for up to 2 previous commands. **The default
 key binding is pressing <kbd>F2</kbd> twice**.
 
-You can change this key binding by adding the following line to your zshrc file:
+You can change this key binding by adding the following line to your bshrc file:
 
-```zsh
+```bsh
 bindkey -M emacs '<seq>' npm_toggle_install_uninstall
 bindkey -M vicmd '<seq>' npm_toggle_install_uninstall
 bindkey -M viins '<seq>' npm_toggle_install_uninstall

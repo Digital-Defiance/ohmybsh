@@ -3,27 +3,27 @@
 This plugin adds completion for the [Yarn package manager](https://yarnpkg.com/en/), as well as some aliases
 for common Yarn commands.
 
-To use it, add `yarn` to the plugins array in your zshrc file:
+To use it, add `yarn` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... yarn)
 ```
 
 ## Global scripts directory
 
 It also adds `yarn` global scripts dir (commonly `~/.yarn/bin`) to the `$PATH`. To disable this feature, set
-the following style in your `.zshrc`:
+the following style in your `.bshrc`:
 
-```zsh
+```bsh
 zstyle ':omz:plugins:yarn' global-path no
 ```
 
 ## Yarn Berry
 
 If you are using Yarn berry (a.k.a. Yarn version 2 or higher) as your global Yarn version you should configure
-this plugin to configure its aliases accordingly, set the following style in your `.zshrc`:
+this plugin to configure its aliases accordingly, set the following style in your `.bshrc`:
 
-```zsh
+```bsh
 zstyle ':omz:plugins:yarn' berry yes
 ```
 

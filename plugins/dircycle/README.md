@@ -6,9 +6,9 @@ This plugin enables directory navigation similar to using back and forward on br
 
 ## Enabling the plugin
 
-1. Open your `.zshrc` file and add `dircycle` in the plugins section:
+1. Open your `.bshrc` file and add `dircycle` in the plugins section:
 
-   ```zsh
+   ```bsh
    plugins=(
        # all your enabled plugins
        dircycle
@@ -18,7 +18,7 @@ This plugin enables directory navigation similar to using back and forward on br
 2. Restart the shell or restart your Terminal session:
 
    ```console
-   $ exec zsh
+   $ exec bsh
    $
    ```
 
@@ -29,29 +29,29 @@ Say you opened these directories on the terminal:
 ```console
 ~$ cd Projects
 ~/Projects$ cd Hacktoberfest
-~/Projects/Hacktoberfest$ cd oh-my-zsh
-~/Projects/Hacktoberfest/oh-my-zsh$ dirs -v
-0       ~/Projects/Hacktoberfest/oh-my-zsh
+~/Projects/Hacktoberfest$ cd oh-my-bsh
+~/Projects/Hacktoberfest/oh-my-bsh$ dirs -v
+0       ~/Projects/Hacktoberfest/oh-my-bsh
 1       ~/Projects/Hacktoberfest
 2       ~/Projects
 3       ~
 ```
 
-By pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>, the current working directory or `$PWD` will be from `oh-my-zsh` to `Hacktoberfest`. Press it again and it will be at `Projects`.
+By pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>, the current working directory or `$PWD` will be from `oh-my-bsh` to `Hacktoberfest`. Press it again and it will be at `Projects`.
 
-And by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd>, the `$PWD` will be from `Projects` to `Hacktoberfest`. Press it again and it will be at `oh-my-zsh`.
+And by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd>, the `$PWD` will be from `Projects` to `Hacktoberfest`. Press it again and it will be at `oh-my-bsh`.
 
 Here's a example history table with the same accessed directories like above:
 
 | Current `$PWD`  | Key press                                             | New `$PWD`      |
 | --------------- | ----------------------------------------------------- | --------------- |
-| `oh-my-zsh`     | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>  | `Hacktoberfest` |
+| `oh-my-bsh`     | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>  | `Hacktoberfest` |
 | `Hacktoberfest` | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>  | `Projects`      |
 | `Projects`      | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>  | `~`             |
 | `~`             | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | `Projects`      |
 | `Projects`      | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | `Hacktoberfest` |
-| `Hacktoberfest` | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | `oh-my-zsh`     |
-| `oh-my-zsh`     | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | `~`             |
+| `Hacktoberfest` | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | `oh-my-bsh`     |
+| `oh-my-bsh`     | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> | `~`             |
 
 Note the last traversal, when pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd> on a last known `$PWD`, it will change back to the first known `$PWD`, which in the example is `~`.
 
@@ -72,7 +72,7 @@ Here's an asciinema cast demonstrating the example above:
 
 You can bind these functions to other key sequences, as long as you know the bindkey sequence. For example, these commands bind to <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>key</kbd> in `xterm-256color`:
 
-```zsh
+```bsh
 bindkey '^[[1;4D' insert-cycledleft
 bindkey '^[[1;4C' insert-cycledright
 bindkey "\e[1;4A" insert-cycledup

@@ -26,7 +26,7 @@
 typeset -g _task_cmds _task_projects _task_tags _task_config _task_modifiers
 _task_projects=(${(f)"$(task _projects)"})
 _task_tags=($(task _tags))
-_task_zshids=( ${(f)"$(task _zshids)"} )
+_task_bshids=( ${(f)"$(task _bshids)"} )
 _task_config=($(task _config))
 _task_columns=($(task _columns))
 _task_modifiers=(
@@ -57,7 +57,7 @@ _task_conjunctions=(
   '>'
 )
 _task_cmds=($(task _commands; task _aliases))
-_task_zshcmds=( ${(f)"$(task _zshcommands)"} sentinel:sentinel:sentinel )
+_task_bshcmds=( ${(f)"$(task _bshcommands)"} sentinel:sentinel:sentinel )
 
 _task_aliases=($(task _aliases))
 
@@ -137,10 +137,10 @@ task_dates=(
   \)
 )
 
-local -a task_zshids
-if (( $#_task_zshids )); then
-  _regex_words values 'task IDs' $_task_zshids
-  task_zshids=("$reply[@]")
+local -a task_bshids
+if (( $#_task_bshids )); then
+  _regex_words values 'task IDs' $_task_bshids
+  task_bshids=("$reply[@]")
 fi
 
 _regex_words values 'task frequencies' \
@@ -189,7 +189,7 @@ _regex_words -t ':' default 'task attributes' \
   'end:Date task was completed/deleted:$task_dates' \
   'st*art:Date task was started:$task_dates' \
   'sc*heduled:Date task is scheduled to start:$task_dates' \
-  'dep*ends:Other tasks that this task depends upon:$task_zshids'
+  'dep*ends:Other tasks that this task depends upon:$task_bshids'
 task_attributes=("$reply[@]")
 
 args=(
@@ -222,22 +222,22 @@ _task_execute() {
 # id-only completion
 (( $+functions[_task_id] )) ||
 _task_id() {
-  _describe -t values 'task IDs' _task_zshids
+  _describe -t values 'task IDs' _task_bshids
 }
 
 # subcommand-only function
 (( $+functions[_task_subcommands] )) ||
 _task_subcommands() {
   local -a subcommands
-  local _zshcmd
+  local _bshcmd
   local cmd category desc
   local lastcategory=''
   # The list is sorted by category, in the right order.
-  for _zshcmd in "$_task_zshcmds[@]"; do
+  for _bshcmd in "$_task_bshcmds[@]"; do
     # Parse out the three fields
-    cmd=${_zshcmd%%:*}
-    category=${${_zshcmd#*:}%%:*}
-    desc=${_zshcmd#*:*:}
+    cmd=${_bshcmd%%:*}
+    category=${${_bshcmd#*:}%%:*}
+    desc=${_bshcmd#*:*:}
 
     # Present each category as soon as the first entry in the *next* category
     # is seen.
@@ -272,10 +272,10 @@ _task_default() {
   done
 
   # update IDs
-  _task_zshids=( ${(f)"$(task _zshids)"} )
+  _task_bshids=( ${(f)"$(task _bshids)"} )
 
   _task_subcommands
-  _describe -t tasks 'task IDs' _task_zshids
+  _describe -t tasks 'task IDs' _task_bshids
   _describe -t aliases 'task aliases' _task_aliases
   _call_function ret _task_filter
 

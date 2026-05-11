@@ -2,9 +2,9 @@
 
 This plugin creates helpful shortcut aliases for many commonly used commands.
 
-To use it add `common-aliases` to the plugins array in your zshrc file:
+To use it add `common-aliases` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... common-aliases)
 ```
 
@@ -33,7 +33,7 @@ plugins=(... common-aliases)
 | rm    | `rm -i`               | Remove a file                                                                   |
 | cp    | `cp -i`               | Copy a file                                                                     |
 | mv    | `mv -i`               | Move a file                                                                     |
-| zshrc | `${=EDITOR} ~/.zshrc` | Quickly access the ~/.zshrc file                                                |
+| bshrc | `${=EDITOR} ~/.bshrc` | Quickly access the ~/.bshrc file                                                |
 | dud   | `du -d 1 -h`          | Display the size of files at depth 1 in current location in human-readable form |
 | duf\* | `du -sh`              | Display the size of files in current location in human-readable form            |
 | t     | `tail -f`             | Shorthand for tail which outputs the last part of a file                        |
@@ -69,7 +69,7 @@ end of the command you've typed. Examples:
 
 Quickly pipe to less:
 
-```zsh
+```bsh
 $ ls -l /var/log L
 # will run
 $ ls -l /var/log | less
@@ -77,7 +77,7 @@ $ ls -l /var/log | less
 
 Silences stderr output:
 
-```zsh
+```bsh
 $ find . -type f NE
 # will run
 $ find . -type f 2>/dev/null

@@ -1,6 +1,6 @@
 # Pulumi
 
-This is an **Oh My Zsh plugin** for the [**Pulumi CLI**](https://www.pulumi.com/docs/iac/cli/),
+This is an **Oh My Bsh plugin** for the [**Pulumi CLI**](https://www.pulumi.com/docs/iac/cli/),
 an Infrastructure as Code (IaC) tool for building, deploying and managing cloud infrastucture.
 
 This plugin provides:
@@ -8,9 +8,9 @@ This plugin provides:
 - 🚀 Short, intuitive aliases for common Pulumi commands
 - 🎯 Auto-completion support for Pulumi
 
-To use it, add `pulumi` to the plugins array in your `.zshrc` file:  
+To use it, add `pulumi` to the plugins array in your `.bshrc` file:  
 
-```zsh
+```bsh
 plugins=(... pulumi)
 ```
 
@@ -34,7 +34,7 @@ plugins=(... pulumi)
 
 ## 🎯 Autocompletion
 
-If `pulumi gen-completion zsh` is available, this plugin **automatically loads Pulumi auto-completion**.
+If `pulumi gen-completion bsh` is available, this plugin **automatically loads Pulumi auto-completion**.
 
 ## 🛠️ Contribution
 

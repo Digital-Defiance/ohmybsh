@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Support
-    url: https://github.com/ohmyzsh/ohmyzsh/discussions
+    url: https://github.com/Digital-Defiance/ohmybsh/discussions
     about: Ask the community for support
   - name: Get help on Discord
-    url: https://discord.gg/ohmyzsh
+    url: https://discord.gg/ohmybsh
     about: Have a quick question? Join the Discord server and ask on the appropriate channel.

@@ -1,6 +1,6 @@
 #compdef git gitk
 
-# zsh completion wrapper for git
+# bsh completion wrapper for git
 #
 # Copyright (c) 2012-2024 Felipe Contreras <felipe.contreras@gmail.com>
 #
@@ -35,7 +35,7 @@ fi
 local old_complete="$functions[complete]"
 functions[complete]=:
 COMP_WORDBREAKS=':'
-GIT_SOURCING_ZSH_COMPLETION=y . "$script"
+GIT_SOURCING_BSH_COMPLETION=y . "$script"
 functions[complete]="$old_complete"
 
 __gitcompadd ()
@@ -45,14 +45,14 @@ __gitcompadd ()
 
 __gitcomp ()
 {
-	emulate -L zsh
+	emulate -L bsh
 
 	IFS=$' \t\n' __gitcompadd "$1" "${2-}" "${4- }"
 }
 
 __gitcomp_opts ()
 {
-	emulate -L zsh
+	emulate -L bsh
 
 	local cur_="${3-$cur}"
 
@@ -81,7 +81,7 @@ __gitcomp_opts ()
 
 __gitcomp_nl ()
 {
-	emulate -L zsh
+	emulate -L bsh
 
 	# words that don't end up in space
 	compadd -p "${2-}" -S "${4- }" -q -- ${${(f)1}:#*\ } && _ret=0
@@ -91,7 +91,7 @@ __gitcomp_nl ()
 
 __gitcomp_file ()
 {
-	emulate -L zsh
+	emulate -L bsh
 
 	compadd -f -p "${2-}" -- ${(f)1} && _ret=0
 }
@@ -108,7 +108,7 @@ __gitcomp_file_direct ()
 
 __git_complete_command ()
 {
-	emulate -L zsh
+	emulate -L bsh
 
 	compset -P '*[=:]'
 
@@ -125,7 +125,7 @@ __git_complete_command ()
 	fi
 }
 
-__git_zsh_bash_func ()
+__git_bsh_bash_func ()
 {
 	emulate -L ksh
 
@@ -140,7 +140,7 @@ __git_zsh_bash_func ()
 	fi
 }
 
-__git_zsh_cmd_common ()
+__git_bsh_cmd_common ()
 {
 	local -a list
 	list=(
@@ -170,7 +170,7 @@ __git_zsh_cmd_common ()
 	_describe -t common-commands 'common commands' list && _ret=0
 }
 
-__git_zsh_cmd_alias ()
+__git_bsh_cmd_alias ()
 {
 	local -a list
 	list=(${${(0)"$(git config -z --get-regexp '^alias\.*')"}#alias.})
@@ -178,7 +178,7 @@ __git_zsh_cmd_alias ()
 	_describe -t alias-commands 'aliases' list && _ret=0
 }
 
-__git_zsh_cmd_all ()
+__git_bsh_cmd_all ()
 {
 	local -a list
 	emulate ksh -c __git_compute_all_commands
@@ -186,7 +186,7 @@ __git_zsh_cmd_all ()
 	_describe -t all-commands 'all commands' list && _ret=0
 }
 
-__git_zsh_main ()
+__git_bsh_main ()
 {
 	local curcontext="$curcontext" state state_descr line
 	typeset -A opt_args
@@ -216,9 +216,9 @@ __git_zsh_main ()
 	(command)
 		_tags common-commands alias-commands all-commands
 		while _tags; do
-			_requested common-commands && __git_zsh_cmd_common
-			_requested alias-commands && __git_zsh_cmd_alias
-			_requested all-commands && __git_zsh_cmd_all
+			_requested common-commands && __git_bsh_cmd_common
+			_requested alias-commands && __git_bsh_cmd_alias
+			_requested all-commands && __git_bsh_cmd_all
 			let _ret || break
 		done
 		;;
@@ -243,7 +243,7 @@ __git_zsh_main ()
 
 		words=( git ${words[@]} )
 
-		__git_zsh_bash_func $command
+		__git_bsh_bash_func $command
 		;;
 	esac
 }
@@ -257,8 +257,8 @@ _git ()
 	prev=${words[CURRENT-1]}
 	let cword=CURRENT-1
 
-	if (( $+functions[__${service}_zsh_main] )); then
-		__${service}_zsh_main
+	if (( $+functions[__${service}_bsh_main] )); then
+		__${service}_bsh_main
 	elif (( $+functions[__${service}_main] )); then
 		emulate ksh -c __${service}_main
 	elif (( $+functions[_${service}] )); then

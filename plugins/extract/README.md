@@ -6,9 +6,9 @@ wide variety of archive filetypes.
 This way you don't have to know what specific command extracts a file, you just do `extract <filename>` and
 the function takes care of the rest.
 
-To use it, add `extract` to the plugins array in your zshrc file:
+To use it, add `extract` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... extract)
 ```
 

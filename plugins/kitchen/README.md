@@ -2,8 +2,8 @@
 
 This plugin adds completion support for the [Test Kitchen](https://kitchen.ci).
 
-To use it, add `kitchen` to the plugins array in your zshrc file:
+To use it, add `kitchen` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... kitchen)
 ```

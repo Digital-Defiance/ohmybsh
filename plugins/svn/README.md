@@ -5,7 +5,7 @@ svn repository. See https://subversion.apache.org/ for the full svn documentatio
 
 To use it, add `svn` to your plugins array:
 
-```zsh
+```bsh
 plugins=(... svn)
 ```
 
@@ -31,7 +31,7 @@ To use this in the `agnoster` theme follow these instructions:
 
 1. Enable the svn plugin
 
-2. Add the following lines to your `zshrc` file:
+2. Add the following lines to your `bshrc` file:
 
     ```shell
     prompt_svn() {
@@ -53,7 +53,7 @@ To use this in the `agnoster` theme follow these instructions:
 
 3. Override the agnoster `build_prompt()` function:
 
-    ```zsh
+    ```bsh
     build_prompt() {
         RETVAL=$?
         prompt_status

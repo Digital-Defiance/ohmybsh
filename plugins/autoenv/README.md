@@ -2,9 +2,9 @@
 
 This plugin loads the [Autoenv](https://github.com/inishchith/autoenv).
 
-To use it, add `autoenv` to the plugins array in your zshrc file:
+To use it, add `autoenv` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... autoenv)
 ```
 

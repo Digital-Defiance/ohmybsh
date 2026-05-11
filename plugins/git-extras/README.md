@@ -2,15 +2,15 @@
 
 This plugin provides completion definitions for some of the commands defined by [git-extras](https://github.com/tj/git-extras), which must already be installed.
 
-To use it, add `git-extras` to the plugins array in your zshrc file:
+To use it, add `git-extras` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... git-extras)
 ```
 
 ## Setup notes
 
-The completions work by augmenting the `_git` completion provided by `zsh`. This only works with the `zsh`-provided `_git`, not the `_git` provided by `git` itself. If you have both `zsh` and `git` installed, you need to make sure that the `zsh`-provided `_git` takes precedence.
+The completions work by augmenting the `_git` completion provided by `bsh`. This only works with the `bsh`-provided `_git`, not the `_git` provided by `git` itself. If you have both `bsh` and `git` installed, you need to make sure that the `bsh`-provided `_git` takes precedence.
 
 ### OS X Homebrew Setup
 

@@ -2,7 +2,7 @@
 #autoload
 
 # in order to make this work, you will need to have the gem zeus installed
-# zeus zsh completion
+# zeus bsh completion
 
 local -a _1st_arguments
 if [[ -e .zeus.sock ]]; then

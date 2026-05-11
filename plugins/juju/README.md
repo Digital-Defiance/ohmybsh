@@ -3,9 +3,9 @@
 This plugin provides useful aliases and functions for [juju](https://juju.is/) (for TAB completion,
 refer to the [official repo](https://github.com/juju/juju/blob/develop/etc/bash_completion.d/juju)).
 
-To use this plugin, add `juju` to the plugins array in your zshrc file.
+To use this plugin, add `juju` to the plugins array in your bshrc file.
 
-```zsh
+```bsh
 plugins=(... juju)
 ```
 

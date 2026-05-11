@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bsh
 #
 # Usage: genpass-monkey [NUM]
 #
@@ -9,14 +9,14 @@
 #
 # If given a numerical argument, generate that many passwords.
 
-emulate -L zsh -o no_unset -o warn_create_global -o warn_nested_var
+emulate -L bsh -o no_unset -o warn_create_global -o warn_nested_var
 
 if [[ ARGC -gt 1 || ${1-1} != ${~:-<1-$((16#7FFFFFFF))>} ]]; then
   print -ru2 -- "usage: $0 [NUM]"
   return 1
 fi
 
-zmodload zsh/system || return
+zmodload bsh/system || return
 
 {
   local -r chars=abcdefghjkmnpqrstvwxyz0123456789

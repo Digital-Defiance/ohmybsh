@@ -2,9 +2,9 @@
 
 This provides aliases that invoke the [`eza`](https://github.com/eza-community/eza) utility rather than `ls`
 
-To use it add `eza` to the plugins array in your zshrc file:
+To use it add `eza` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... eza)
 ```
 
@@ -17,7 +17,7 @@ changing the `zstyle` won't have any effect.
 
 ### `dirs-first`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'dirs-first' yes|no
 ```
 
@@ -27,7 +27,7 @@ Default: `no`
 
 ### `git-status`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'git-status' yes|no
 ```
 
@@ -37,7 +37,7 @@ Default: `no`
 
 ### `header`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'header' yes|no
 ```
 
@@ -47,7 +47,7 @@ Default: `no`
 
 ### `show-group`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'show-group' yes|no
 ```
 
@@ -57,7 +57,7 @@ Default: `yes`
 
 ### `icons`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'icons' yes|no
 ```
 
@@ -67,7 +67,7 @@ Default: `no`
 
 ### `color-scale`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'color-scale' all|age|size
 ```
 
@@ -77,7 +77,7 @@ Default: `none`
 
 ### `color-scale-mode`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'color-scale-mode' gradient|fixed
 ```
 
@@ -90,7 +90,7 @@ Default: `gradient`
 
 ### `size-prefix`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'size-prefix' (binary|none|si)
 ```
 
@@ -105,7 +105,7 @@ Default: `si`
 
 ### `time-style`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'time-style' $TIME_STYLE
 ```
 
@@ -115,7 +115,7 @@ Default: Not set, which means the default behavior of `eza` will take place.
 
 ### `hyperlink`
 
-```zsh
+```bsh
 zstyle ':omz:plugins:eza' 'hyperlink' yes|no
 ```
 

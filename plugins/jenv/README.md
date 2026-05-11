@@ -6,9 +6,9 @@ and [pyenv](https://github.com/yyuu/pyenv).
 This plugin initializes jenv and provides the `jenv_prompt_info` function to add Java
 version information to prompts.
 
-To use, add `jenv` to your plugins array in your zshrc file:
+To use, add `jenv` to your plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jenv)
 ```
 

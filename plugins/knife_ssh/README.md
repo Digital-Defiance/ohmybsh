@@ -3,8 +3,8 @@
 This plugin adds a `knife_ssh` function as well as completion for it, to allow
 connecting via ssh to servers managed with [Chef](https://www.chef.io/).
 
-To use it, add `knife_ssh` to the plugins array in your zshrc file:
-```zsh
+To use it, add `knife_ssh` to the plugins array in your bshrc file:
+```bsh
 plugins=(... knife_ssh)
 ```
 

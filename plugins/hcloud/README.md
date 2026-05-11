@@ -3,9 +3,9 @@
 This plugin adds completion for the [Hetzner Cloud CLI](https://github.com/hetznercloud/cli),
 as well as some aliases for common hcloud commands.
 
-To use it, add `hcloud` to the plugins array in your zshrc file:
+To use it, add `hcloud` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... hcloud)
 ```
 

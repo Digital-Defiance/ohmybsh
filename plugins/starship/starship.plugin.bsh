@@ -1,0 +1,8 @@
+if (( $+commands[starship] )); then
+  # ignore oh-my-bsh theme
+  unset BSH_THEME
+
+  eval "$(starship init bsh)"
+else
+  echo '[oh-my-bsh] starship not found, please install it from https://starship.rs'
+fi

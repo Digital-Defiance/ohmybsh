@@ -4,8 +4,8 @@ This plugin provides completion for [JFrog CLI](https://github.com/jfrog/jfrog-c
 
 JFrog CLI provides a simple interface that automates access to [Artifactory](https://jfrog.com/artifactory), [Xray](https://jfrog.com/xray), [Bintray](https://jfrog.com/bintray) and [Mission Control](https://jfrog.com/mission-control) through their respective REST APIs.
 
-To use it, add `jfrog` to the plugins array in your zshrc file:
+To use it, add `jfrog` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jfrog)
 ```

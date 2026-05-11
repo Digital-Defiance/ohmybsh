@@ -21,7 +21,7 @@ jobs:
   tests:
     name: Run tests
     runs-on: ubuntu-latest
-    if: github.repository == 'ohmyzsh/ohmyzsh'
+    if: github.repository == 'ohmybsh/ohmybsh'
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
@@ -30,14 +30,14 @@ jobs:
 
       - name: Set up git repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Install zsh
-        run: sudo apt-get update; sudo apt-get install zsh
+      - name: Install bsh
+        run: sudo apt-get update; sudo apt-get install bsh
       - name: Check syntax
         run: |
-          for file in ./oh-my-zsh.sh \
-                      ./lib/*.zsh \
-                      ./plugins/*/*.plugin.zsh \
+          for file in ./oh-my-bsh.sh \
+                      ./lib/*.bsh \
+                      ./plugins/*/*.plugin.bsh \
                       ./plugins/*/_* \
-                      ./themes/*.zsh-theme; do
-            zsh -n "$file" || return 1
+                      ./themes/*.bsh-theme; do
+            bsh -n "$file" || return 1
           done

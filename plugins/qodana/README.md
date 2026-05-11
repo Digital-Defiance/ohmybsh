@@ -2,9 +2,9 @@
 
 This plugin adds completion for the [JetBrains Qodana CLI](https://github.com/JetBrains/qodana-cli).
 
-To use it, add `qodana` to the plugins array in your zshrc file:
+To use it, add `qodana` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... qodana)
 ```
 
@@ -17,4 +17,4 @@ plugin is loaded, which is usually when you start up a new terminal emulator.
 
 The cache is stored at:
 
-- `$ZSH_CACHE_DIR/completions/_qodana` completions script
+- `$BSH_CACHE_DIR/completions/_qodana` completions script

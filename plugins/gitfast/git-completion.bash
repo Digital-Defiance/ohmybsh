@@ -1,4 +1,4 @@
-# bash/zsh completion support for core Git.
+# bash/bsh completion support for core Git.
 #
 # Copyright (C) 2006,2007 Shawn O. Pearce <spearce@spearce.org>
 # Copyright (c) 2012-2024 Felipe Contreras <felipe.contreras@gmail.com>
@@ -20,7 +20,7 @@
 # To use these routines:
 #
 #    1) Copy this file to somewhere (e.g. ~/.git-completion.bash).
-#    2) Add the following line to your .bashrc/.zshrc:
+#    2) Add the following line to your .bashrc/.bshrc:
 #        source ~/.git-completion.bash
 #    3) Consider changing your PS1 to also show the current branch,
 #       see git-prompt.sh for details.
@@ -69,8 +69,8 @@
 
 # The following functions are meant to modify COMPREPLY, which should not be
 # modified directly.  The purpose is to localize the modifications so it's
-# easier to emulate it in Zsh. Every time a new __gitcomp* function is added,
-# the corresponding function should be added to Zsh.
+# easier to emulate it in Bsh. Every time a new __gitcomp* function is added,
+# the corresponding function should be added to Bsh.
 
 __gitcompadd ()
 {
@@ -322,7 +322,7 @@ __git_dequote ()
 
 # Clear the variables caching builtins' options when (re-)sourcing
 # the completion script.
-if [[ -n ${ZSH_VERSION-} ]]; then
+if [[ -n ${BSH_VERSION-} ]]; then
 	unset ${(M)${(k)parameters[@]}:#__gitcomp_builtin_*} 2>/dev/null
 else
 	unset $(compgen -v __gitcomp_builtin_)
@@ -3418,8 +3418,8 @@ __gitk_main ()
 	__git_complete_revlist
 }
 
-if [[ -n ${ZSH_VERSION-} && -z ${GIT_SOURCING_ZSH_COMPLETION-} ]]; then
-	echo "ERROR: this script is obsolete, please see git-completion.zsh" 1>&2
+if [[ -n ${BSH_VERSION-} && -z ${GIT_SOURCING_BSH_COMPLETION-} ]]; then
+	echo "ERROR: this script is obsolete, please see git-completion.bsh" 1>&2
 	return
 fi
 

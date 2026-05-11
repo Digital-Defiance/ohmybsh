@@ -2,9 +2,9 @@
 
 Displays a zen quote from GitHub's Octocat on start up.
 
-To use it, add `octozen` to the plugins array in your zshrc file:
+To use it, add `octozen` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... octozen)
 ```
 

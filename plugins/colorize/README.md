@@ -8,7 +8,8 @@ is found it will just cat the file normally, without syntax highlighting.
 
 ## Setup
 
-To use it, add colorize to the plugins array of your `~/.zshrc` file:
+To use it, add colorize to the plugins array of your `~/.bshrc` file:
+
 ```
 plugins=(... colorize)
 ```
@@ -24,26 +25,26 @@ This plugin requires that at least one of the following tools is installed:
 
 ### Colorize tool
 
-Colorize supports `pygmentize` and `chroma` as syntax highlighter. By default colorize uses `pygmentize` unless it's not installed and `chroma` is. This can be overridden by the `ZSH_COLORIZE_TOOL` environment variable:
+Colorize supports `pygmentize` and `chroma` as syntax highlighter. By default colorize uses `pygmentize` unless it's not installed and `chroma` is. This can be overridden by the `BSH_COLORIZE_TOOL` environment variable:
 
 ```
-ZSH_COLORIZE_TOOL=chroma
+BSH_COLORIZE_TOOL=chroma
 ```
 
 ### Styles
 
-Pygments offers multiple styles. By default, the `default` style is used, but you can choose another theme by setting the `ZSH_COLORIZE_STYLE` environment variable:
+Pygments offers multiple styles. By default, the `default` style is used, but you can choose another theme by setting the `BSH_COLORIZE_STYLE` environment variable:
 
 ```
-ZSH_COLORIZE_STYLE="colorful"
+BSH_COLORIZE_STYLE="colorful"
 ```
 
 ### Chroma Formatter Settings
 
-Chroma supports terminal output in 8 color, 256 color, and true-color. If you need to change the default terminal output style from the standard 8 color output, set the `ZSH_COLORIZE_CHROMA_FORMATTER` environment variable:
+Chroma supports terminal output in 8 color, 256 color, and true-color. If you need to change the default terminal output style from the standard 8 color output, set the `BSH_COLORIZE_CHROMA_FORMATTER` environment variable:
 
 ```
-ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
+BSH_COLORIZE_CHROMA_FORMATTER=terminal256
 ```
 
 ## Usage

@@ -2,9 +2,9 @@
 
 Completion script for [scala and scalac](https://www.scala-lang.org/) commands.
 
-To use it, add `scala` to the plugins array of your zshrc file:
+To use it, add `scala` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... scala)
 ```
 

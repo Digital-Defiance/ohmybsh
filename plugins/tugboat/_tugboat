@@ -1,7 +1,7 @@
 #compdef tugboat
 #autoload
 
-# Tugboat zsh autocompletion
+# Tugboat bsh autocompletion
 
 
 local -a _commands

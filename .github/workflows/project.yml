@@ -14,22 +14,22 @@ jobs:
   add-to-project:
     name: Add to project
     runs-on: ubuntu-latest
-    if: github.repository == 'ohmyzsh/ohmyzsh'
+    if: github.repository == 'ohmybsh/ohmybsh'
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
         with:
           egress-policy: audit
-      - name: Authenticate as @ohmyzsh
+      - name: Authenticate as @ohmybsh
         id: generate-token
         uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         with:
-          client-id: ${{ secrets.OHMYZSH_CLIENT_ID }}
-          private-key: ${{ secrets.OHMYZSH_APP_PRIVATE_KEY }}
+          client-id: ${{ secrets.OHMYBSH_CLIENT_ID }}
+          private-key: ${{ secrets.OHMYBSH_APP_PRIVATE_KEY }}
       - name: Read project data
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-          ORGANIZATION: ohmyzsh
+          ORGANIZATION: ohmybsh
           PROJECT_NUMBER: "1"
         run: |
           # Get Project data
@@ -92,7 +92,7 @@ jobs:
               plugins++
             }
             /^themes\// {
-              gsub(/\.zsh-theme$/, "", $2)
+              gsub(/\.bsh-theme$/, "", $2)
               if (theme == $2) next
               theme = $2
               themes++

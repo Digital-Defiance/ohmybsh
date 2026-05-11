@@ -2,7 +2,7 @@
 
 This plugin provides completion for the [pass](https://www.passwordstore.org/) password manager.
 
-To use it, add `pass` to the plugins array in your zshrc file.
+To use it, add `pass` to the plugins array in your bshrc file.
 
 ```
 plugins=(... pass)
@@ -13,7 +13,7 @@ plugins=(... pass)
 ### Multiple repositories
 
 If you use multiple repositories, you can configure completion like this:
-```zsh
+```bsh
 compdef _pass workpass
 zstyle ':completion::complete:workpass::' prefix "$HOME/work/pass"
 workpass() {

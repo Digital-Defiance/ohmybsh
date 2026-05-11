@@ -3,9 +3,9 @@
 With lots of 3rd-party amazing aliases installed, this plugin helps list the shortcuts
 that are currently available based on the plugins you have enabled.
 
-To use it, add `aliases` to the plugins array in your zshrc file:
+To use it, add `aliases` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(aliases)
 ```
 
@@ -25,4 +25,4 @@ Requirements: Python needs to be installed.
 
 - `als --groups`: show only group names
 
-  ![screenshot](https://github.com/ohmyzsh/ohmyzsh/assets/66907184/5bfa00ea-5fc3-4e97-8b22-2f74f6b948c7)
+  ![screenshot](https://github.com/Digital-Defiance/ohmybsh/assets/66907184/5bfa00ea-5fc3-4e97-8b22-2f74f6b948c7)

@@ -3,15 +3,15 @@
 This plugin adds `node-docs` function that opens specific section in [Node.js](https://nodejs.org)
 documentation (depending on the installed version).
 
-To use it, add `node` to the plugins array of your zshrc file:
+To use it, add `node` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... node)
 ```
 
 ## Usage
 
-```zsh
+```bsh
 # Opens https://nodejs.org/docs/latest-v10.x/api/fs.html
 $ node-docs fs
 # Opens https://nodejs.org/docs/latest-v10.x/api/path.html

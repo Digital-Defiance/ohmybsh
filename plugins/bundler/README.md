@@ -3,9 +3,9 @@
 This plugin adds completion for basic bundler commands, as well as aliases and helper functions for
 an easier experience with bundler.
 
-To use it, add `bundler` to the plugins array in your zshrc file:
+To use it, add `bundler` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... bundler)
 ```
 
@@ -42,7 +42,7 @@ Please **use the exact name of the executable** and not the gem name.
 
 #### Include gems to be wrapped (`BUNDLED_COMMANDS`)
 
-Add this before the plugin list in your `.zshrc`:
+Add this before the plugin list in your `.bshrc`:
 
 ```sh
 BUNDLED_COMMANDS=(rubocop)
@@ -53,7 +53,7 @@ This will add the wrapper for the `rubocop` gem (i.e. the executable).
 
 #### Exclude gems from being wrapped (`UNBUNDLED_COMMANDS`)
 
-Add this before the plugin list in your `.zshrc`:
+Add this before the plugin list in your `.bshrc`:
 
 ```sh
 UNBUNDLED_COMMANDS=(foreman spin)
@@ -64,7 +64,7 @@ This will exclude the `foreman` and `spin` gems (i.e. their executable) from bei
 
 ### Excluded gems
 
-These gems should not be called with `bundle exec`. Please see [issue #2923](https://github.com/ohmyzsh/ohmyzsh/pull/2923) on GitHub for clarification:
+These gems should not be called with `bundle exec`. Please see [issue #2923](https://github.com/Digital-Defiance/ohmybsh/pull/2923) on GitHub for clarification:
 
 - `berks`
 - `foreman`

@@ -2,9 +2,9 @@
 
 This plugin enables you to use [gitignore.io](https://www.gitignore.io) from the command line. You need an active internet connection to fetch templates. The plugin uses the gitignore.io CDN endpoint to simplify access and improve reliability.
 
-To use it, add `gitignore` to the plugins array in your zshrc file:
+To use it, add `gitignore` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... gitignore)
 ```
 

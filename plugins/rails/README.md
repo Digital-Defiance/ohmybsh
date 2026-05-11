@@ -3,9 +3,9 @@
 This plugin adds completion for [Ruby On Rails Framework](https://rubyonrails.org/) and
 [Rake](https://ruby.github.io/rake/) commands, as well as some aliases for logs and environment variables.
 
-To use it, add `rails` to the plugins array in your zshrc file:
+To use it, add `rails` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... rails)
 ```
 

@@ -3,9 +3,9 @@
 This plugin adds completion for [pip](https://pip.pypa.io/en/latest/),
 the Python package manager.
 
-To use it, add `pip` to the plugins array in your zshrc file:
+To use it, add `pip` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... pip)
 ```
 
@@ -13,9 +13,9 @@ plugins=(... pip)
 
 The pip plugin caches the names of available pip packages from the PyPI index.
 To trigger the caching process, try to complete `pip install`,
-or you can run `zsh-pip-cache-packages` directly.
+or you can run `bsh-pip-cache-packages` directly.
 
-To reset the cache, run `zsh-pip-clear-cache` and it will be rebuilt next
+To reset the cache, run `bsh-pip-clear-cache` and it will be rebuilt next
 the next time you autocomplete `pip install`.
 
 ## Aliases

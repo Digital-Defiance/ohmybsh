@@ -2,9 +2,9 @@
 
 This plugin provides autocompletion for [jj](https://martinvonz.github.io/jj).
 
-To use it, add `jj` to the plugins array of your zshrc file:
+To use it, add `jj` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jj)
 ```
 
@@ -79,7 +79,7 @@ PROMPT='$(_my_theme_vcs_info) $'
 ```
 
 You can find an example
-[here](https://github.com/nasso/omzsh/blob/e439e494f22f4fd4ef1b6cb64626255f4b341c1b/themes/sunakayu.zsh-theme).
+[here](https://github.com/nasso/ombsh/blob/e439e494f22f4fd4ef1b6cb64626255f4b341c1b/themes/sunakayu.bsh-theme).
 
 ### Performance
 
@@ -106,9 +106,9 @@ the default git async-prompt mode. This is because async-prompt only registers i
 when it detects `$(git_prompt_info)` literally in your prompt variables. A wrapper like
 `$(_my_theme_vcs_info)` won't match, so the async output stays empty.
 
-To fix this, add one of the following to your `.zshrc` **before** Oh My Zsh is sourced:
+To fix this, add one of the following to your `.bshrc` **before** Oh My Bsh is sourced:
 
-```zsh
+```bsh
 # Option 1: force async handlers to always register (recommended, keeps async behavior)
 zstyle ':omz:alpha:lib:git' async-prompt force
 
@@ -116,7 +116,7 @@ zstyle ':omz:alpha:lib:git' async-prompt force
 zstyle ':omz:alpha:lib:git' async-prompt no
 ```
 
-See [#13555](https://github.com/ohmyzsh/ohmyzsh/issues/13555) for details.
+See [#13555](https://github.com/Digital-Defiance/ohmybsh/issues/13555) for details.
 
 ## See Also
 

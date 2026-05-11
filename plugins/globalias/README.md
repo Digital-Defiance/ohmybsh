@@ -2,13 +2,13 @@
 
 Expands all glob expressions, subcommands and aliases (including global).
 
-Idea from: https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html.
+Idea from: https://blog.patshead.com/2012/11/automatically-expaning-bsh-global-aliases---simplified.html.
 
 ## Usage
 
-Add `globalias` to the plugins array in your zshrc file:
+Add `globalias` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... globalias)
 ```
 
@@ -45,7 +45,7 @@ $ mkdir Tue,\ 04\ Oct\ 2016\ 13:54:03\ +0300
 #### Aliases
 
 ```
-# .zshrc:
+# .bshrc:
 alias -g G="| grep --color=auto -P"
 alias l='ls --color=auto -lah'
 
@@ -66,7 +66,7 @@ $ sudo systemctl
 #### Filtered values
 
 ```
-# .zshrc
+# .bshrc
 alias l='ls -lh'
 alias la='ls --color=auto -lah'
 GLOBALIAS_FILTER_VALUES=(l)

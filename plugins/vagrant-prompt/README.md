@@ -3,9 +3,9 @@
 This plugin prompts the status of the Vagrant VMs. It supports single-host and
 multi-host configurations as well.
 
-To use it, add `vagrant-prompt` to the plugins array in your zshrc file:
+To use it, add `vagrant-prompt` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... vagrant-prompt)
 ```
 
@@ -16,7 +16,7 @@ plugins=(... vagrant-prompt)
 To display Vagrant info on your prompt add the `vagrant_prompt_info` to the
 `$PROMPT` or `$RPROMPT` variable in your theme. Example:
 
-```zsh
+```bsh
 PROMPT="$PROMPT"' $(vagrant_prompt_info)'
 # or
 RPROMPT='$(vagrant_prompt_info)'
@@ -25,15 +25,15 @@ RPROMPT='$(vagrant_prompt_info)'
 ### Customization
 
 `vagrant_prompt_info` makes use of the following custom variables, which can be set in your
-`.zshrc` file:
+`.bshrc` file:
 
-```zsh
-ZSH_THEME_VAGRANT_PROMPT_PREFIX="%{$fg_bold[blue]%}["
-ZSH_THEME_VAGRANT_PROMPT_SUFFIX="%{$fg_bold[blue]%}]%{$reset_color%} "
-ZSH_THEME_VAGRANT_PROMPT_RUNNING="%{$fg_no_bold[green]%}●"
-ZSH_THEME_VAGRANT_PROMPT_POWEROFF="%{$fg_no_bold[red]%}●"
-ZSH_THEME_VAGRANT_PROMPT_SUSPENDED="%{$fg_no_bold[yellow]%}●"
-ZSH_THEME_VAGRANT_PROMPT_NOT_CREATED="%{$fg_no_bold[white]%}○"
+```bsh
+BSH_THEME_VAGRANT_PROMPT_PREFIX="%{$fg_bold[blue]%}["
+BSH_THEME_VAGRANT_PROMPT_SUFFIX="%{$fg_bold[blue]%}]%{$reset_color%} "
+BSH_THEME_VAGRANT_PROMPT_RUNNING="%{$fg_no_bold[green]%}●"
+BSH_THEME_VAGRANT_PROMPT_POWEROFF="%{$fg_no_bold[red]%}●"
+BSH_THEME_VAGRANT_PROMPT_SUSPENDED="%{$fg_no_bold[yellow]%}●"
+BSH_THEME_VAGRANT_PROMPT_NOT_CREATED="%{$fg_no_bold[white]%}○"
 ```
 
 ### State to variable mapping
@@ -43,10 +43,10 @@ according to the following table:
 
 | State       | Symbol                                 |
 | ----------- | -------------------------------------- |
-| running     | `ZSH_THEME_VAGRANT_PROMPT_RUNNING`     |
-| not running | `ZSH_THEME_VAGRANT_PROMPT_POWEROFF`    |
-| poweroff    | `ZSH_THEME_VAGRANT_PROMPT_POWEROFF`    |
-| paused      | `ZSH_THEME_VAGRANT_PROMPT_SUSPENDED`   |
-| saved       | `ZSH_THEME_VAGRANT_PROMPT_SUSPENDED`   |
-| suspended   | `ZSH_THEME_VAGRANT_PROMPT_SUSPENDED`   |
-| not created | `ZSH_THEME_VAGRANT_PROMPT_NOT_CREATED` |
+| running     | `BSH_THEME_VAGRANT_PROMPT_RUNNING`     |
+| not running | `BSH_THEME_VAGRANT_PROMPT_POWEROFF`    |
+| poweroff    | `BSH_THEME_VAGRANT_PROMPT_POWEROFF`    |
+| paused      | `BSH_THEME_VAGRANT_PROMPT_SUSPENDED`   |
+| saved       | `BSH_THEME_VAGRANT_PROMPT_SUSPENDED`   |
+| suspended   | `BSH_THEME_VAGRANT_PROMPT_SUSPENDED`   |
+| not created | `BSH_THEME_VAGRANT_PROMPT_NOT_CREATED` |

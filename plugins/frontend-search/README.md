@@ -4,9 +4,9 @@
 
 ## Installation
 
-Open your `~/.zshrc` file and enable the `frontend-search` plugin:
+Open your `~/.bshrc` file and enable the `frontend-search` plugin:
 
-```zsh
+```bsh
 
 plugins=( ... frontend-search)
 
@@ -21,7 +21,7 @@ You can use the frontend-search plugin in these two forms:
 
 For example, these two are equivalent:
 
-```zsh
+```bsh
 $ angular dependency injection
 # Will turn into ...
 $ frontend angular dependency injection
@@ -68,7 +68,7 @@ If you want to have another context, open an Issue and tell us!
 
 The plugin will use Google as a fallback if the docs site for a search context does not have a search
 function. You can set the fallback search engine to DuckDuckGo by setting
-`FRONTEND_SEARCH_FALLBACK='duckduckgo'` in your `~/.zshrc` file before Oh My Zsh is sourced.
+`FRONTEND_SEARCH_FALLBACK='duckduckgo'` in your `~/.bshrc` file before Oh My Bsh is sourced.
 
 ## DuckDuckGo Lucky Search
 

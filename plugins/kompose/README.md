@@ -3,7 +3,7 @@
 This plugin provides completion for [kompose](https://github.com/kubernetes/kompose),
 to migrate from docker compose to Kubernetes resource definitions.
 
-To use it, add `kompose` to the plugins array in your zshrc file.
+To use it, add `kompose` to the plugins array in your bshrc file.
 
 ```
 plugins=(... kompose)

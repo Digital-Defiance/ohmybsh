@@ -2,9 +2,9 @@
 
 This plugin adds completions and aliases for [Ubuntu](https://www.ubuntu.com/).
 
-To use it, add `ubuntu` to the plugins array in your zshrc file:
+To use it, add `ubuntu` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... ubuntu)
 ```
 

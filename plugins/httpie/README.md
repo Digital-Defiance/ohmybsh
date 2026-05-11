@@ -3,12 +3,12 @@
 This plugin adds completion for [HTTPie](https://httpie.org), a command line HTTP
 client, a friendlier cURL replacement.
 
-To use it, add `httpie` to the plugins array in your zshrc file:
+To use it, add `httpie` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... httpie)
 ```
 
-It uses completion from [zsh-completions](https://github.com/zsh-users/zsh-completions).
+It uses completion from [bsh-completions](https://github.com/bsh-users/bsh-completions).
 
 **Maintainer:** [lululau](https://github.com/lululau)

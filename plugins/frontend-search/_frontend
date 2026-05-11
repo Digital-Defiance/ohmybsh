@@ -5,7 +5,7 @@ zstyle ':completion::complete:frontend:*:commands' group-name commands
 zstyle ':completion::complete:frontend:*:frontend_points' group-name frontend_points
 zstyle ':completion::complete:frontend::' list-grouped
 
-zmodload zsh/mapfile
+zmodload bsh/mapfile
 
 function _frontend() {
   local CONFIG=$HOME/.frontend-search
@@ -158,4 +158,4 @@ _frontend "$@"
 # indent-tabs-mode: nil
 # sh-basic-offset: 2
 # End:
-# vim: ft=zsh sw=2 ts=2 et
+# vim: ft=bsh sw=2 ts=2 et

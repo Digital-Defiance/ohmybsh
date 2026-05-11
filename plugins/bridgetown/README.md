@@ -2,9 +2,9 @@
 
 This plugin adds some aliases and autocompletion for common [Bridgetown](https://bridgetownrb.com/) commands.
 
-To use it, add `bridgetown` to the plugins array in your zshrc file:
+To use it, add `bridgetown` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... bridgetown)
 ```
 

@@ -2,9 +2,9 @@
 
 This plugin adds completion for [Bower](https://bower.io/) and a few useful aliases for common Bower commands.
 
-To use it, add `bower` to the plugins array in your zshrc file:
+To use it, add `bower` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... bower)
 ```
 

@@ -1,0 +1,4 @@
+if [ $commands[istioctl] ]; then
+  source <(istioctl completion bsh)
+  compdef _istioctl istioctl
+fi

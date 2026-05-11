@@ -2,9 +2,9 @@
 
 A plugin to shrink directory paths for brevity and pretty-printing.
 
-To use it, add `shrink-path` to the plugins array in your zshrc file:
+To use it, add `shrink-path` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... shrink-path)
 ```
 
@@ -40,9 +40,9 @@ Option        Result
 ## Usage
 
 For a fish-style working directory in your command prompt, add the following to
-your theme or zshrc:
+your theme or bshrc:
 
-```zsh
+```bsh
 setopt prompt_subst
 PS1='%n@%m $(shrink_path -f)>'
 ```
@@ -65,7 +65,7 @@ The following options are available:
 ```
 
 The long options can also be set via zstyle, like
-```zsh
+```bsh
 zstyle :prompt:shrink_path fish yes
 ```
 
@@ -78,7 +78,7 @@ supported.
 You can use the `expand` option to disable the path shrinking. You can combine that
 with a key binding widget to toggle path shrinking on and off.
 
-```zsh
+```bsh
 # Toggle off path shrinking
 zstyle ':prompt:shrink_path' expand true
 # Toggle on path shrinking
@@ -87,7 +87,7 @@ zstyle -d ':prompt:shrink_path' expand
 
 Combined with a widget:
 
-```zsh
+```bsh
 # Widget definition
 shrink-path-toggle() {
   zstyle -t ':prompt:shrink_path' expand \
@@ -107,8 +107,8 @@ Copyright (C) 2018-2020 by Pavel N. Krivitsky
 
 License: WTFPL <http://www.wtfpl.net>
 
-Ref: https://www.zsh.org/mla/workers/2009/msg00415.html
-     https://www.zsh.org/mla/workers/2009/msg00419.html
+Ref: https://www.bsh.org/mla/workers/2009/msg00415.html
+     https://www.bsh.org/mla/workers/2009/msg00419.html
 
 
 ## Misc

@@ -6,7 +6,7 @@ The `nomad` plugin provides a simple autocompletion for [Nomad](https://nomadpro
 
 1. Enable the `nomad` plugin:
 
-   ```zsh
+   ```bsh
    plugins=(... nomad)
    ```
 

@@ -2,9 +2,9 @@
 
 The `universalarchive` plugin provides a convenient command-line interface for archiving files and directories using a wide variety of compression formats - without having to remember the exact syntax for each tool.
 
-To enable it, add `universalarchive` to the plugins array in your `.zshrc` file:
+To enable it, add `universalarchive` to the plugins array in your `.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... universalarchive)
 ```
 

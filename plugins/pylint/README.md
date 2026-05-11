@@ -3,9 +3,9 @@
 This plugin adds aliases and autocompletion for [Pylint](https://www.pylint.org/),
 the Python code style checking tool.
 
-To use it, add `pylint` to the plugins array in your zshrc file:
+To use it, add `pylint` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... pylint)
 ```
 

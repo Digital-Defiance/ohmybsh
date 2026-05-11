@@ -2,9 +2,9 @@
 
 This plugin adds completions and aliases for [Roswell](https://github.com/roswell/roswell/).
 
-To use it, add `ros` to the plugins array in your zshrc file:
+To use it, add `ros` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... ros)
 ```
 

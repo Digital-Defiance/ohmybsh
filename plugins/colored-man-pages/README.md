@@ -2,9 +2,9 @@
 
 This plugin adds colors to man pages.
 
-To use it, add `colored-man-pages` to the plugins array in your zshrc file:
+To use it, add `colored-man-pages` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... colored-man-pages)
 ```
 
@@ -13,7 +13,7 @@ from [`debian-goodies`](https://packages.debian.org/stable/debian-goodies).
 
 You can also try to color other pages by prefixing the respective command with `colored`:
 
-```zsh
+```bsh
 colored git help clone
 ```
 
@@ -25,8 +25,8 @@ loaded. Check out sources for more.
 
 For example: `less_termcap[md]` maps to `LESS_TERMCAP_md` which is the escape sequence that tells `less`
 how to print something in bold. It's currently shown in bold red, but if you want to change it, you
-can redefine `less_termcap[md]` in your zshrc file, after OMZ is sourced:
+can redefine `less_termcap[md]` in your bshrc file, after OMZ is sourced:
 
-```zsh
+```bsh
 less_termcap[md]="${fg_bold[blue]}" # this tells less to print bold text in bold blue
 ```

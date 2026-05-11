@@ -1,9 +1,9 @@
 #compdef docker dockerd
 #
-# zsh completion for docker (http://docker.com)
+# bsh completion for docker (http://docker.com)
 #
 # version:  0.3.0
-# github:   https://github.com/felixr/docker-zsh-completion
+# github:   https://github.com/felixr/docker-bsh-completion
 #
 # contributors:
 #   - Felix Riedel
@@ -142,7 +142,7 @@ __docker_complete_containers_names() {
 __docker_complete_info_plugins() {
     [[ $PREFIX = -* ]] && return 1
     integer ret=1
-    emulate -L zsh
+    emulate -L bsh
     setopt extendedglob
     local -a plugins
     plugins=(${(ps: :)${(M)${(f)${${"$(_call_program commands docker $docker_options info)"##*$'\n'Plugins:}%%$'\n'^ *}}:# $1: *}## $1: })
@@ -322,7 +322,7 @@ __docker_complete_runtimes() {
     [[ $PREFIX = -*  ]] && return 1
     integer ret=1
 
-    emulate -L zsh
+    emulate -L bsh
     setopt extendedglob
     local -a runtimes_opts
     runtimes_opts=(${(ps: :)${(f)${${"$(_call_program commands docker $docker_options info)"##*$'\n'Runtimes: }%%$'\n'^ *}}})
@@ -440,7 +440,7 @@ __docker_complete_events_filter() {
                 __docker_complete_containers && ret=0
                 ;;
             (daemon)
-                emulate -L zsh
+                emulate -L bsh
                 setopt extendedglob
                 local -a daemon_opts
                 daemon_opts=(
@@ -3063,7 +3063,7 @@ __docker_subcommand() {
 
 _docker() {
     # Support for subservices, which allows for `compdef _docker docker-shell=_docker_containers`.
-    # Based on /usr/share/zsh/functions/Completion/Unix/_git without support for `ret`.
+    # Based on /usr/share/bsh/functions/Completion/Unix/_git without support for `ret`.
     if [[ $service != docker ]]; then
         _call_function - _$service
         return
@@ -3123,4 +3123,4 @@ _docker "$@"
 # indent-tabs-mode: nil
 # sh-basic-offset: 4
 # End:
-# vim: ft=zsh sw=4 ts=4 et
+# vim: ft=bsh sw=4 ts=4 et

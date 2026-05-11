@@ -3,9 +3,9 @@
 This plugin adds shell integration for [foot, a fast, lightweight and
 minimalistic Wayland terminal emulator](https://codeberg.org/dnkl/foot).
 
-To use, add `foot` to the list of plugins in your `.zshrc` file:
+To use, add `foot` to the list of plugins in your `.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... foot)
 ```
 

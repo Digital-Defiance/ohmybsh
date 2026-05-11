@@ -2,9 +2,9 @@
 
 This plugin adds [redis-cli](https://redis.io/topics/rediscli) completion, based off of Homebrew completion.
 
-To use it, add `redis-cli` to the plugins array in your zshrc file:
+To use it, add `redis-cli` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... redis-cli)
 ```
 

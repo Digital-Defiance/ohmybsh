@@ -2,9 +2,9 @@
 
 This plugin loads the [autojump navigation tool](https://github.com/wting/autojump).
 
-To use it, add `autojump` to the plugins array in your zshrc file:
+To use it, add `autojump` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... autojump)
 ```
 

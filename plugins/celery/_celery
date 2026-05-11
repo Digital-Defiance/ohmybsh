@@ -1,7 +1,7 @@
 #compdef celery
 #autoload
 
-#celery zsh  completion
+#celery bsh  completion
 
 _celery () {
 local -a _1st_arguments ifargs dopts controlargs

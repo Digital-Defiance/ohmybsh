@@ -2,9 +2,9 @@
 
 The plugin adds several aliases for useful [Python](https://www.python.org/) commands.
 
-To use it, add `python` to the plugins array in your zshrc file:
+To use it, add `python` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... python)
 ```
 
@@ -33,14 +33,14 @@ virtual environments:
 - `auto_vrun`: automatically activate the venv virtual environment when entering a directory containing
   `<venv-name>/bin/activate`, and automatically deactivate it when navigating out of it (keeps venv activated
   in subdirectories).
-  - To enable the feature, set `PYTHON_AUTO_VRUN=true` before sourcing oh-my-zsh.
+  - To enable the feature, set `PYTHON_AUTO_VRUN=true` before sourcing oh-my-bsh.
   - The plugin activates the first existing virtual environment, in order, appearing in `$PYTHON_VENV_NAMES`.
     The default virtual environment name is `venv`. To use a different name, set
     `PYTHON_VENV_NAME=<venv-name>`. For example: `PYTHON_VENV_NAME=".venv"`
 
 ### Settings
 
-You can set these variables in your `.zshrc` file, before Oh My Zsh is sourced.
+You can set these variables in your `.bshrc` file, before Oh My Bsh is sourced.
 For example:
 
 ```sh
@@ -48,9 +48,8 @@ PYTHON_VENV_NAME=".venv"
 PYTHON_VENV_NAMES=($PYTHON_VENV_NAME venv)
 ...
 plugins=(... python)
-source "$ZSH/oh-my-zsh.sh"
+source "$BSH/oh-my-bsh.sh"
 ```
-
 
 ## `$PYTHON_VENV_NAME`
 
@@ -65,4 +64,3 @@ Preferred name for virtual environments, for example when creating via `mkv`.
 Array of virtual environment names to be checked, in order, by `vrun` and `auto_vrun`.
 This means these functions will load the first existing virtual environment in this list.
 Duplicate names are ignored.
-

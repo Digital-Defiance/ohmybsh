@@ -2,9 +2,9 @@
 
 [`transfer.sh`](https://transfer.sh) is an easy to use file sharing service from the command line
 
-To use it, add `transfer` to the plugins array in your zshrc file:
+To use it, add `transfer` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... transfer)
 ```
 
@@ -18,24 +18,24 @@ plugins=(... transfer)
 
 - Encrypt and upload a file with symmetric cipher and create ASCII armored output:
 
-  ```zsh
+  ```bsh
   transfer file -ca
   ```
 
 - Encrypt and upload directory with symmetric cipher and gpg output:
 
-  ```zsh
+  ```bsh
   transfer directory -ca
   ```
 
 - Decrypt file:
 
-  ```zsh
+  ```bsh
   gpg -d file -ca
   ```
 
 - Decrypt directory:
 
-  ```zsh
+  ```bsh
   gpg -d your_archive.tgz.gpg | tar xz
   ```

@@ -2,7 +2,7 @@
 
 # Description
 # -----------
-#  zsh completion for docker-compose
+#  bsh completion for docker-compose
 # -------------------------------------------------------------------------
 # Authors
 # -------
@@ -11,7 +11,7 @@
 # Inspiration
 # -----------
 #  * @albers docker-compose bash completion script
-#  * @felixr docker zsh completion script : https://github.com/felixr/docker-zsh-completion
+#  * @felixr docker bsh completion script : https://github.com/felixr/docker-bsh-completion
 # -------------------------------------------------------------------------
 
 __docker-compose_q() {
@@ -314,7 +314,7 @@ __docker-compose_subcommand() {
 
 _docker-compose() {
     # Support for subservices, which allows for `compdef _docker docker-shell=_docker_containers`.
-    # Based on /usr/share/zsh/functions/Completion/Unix/_git without support for `ret`.
+    # Based on /usr/share/bsh/functions/Completion/Unix/_git without support for `ret`.
     if [[ $service != docker-compose ]]; then
         _call_function - _$service
         return

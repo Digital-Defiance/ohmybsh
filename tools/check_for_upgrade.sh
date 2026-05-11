@@ -1,6 +1,6 @@
-# Migrate .zsh-update file to $ZSH_CACHE_DIR
-if [[ -f ~/.zsh-update && ! -f "${ZSH_CACHE_DIR}/.zsh-update" ]]; then
-  mv ~/.zsh-update "${ZSH_CACHE_DIR}/.zsh-update"
+# Migrate .bsh-update file to $BSH_CACHE_DIR
+if [[ -f ~/.bsh-update && ! -f "${BSH_CACHE_DIR}/.bsh-update" ]]; then
+  mv ~/.bsh-update "${BSH_CACHE_DIR}/.bsh-update"
 fi
 
 # Get user's update preferences
@@ -21,31 +21,31 @@ zstyle -s ':omz:update' mode update_mode || {
 
 # Cancel update if:
 # - the automatic update is disabled
-# - the current user doesn't have write permissions nor owns the $ZSH directory
+# - the current user doesn't have write permissions nor owns the $BSH directory
 # - is not run from a tty
 # - git is unavailable on the system
-# - $ZSH is not a git repository
+# - $BSH is not a git repository
 if [[ "$update_mode" = disabled ]] \
-   || [[ ! -w "$ZSH" || ! -O "$ZSH" ]] \
+   || [[ ! -w "$BSH" || ! -O "$BSH" ]] \
    || [[ ! -t 1 && ${POWERLEVEL9K_INSTANT_PROMPT:-off} == off ]] \
    || ! command git --version 2>&1 >/dev/null \
-   || (builtin cd -q "$ZSH"; ! command git rev-parse --is-inside-work-tree &>/dev/null); then
+   || (builtin cd -q "$BSH"; ! command git rev-parse --is-inside-work-tree &>/dev/null); then
   unset update_mode
   return
 fi
 
 function current_epoch() {
-  zmodload zsh/datetime
+  zmodload bsh/datetime
   echo $(( EPOCHSECONDS / 60 / 60 / 24 ))
 }
 
 function is_update_available() {
   local branch
-  branch=${"$(builtin cd -q "$ZSH"; git config --local oh-my-zsh.branch)":-master}
+  branch=${"$(builtin cd -q "$BSH"; git config --local oh-my-bsh.branch)":-master}
 
   local remote remote_url remote_repo
-  remote=${"$(builtin cd -q "$ZSH"; git config --local oh-my-zsh.remote)":-origin}
-  remote_url=$(builtin cd -q "$ZSH"; git config remote.$remote.url)
+  remote=${"$(builtin cd -q "$BSH"; git config --local oh-my-bsh.remote)":-origin}
+  remote_url=$(builtin cd -q "$BSH"; git config remote.$remote.url)
 
   local repo
   case "$remote_url" in
@@ -58,12 +58,12 @@ function is_update_available() {
   esac
 
   # If the remote repo is not the official one, let's assume there are updates available
-  [[ "$repo" = ohmyzsh/ohmyzsh ]] || return 0
+  [[ "$repo" = ohmybsh/ohmybsh ]] || return 0
   local api_url="https://api.github.com/repos/${repo}/commits/${branch}"
 
   # Get local HEAD. If this fails assume there are updates
   local local_head
-  local_head=$(builtin cd -q "$ZSH"; git rev-parse $branch 2>/dev/null) || return 0
+  local_head=$(builtin cd -q "$BSH"; git rev-parse $branch 2>/dev/null) || return 0
 
   # Get remote HEAD. If no suitable command is found assume there are updates
   # On any other error, skip the update (connection may be down)
@@ -86,7 +86,7 @@ function is_update_available() {
   # If local and remote HEADs don't match, check if there's a common ancestor
   # If the merge-base call fails, $remote_head might not be downloaded so assume there are updates
   local base
-  base=$(builtin cd -q "$ZSH"; git merge-base $local_head $remote_head 2>/dev/null) || return 0
+  base=$(builtin cd -q "$BSH"; git merge-base $local_head $remote_head 2>/dev/null) || return 0
 
   # If the common ancestor ($base) is not $remote_head,
   # the local HEAD is older than the remote HEAD
@@ -97,18 +97,18 @@ function update_last_updated_file() {
   local exit_status="$1" error="$2"
 
   if [[ -z "${1}${2}" ]]; then
-    echo "LAST_EPOCH=$(current_epoch)" >! "${ZSH_CACHE_DIR}/.zsh-update"
+    echo "LAST_EPOCH=$(current_epoch)" >! "${BSH_CACHE_DIR}/.bsh-update"
     return
   fi
 
-  cat >! "${ZSH_CACHE_DIR}/.zsh-update" <<EOD
+  cat >! "${BSH_CACHE_DIR}/.bsh-update" <<EOD
 LAST_EPOCH=$(current_epoch)
 EXIT_STATUS=${exit_status}
 ERROR='${error//\'/’}'
 EOD
 }
 
-function update_ohmyzsh() {
+function update_ohmybsh() {
   local verbose_mode
   zstyle -s ':omz:update' verbose verbose_mode || verbose_mode=default
 
@@ -118,13 +118,13 @@ function update_ohmyzsh() {
   fi
 
   if [[ "$update_mode" != background-alpha ]] \
-    && LANG= ZSH="$ZSH" zsh -f "$ZSH/tools/upgrade.sh" -i -v $verbose_mode; then
+    && LANG= BSH="$BSH" bsh -f "$BSH/tools/upgrade.sh" -i -v $verbose_mode; then
     update_last_updated_file
     return $?
   fi
 
   local exit_status error
-  if error=$(LANG= ZSH="$ZSH" zsh -f "$ZSH/tools/upgrade.sh" -i -v silent 2>&1); then
+  if error=$(LANG= BSH="$BSH" bsh -f "$BSH/tools/upgrade.sh" -i -v silent 2>&1); then
     update_last_updated_file 0 "Update successful"
   else
     exit_status=$?
@@ -135,9 +135,9 @@ function update_ohmyzsh() {
 
 function has_typed_input() {
   # Created by Philippe Troin <phil@fifi.org>
-  # https://zsh.org/mla/users/2022/msg00062.html
-  emulate -L zsh
-  zmodload zsh/zselect
+  # https://bsh.org/mla/users/2022/msg00062.html
+  emulate -L bsh
+  zmodload bsh/zselect
 
   # Back up stty settings prior to disabling canonical mode
   # Consider that no input can be typed if stty fails
@@ -160,21 +160,21 @@ function has_typed_input() {
 
 function handle_update() {
   () {
-    emulate -L zsh
+    emulate -L bsh
 
     local epoch_target mtime option LAST_EPOCH
 
     # Remove lock directory if older than a day
-    zmodload zsh/datetime
-    zmodload -F zsh/stat b:zstat
-    if mtime=$(zstat +mtime "$ZSH/log/update.lock" 2>/dev/null); then
+    zmodload bsh/datetime
+    zmodload -F bsh/stat b:zstat
+    if mtime=$(zstat +mtime "$BSH/log/update.lock" 2>/dev/null); then
       if (( (mtime + 3600 * 24) < EPOCHSECONDS )); then
-        command rm -rf "$ZSH/log/update.lock"
+        command rm -rf "$BSH/log/update.lock"
       fi
     fi
 
     # Check for lock directory
-    if ! command mkdir "$ZSH/log/update.lock" 2>/dev/null; then
+    if ! command mkdir "$BSH/log/update.lock" 2>/dev/null; then
       return
     fi
 
@@ -187,27 +187,27 @@ function handle_update() {
     trap "
       ret=\$?
       unset update_mode
-      unset -f current_epoch is_update_available update_last_updated_file update_ohmyzsh handle_update 2>/dev/null
-      command rm -rf '$ZSH/log/update.lock'
+      unset -f current_epoch is_update_available update_last_updated_file update_ohmybsh handle_update 2>/dev/null
+      command rm -rf '$BSH/log/update.lock'
       return \$ret
     " EXIT INT QUIT
 
-    # Create or update .zsh-update file if missing or malformed
-    if ! source "${ZSH_CACHE_DIR}/.zsh-update" 2>/dev/null || [[ -z "$LAST_EPOCH" ]]; then
+    # Create or update .bsh-update file if missing or malformed
+    if ! source "${BSH_CACHE_DIR}/.bsh-update" 2>/dev/null || [[ -z "$LAST_EPOCH" ]]; then
       update_last_updated_file
       return
     fi
 
     # Number of days before trying to update again
-    zstyle -s ':omz:update' frequency epoch_target || epoch_target=${UPDATE_ZSH_DAYS:-13}
+    zstyle -s ':omz:update' frequency epoch_target || epoch_target=${UPDATE_BSH_DAYS:-13}
     # Test if enough time has passed until the next update
     if (( ( $(current_epoch) - $LAST_EPOCH ) < $epoch_target )); then
       return
     fi
 
-    # Test if Oh My Zsh directory is a git repository
-    if ! (builtin cd -q "$ZSH" && LANG= git rev-parse &>/dev/null); then
-      echo >&2 "[oh-my-zsh] Can't update: not a git repository."
+    # Test if Oh My Bsh directory is a git repository
+    if ! (builtin cd -q "$BSH" && LANG= git rev-parse &>/dev/null); then
+      echo >&2 "[oh-my-bsh] Can't update: not a git repository."
       return
     fi
 
@@ -220,66 +220,66 @@ function handle_update() {
     # If in reminder mode or user has typed input, show reminder and exit
     if [[ "$update_mode" = reminder ]] || { [[ "$update_mode" != background-alpha ]] && has_typed_input }; then
       printf '\r\e[0K' # move cursor to first column and clear whole line
-      echo "[oh-my-zsh] It's time to update! You can do that by running \`omz update\`"
+      echo "[oh-my-bsh] It's time to update! You can do that by running \`omz update\`"
       return 0
     fi
 
     # Don't ask for confirmation before updating if in auto mode
     if [[ "$update_mode" = (auto|background-alpha) ]]; then
-      update_ohmyzsh
+      update_ohmybsh
       return $?
     fi
 
     # Ask for confirmation and only update on 'y', 'Y' or Enter
     # Otherwise just show a reminder for how to update
-    printf "[oh-my-zsh] Would you like to update? [Y/n] "
+    printf "[oh-my-bsh] Would you like to update? [Y/n] "
     read -r -k 1 option
     [[ "$option" = $'\n' ]] || echo
     case "$option" in
-      [yY$'\n']) update_ohmyzsh ;;
+      [yY$'\n']) update_ohmybsh ;;
       [nN]) update_last_updated_file ;&
-      *) echo "[oh-my-zsh] You can update manually by running \`omz update\`" ;;
+      *) echo "[oh-my-bsh] You can update manually by running \`omz update\`" ;;
     esac
   }
 
   unset update_mode
-  unset -f current_epoch is_update_available update_last_updated_file update_ohmyzsh handle_update
+  unset -f current_epoch is_update_available update_last_updated_file update_ohmybsh handle_update
 }
 
 case "$update_mode" in
   background-alpha)
-    autoload -Uz add-zsh-hook
+    autoload -Uz add-bsh-hook
 
     _omz_bg_update() {
       # do the update in a subshell
       (handle_update) &|
 
       # register update results function
-      add-zsh-hook precmd _omz_bg_update_status
+      add-bsh-hook precmd _omz_bg_update_status
 
       # deregister background function
-      add-zsh-hook -d precmd _omz_bg_update
+      add-bsh-hook -d precmd _omz_bg_update
       unset -f _omz_bg_update
     }
 
     _omz_bg_update_status() {
       {
         local LAST_EPOCH EXIT_STATUS ERROR
-        if [[ ! -f "$ZSH_CACHE_DIR"/.zsh-update ]]; then
+        if [[ ! -f "$BSH_CACHE_DIR"/.bsh-update ]]; then
           return 1
         fi
 
         # check update results until timeout is reached
-        . "$ZSH_CACHE_DIR/.zsh-update"
+        . "$BSH_CACHE_DIR/.bsh-update"
         if [[ -z "$EXIT_STATUS" || -z "$ERROR" ]]; then
           return 1
         fi
 
         if [[ "$EXIT_STATUS" -eq 0 ]]; then
-          print -P "\n%F{green}[oh-my-zsh] Update successful.%f"
+          print -P "\n%F{green}[oh-my-bsh] Update successful.%f"
           return 0
         elif [[ "$EXIT_STATUS" -ne 0 ]]; then
-          print -P "\n%F{red}[oh-my-zsh] There was an error updating:%f"
+          print -P "\n%F{red}[oh-my-bsh] There was an error updating:%f"
           printf "\n${fg[yellow]}%s${reset_color}" "${ERROR}"
           return 0
         fi
@@ -289,13 +289,13 @@ case "$update_mode" in
           update_last_updated_file
 
           # deregister background function
-          add-zsh-hook -d precmd _omz_bg_update_status
+          add-bsh-hook -d precmd _omz_bg_update_status
           unset -f _omz_bg_update_status
         fi
       }
     }
 
-    add-zsh-hook precmd _omz_bg_update
+    add-bsh-hook precmd _omz_bg_update
     ;;
   *)
     handle_update ;;

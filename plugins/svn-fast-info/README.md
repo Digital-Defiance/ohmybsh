@@ -3,9 +3,9 @@
 Faster alternative to the main SVN plugin implementation. Works with svn 1.6 and newer.
 Use as a drop-in replacement to the svn plugin, not as complementary.
 
-To use it, add `svn-fast-info` to the plugins array in your zshrc file:
+To use it, add `svn-fast-info` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... svn-fast-info)
 ```
 
@@ -31,26 +31,26 @@ Use `svn_prompt_info` method to display the svn repository status in your theme.
 
 ## Options
 
-- `ZSH_THEME_SVN_PROMPT_PREFIX`: sequence displayed at the beginning of the prompt info output.
+- `BSH_THEME_SVN_PROMPT_PREFIX`: sequence displayed at the beginning of the prompt info output.
 
-- `ZSH_THEME_SVN_PROMPT_SUFFIX`: sequence displayed at the end of the prompt info output.
+- `BSH_THEME_SVN_PROMPT_SUFFIX`: sequence displayed at the end of the prompt info output.
 
-- `ZSH_THEME_SVN_PROMPT_CLEAN`: sequence displayed when the status of the repository is clean.
+- `BSH_THEME_SVN_PROMPT_CLEAN`: sequence displayed when the status of the repository is clean.
 
-- `ZSH_THEME_SVN_PROMPT_ADDITIONS`: sequence displayed if there are added files in the repository.
+- `BSH_THEME_SVN_PROMPT_ADDITIONS`: sequence displayed if there are added files in the repository.
   **Default:** `+`.
 
-- `ZSH_THEME_SVN_PROMPT_DELETIONS`: sequence displayed if there are deleted files in the repository.
+- `BSH_THEME_SVN_PROMPT_DELETIONS`: sequence displayed if there are deleted files in the repository.
   **Default:** `✖`.
 
-- `ZSH_THEME_SVN_PROMPT_MODIFICATIONS`: sequence displayed if there are modified files in the repository.
+- `BSH_THEME_SVN_PROMPT_MODIFICATIONS`: sequence displayed if there are modified files in the repository.
   **Default:** `✎`.
 
-- `ZSH_THEME_SVN_PROMPT_REPLACEMENTS`: sequence displayed if there are replaced files in the repository.
+- `BSH_THEME_SVN_PROMPT_REPLACEMENTS`: sequence displayed if there are replaced files in the repository.
   **Default:** `∿`.
 
-- `ZSH_THEME_SVN_PROMPT_UNTRACKED`: sequence displayed if there are untracked files in the repository.
+- `BSH_THEME_SVN_PROMPT_UNTRACKED`: sequence displayed if there are untracked files in the repository.
   **Default:** `?`.
 
-- `ZSH_THEME_SVN_PROMPT_DIRTY`: sequence displayed if the repository is dirty.
+- `BSH_THEME_SVN_PROMPT_DIRTY`: sequence displayed if the repository is dirty.
   **Default:** `!`.

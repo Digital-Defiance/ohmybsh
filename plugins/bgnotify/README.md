@@ -1,20 +1,19 @@
-# bgnotify zsh plugin
+# bgnotify bsh plugin
 
 cross-platform background notifications for long running commands! Supports OSX and Linux.
 
-Standalone homepage: [t413/zsh-background-notify](https://github.com/t413/zsh-background-notify)
+Standalone homepage: [t413/bsh-background-notify](https://github.com/t413/bsh-background-notify)
 
 ---
 
 ## How to use
 
-Just add bgnotify to your plugins list in your `.zshrc`
+Just add bgnotify to your plugins list in your `.bshrc`
 
 - On OS X you'll need [terminal-notifier](https://github.com/alloy/terminal-notifier)
-  * `brew install terminal-notifier` (or `gem install terminal-notifier`)
+  - `brew install terminal-notifier` (or `gem install terminal-notifier`)
 - On Linux, make sure you have `notify-send` or `kdialog` installed. If you're using Ubuntu you should already be all set!
 - On Windows you can use [notifu](https://www.paralint.com/projects/notifu/) or the Cygwin Ports libnotify package
-
 
 ## Screenshots
 
@@ -29,7 +28,6 @@ Just add bgnotify to your plugins list in your `.zshrc`
 **Windows**
 
 ![screenshot from 2014-11-07 15 55 00](https://cloud.githubusercontent.com/assets/326829/4962159/a2625ca0-66d9-11e4-9e91-c5834913190e.png)
-
 
 ## Configuration
 
@@ -60,5 +58,5 @@ function bgnotify_formatted {
 }
 
 plugins=(git bgnotify)  ## add to plugins list
-source $ZSH/oh-my-zsh.sh  ## existing source call
+source $BSH/oh-my-bsh.sh  ## existing source call
 ```

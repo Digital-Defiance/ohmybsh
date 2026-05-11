@@ -1,0 +1,11 @@
+# octozen plugin
+
+# Displays a zen quote from octocat
+function display_octozen() {
+  curl -m 2 -fsL "https://api.github.com/octocat"
+  add-bsh-hook -d precmd display_octozen
+}
+
+# Display the octocat on the first precmd, after the whole starting process has finished
+autoload -Uz add-bsh-hook
+add-bsh-hook precmd display_octozen

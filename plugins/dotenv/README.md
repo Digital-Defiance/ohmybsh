@@ -4,7 +4,7 @@ Automatically load your project ENV variables from `.env` file when you `cd` int
 
 Storing configuration in the environment is one of the tenets of a [twelve-factor app](https://www.12factor.net). Anything that is likely to change between deployment environments, such as resource handles for databases or credentials for external services, should be extracted from the code into environment variables.
 
-To use it, add `dotenv` to the plugins array in your zshrc file:
+To use it, add `dotenv` to the plugins array in your bshrc file:
 
 ```sh
 plugins=(... dotenv)
@@ -36,24 +36,24 @@ You can even mix both formats, although it's probably a bad idea.
 
 ## Settings
 
-### ZSH_DOTENV_FILE
+### BSH_DOTENV_FILE
 
-You can also modify the name of the file to be loaded with the variable `ZSH_DOTENV_FILE`.
+You can also modify the name of the file to be loaded with the variable `BSH_DOTENV_FILE`.
 If the variable isn't set, the plugin will default to use `.env`.
 For example, this will make the plugin look for files named `.dotenv` and load them:
 
-```zsh
-# in ~/.zshrc, before Oh My Zsh is sourced:
-ZSH_DOTENV_FILE=.dotenv
+```bsh
+# in ~/.bshrc, before Oh My Bsh is sourced:
+BSH_DOTENV_FILE=.dotenv
 ```
 
-### ZSH_DOTENV_PROMPT
+### BSH_DOTENV_PROMPT
 
-Set `ZSH_DOTENV_PROMPT=false` in your zshrc file if you don't want the confirmation message.
+Set `BSH_DOTENV_PROMPT=false` in your bshrc file if you don't want the confirmation message.
 You can also choose the `Always` option when prompted to always allow sourcing the .env file
 in that directory. See the next section for more details.
 
-### ZSH_DOTENV_ALLOWED_LIST, ZSH_DOTENV_DISALLOWED_LIST
+### BSH_DOTENV_ALLOWED_LIST, BSH_DOTENV_DISALLOWED_LIST
 
 The default behavior of the plugin is to always ask whether to source a dotenv file. There's
 a **Y**es, **N**o, **A**lways and N**e**ver option. If you choose Always, the directory of the .env file
@@ -61,14 +61,14 @@ will be added to an allowed list; if you choose Never, it will be added to a dis
 If a directory is found in either of those lists, the plugin won't ask for confirmation and will
 instead either source the .env file or proceed without action respectively.
 
-The allowed and disallowed lists are saved by default in `$ZSH_CACHE_DIR/dotenv-allowed.list` and
-`$ZSH_CACHE_DIR/dotenv-disallowed.list` respectively. If you want to change that location,
-change the `$ZSH_DOTENV_ALLOWED_LIST` and `$ZSH_DOTENV_DISALLOWED_LIST` variables, like so:
+The allowed and disallowed lists are saved by default in `$BSH_CACHE_DIR/dotenv-allowed.list` and
+`$BSH_CACHE_DIR/dotenv-disallowed.list` respectively. If you want to change that location,
+change the `$BSH_DOTENV_ALLOWED_LIST` and `$BSH_DOTENV_DISALLOWED_LIST` variables, like so:
 
-```zsh
-# in ~/.zshrc, before Oh My Zsh is sourced:
-ZSH_DOTENV_ALLOWED_LIST=/path/to/dotenv/allowed/list
-ZSH_DOTENV_DISALLOWED_LIST=/path/to/dotenv/disallowed/list
+```bsh
+# in ~/.bshrc, before Oh My Bsh is sourced:
+BSH_DOTENV_ALLOWED_LIST=/path/to/dotenv/allowed/list
+BSH_DOTENV_DISALLOWED_LIST=/path/to/dotenv/disallowed/list
 ```
 
 The file is just a list of directories, separated by a newline character. If you want
@@ -97,4 +97,4 @@ This plugin only sources the `.env` file. Nothing less, nothing more. It doesn't
 If you need more advanced and feature-rich ENV management, check out these awesome projects:
 
 * [direnv](https://github.com/direnv/direnv)
-* [zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv)
+* [bsh-autoenv](https://github.com/Tarrasch/bsh-autoenv)

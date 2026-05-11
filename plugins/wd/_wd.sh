@@ -5,7 +5,7 @@ zstyle ':completion::complete:wd:*:commands' group-name commands
 zstyle ':completion::complete:wd:*:warp_points' group-name warp_points
 zstyle ':completion::complete:wd::' list-grouped
 
-zmodload zsh/mapfile
+zmodload bsh/mapfile
 
 function _wd() {
   local WD_CONFIG=${WD_CONFIG:-$HOME/.warprc}
@@ -103,4 +103,4 @@ _wd "$@"
 # indent-tabs-mode: nil
 # sh-basic-offset: 2
 # End:
-# vim: ft=zsh sw=2 ts=2 et
+# vim: ft=bsh sw=2 ts=2 et

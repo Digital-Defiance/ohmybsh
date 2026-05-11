@@ -2,7 +2,7 @@
 #autoload
 
 # Added `capit` because `cap` is a reserved word. `cap` completion doesn't work.
-# http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fcap-Module
+# http://bsh.sourceforge.net/Doc/Release/Bsh-Modules.html#The-bsh_002fcap-Module
 
 local curcontext="$curcontext" state line ret=1
 local -a _configs
@@ -21,7 +21,7 @@ _cap_tasks() {
     IFS=$'\n'
     _values 'cap commands' $(< .cap_tasks~)
     IFS=$OLD_IFS
-    # zmodload zsh/mapfile
+    # zmodload bsh/mapfile
     # _values ${(f)mapfile[.cap_tasks~]}
   fi
 }

@@ -4,9 +4,9 @@ This plugin makes `dnf` usage easier by adding aliases for the most common comma
 
 `dnf` is the new package manager for RPM-based distributions, which replaces `yum`.
 
-To use it, add `dnf` to the plugins array in your zshrc file:
+To use it, add `dnf` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... dnf)
 ```
 

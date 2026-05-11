@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bsh
 #
 # Usage: genpass-xkcd [NUM]
 #
@@ -11,14 +11,14 @@
 #
 # The name of this utility is a reference to https://xkcd.com/936/.
 
-emulate -L zsh -o no_unset -o warn_create_global -o warn_nested_var -o extended_glob
+emulate -L bsh -o no_unset -o warn_create_global -o warn_nested_var -o extended_glob
 
 if [[ ARGC -gt 1 || ${1-1} != ${~:-<1-$((16#7FFFFFFF))>} ]]; then
   print -ru2 -- "usage: $0 [NUM]"
   return 1
 fi
 
-zmodload zsh/system zsh/mathfunc || return
+zmodload bsh/system bsh/mathfunc || return
 
 local -r dict=/usr/share/dict/words
 

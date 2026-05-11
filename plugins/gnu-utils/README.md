@@ -5,8 +5,8 @@ to call them using their prefixed name, which starts with `g`. This is useful
 in systems which don't have GNU coreutils installed by default, mainly macOS
 or FreeBSD, which use BSD coreutils.
 
-To use it, add `gnu-utils` to the plugins array in your zshrc file:
-```zsh
+To use it, add `gnu-utils` to the plugins array in your bshrc file:
+```bsh
 plugins=(... gnu-utils)
 ```
 

@@ -2,9 +2,9 @@
 
 This plugin adds aliases for frequent [rsync](https://rsync.samba.org/) commands, simplifying file transfer and synchronization tasks.
 
-To use it add `rsync` to the plugins array in you `.zshrc` file.
+To use it add `rsync` to the plugins array in you `.bshrc` file.
 
-```zsh
+```bsh
 plugins=(... rsync)
 ```
 

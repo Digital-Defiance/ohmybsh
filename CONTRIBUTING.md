@@ -1,6 +1,6 @@
 # CONTRIBUTING GUIDELINES
 
-Oh-My-Zsh is a community-driven project. Contribution is welcome, encouraged, and appreciated.
+Oh-My-Bsh is a community-driven project. Contribution is welcome, encouraged, and appreciated.
 It is also essential for the development of the project.
 
 First, please take a moment to review our [code of conduct](CODE_OF_CONDUCT.md).
@@ -38,7 +38,7 @@ your problem.
 
 If you find one, comment on it, so we know more people are experiencing it.
 
-If not, look at the [Troubleshooting](https://github.com/ohmyzsh/ohmyzsh/wiki/Troubleshooting)
+If not, look at the [Troubleshooting](https://github.com/Digital-Defiance/ohmybsh/wiki/Troubleshooting)
 page for instructions on how to gather data to better debug your problem.
 
 Then, you can go ahead and create an issue with as much detail as you can provide.
@@ -69,7 +69,7 @@ maintainers) by mentioning their GitHub handle (starting with `@`) in your messa
 
 You should be familiar with the basics of
 [contributing on GitHub](https://help.github.com/articles/using-pull-requests) and have a fork
-[properly set up](https://github.com/ohmyzsh/ohmyzsh/wiki/Contribution-Technical-Practices).
+[properly set up](https://github.com/Digital-Defiance/ohmybsh/wiki/Contribution-Technical-Practices).
 
 You MUST always create PRs with _a dedicated branch_ based on the latest upstream tree.
 
@@ -92,7 +92,7 @@ maintainers) by mentioning their GitHub handle (starting with `@`) in your messa
 
 ### You have an addition
 
-Please [do not](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#dont-send-us-your-theme-for-now)
+Please [do not](https://github.com/Digital-Defiance/ohmybsh/wiki/Themes#dont-send-us-your-theme-for-now)
 send themes for now.
 
 Please be so kind as to [search](#use-the-search-luke) for any pending, merged or rejected Pull Requests
@@ -107,11 +107,11 @@ For any extensive change, such as a new plugin, you will have to find testers to
 
 ### New plugin aliases
 
-We acknowledge that aliases are a core part of Oh My Zsh. There are plugins that have +100 aliases!
+We acknowledge that aliases are a core part of Oh My Bsh. There are plugins that have +100 aliases!
 
 This has become an issue for two opposing reasons:
 
-- Some users want to have their personal aliases in Oh My Zsh.
+- Some users want to have their personal aliases in Oh My Bsh.
 - Some users don't want any aliases at all and feel that there are too many.
 
 Because of this, from now on, we require that new aliases follow these conditions:
@@ -130,11 +130,12 @@ so it should be justified why they should have it.
 
 We'll admit it: AI tools can be pretty helpful for coding tasks, and we're not here to gatekeep how you get your work done. We use these tools ourselves! 🤖
 
-But here's the thing—Oh My Zsh is maintained by a small team of volunteers who do this in their spare time. We already have hundreds of pending PRs, and we want to make sure we're spending our limited time effectively.
+But here's the thing—Oh My Bsh is maintained by a small team of volunteers who do this in their spare time. We already have hundreds of pending PRs, and we want to make sure we're spending our limited time effectively.
 
 If you used AI tools meaningfully in your contribution (code generation, agentic coding assistants, etc.), please mention it in your PR description. Basic autocomplete doesn't count, but if an AI wrote substantial parts of your code, just let us know.
 
 **Examples of good disclosure:**
+
 - "Used ChatGPT to help generate the initial regex pattern for parsing git status output"
 - "Claude assisted with writing the unit tests for this feature"  
 - "Generated with Gemini and then reviewed/tested manually"
@@ -161,7 +162,7 @@ to help you check whether a similar contribution to yours already exists. Please
 before making any contribution, it avoids duplicates and eases maintenance. Trust me,
 that works 90% of the time.
 
-You can also take a look at the [FAQ](https://github.com/ohmyzsh/ohmyzsh/wiki/FAQ)
+You can also take a look at the [FAQ](https://github.com/Digital-Defiance/ohmybsh/wiki/FAQ)
 to be sure your contribution has not already come up.
 
 If all fails, your thing has probably not been reported yet, so you can go ahead
@@ -171,7 +172,7 @@ and [create an issue](#reporting-issues) or [submit a PR](#submitting-pull-reque
 
 ## Commit Guidelines
 
-Oh My Zsh uses the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+Oh My Bsh uses the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 specification. The automatic changelog tool uses these to automatically generate
 a changelog based on the commit messages. Here's a guide to writing a commit message
 to allow this:
@@ -202,11 +203,13 @@ type(scope)!: subject
   Examples:
 
   - Commit that changes the `git` plugin:
+
   ```
   feat(git): add alias for `git commit`
   ```
 
   - Commit that changes many plugins:
+
   ```
   style: fix inline declaration of arrays
   ```
@@ -231,7 +234,7 @@ type(scope)!: subject
 
   BREAKING CHANGE: the glyph to indicate when a git repository is dirty has
   changed from a Powerline character to a standard UTF-8 emoji. You can
-  change it back by setting `ZSH_THEME_DIRTY_GLYPH`.
+  change it back by setting `BSH_THEME_DIRTY_GLYPH`.
 
   Fixes #420
 
@@ -244,12 +247,14 @@ type(scope)!: subject
   Formatting tricks: the commit subject may contain:
 
   - Links to related issues or PRs by writing `#issue`. This will be highlighted by the changelog tool:
+
     ```
     feat(archlinux): add support for aura AUR helper (#9467)
     ```
 
   - Formatted inline code by using backticks: the text between backticks will also be highlighted by
     the changelog tool:
+
     ```
     feat(shell-proxy): enable unexported `DEFAULT_PROXY` setting (#9774)
     ```
@@ -266,5 +271,5 @@ subject is clear and precise enough that users will know what changed by just lo
 
 Very nice!! :)
 
-Please have a look at the [Volunteer](https://github.com/ohmyzsh/ohmyzsh/wiki/Volunteers)
+Please have a look at the [Volunteer](https://github.com/Digital-Defiance/ohmybsh/wiki/Volunteers)
 page for instructions on where to start and more.

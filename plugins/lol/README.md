@@ -2,9 +2,9 @@
 
 Plugin for adding catspeak aliases, because why not.
 
-To use it, add `lol` to the plugins array in your zshrc file:
+To use it, add `lol` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... lol)
 ```
 

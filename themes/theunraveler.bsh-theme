@@ -1,0 +1,16 @@
+# Comment
+
+PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
+
+RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}'
+
+BSH_THEME_GIT_PROMPT_PREFIX=""
+BSH_THEME_GIT_PROMPT_SUFFIX=""
+BSH_THEME_GIT_PROMPT_DIRTY=""
+BSH_THEME_GIT_PROMPT_CLEAN=""
+BSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} ✈"
+BSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✭"
+BSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗"
+BSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➦"
+BSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ✂"
+BSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%} ✱"

@@ -3,9 +3,9 @@
 This plugin automatically installs [uv](https://github.com/astral-sh/uv)'s completions for you,
 and keeps them up to date. It also adds convenient aliases for common usage.
 
-To use it, add `uv` to the plugins array in your zshrc file:
+To use it, add `uv` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... uv)
 ```
 

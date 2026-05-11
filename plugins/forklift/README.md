@@ -2,9 +2,9 @@
 
 Plugin for ForkLift, an FTP application for OS X.
 
-To use it, add `forklift` to the plugins array in your zshrc file:
+To use it, add `forklift` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... forklift)
 ```
 

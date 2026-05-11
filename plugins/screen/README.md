@@ -3,8 +3,8 @@
 This plugin sets title and hardstatus of the tab window for [screen](https://www.gnu.org/software/screen/),
 the terminal multiplexer.
 
-To use it add `screen` to the plugins array in your zshrc file.
+To use it add `screen` to the plugins array in your bshrc file.
 
-```zsh
+```bsh
 plugins=(... screen)
 ```

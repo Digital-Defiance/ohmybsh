@@ -2,9 +2,9 @@
 
 Aliases for [Zypper](https://en.opensuse.org/Portal:Zypper) according to the official Zypper's alias
 
-To use it add `suse` to the plugins array in you zshrc file.
+To use it add `suse` to the plugins array in you bshrc file.
 
-```zsh
+```bsh
 plugins=(... suse)
 ```
 
@@ -19,7 +19,7 @@ plugins=(... suse)
 | zhse             | `zypper -h se`                | print help for the search command                              |
 | zlicenses        | `zypper licenses`             | prints a report about licenses and EULAs of installed packages |
 | zps              | `sudo zypper ps`              | list process using deleted files                               |
-| zshell           | `sudo zypper shell`           | open a zypper shell session                                    |
+| bshell           | `sudo zypper shell`           | open a zypper shell session                                    |
 | zsource-download | `sudo zypper source-download` | download source rpms for all installed packages                |
 | ztos             | `zypper tos`                  | shows the ID string of the target operating system             |
 | zvcmp            | `zypper vcmp`                 | tell whether version1 is older or newer than version2          |
@@ -64,7 +64,7 @@ NOTE: `--no-refresh` is passed to zypper for speeding up the calls and avoid err
 of root privileges. If you need to refresh the repositories, call `sudo zypper ref` (`zref` alias)
 before running these aliases.
 
-Related: [#9798](https://github.com/ohmyzsh/ohmyzsh/pull/9798).
+Related: [#9798](https://github.com/Digital-Defiance/ohmybsh/pull/9798).
 
 ## Repositories commands
 

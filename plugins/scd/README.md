@@ -9,11 +9,11 @@ the shell and can be also filled manually by running `scd -a`.  To switch to
 some directory, `scd` needs few fragments of the desired path to match with
 the index.  A selection menu is displayed in case of several matches, with a
 preference given to recently visited paths.  `scd` can create permanent
-directory aliases, which appear as named directories in zsh session.
+directory aliases, which appear as named directories in bsh session.
 
 ## INSTALLATION NOTES
 
-Besides oh-my-zsh, `scd` can be used with *bash*, *dash* or *tcsh*
+Besides oh-my-bsh, `scd` can be used with *bash*, *dash* or *tcsh*
 shells and is also available as Vim plugin
 [scd.vim](https://github.com/pavoljuhas/scd.vim) and
 [IPython](https://ipython.org) extension.  For installation details, see
@@ -27,8 +27,8 @@ scd [options] [pattern1 pattern2 ...]
 
 ## PATTERNS
 
-Patterns may use all zsh [glob operators](
-http://zsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Operators)
+Patterns may use all bsh [glob operators](
+http://bsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Operators)
 available with *extendedglob* option.  Specified patterns must match
 the absolute path and at least one of them must match in the tail.
 Several special patterns are also recognized as follows:
@@ -59,11 +59,11 @@ PAT$</dt><dd>
 
 --alias=ALIAS</dt><dd>
   create alias for the current or specified directory and save it to
-  <em>~/.scdalias.zsh</em>.</dd><dt>
+  <em>~/.scdalias.bsh</em>.</dd><dt>
 
 --unalias</dt><dd>
   remove ALIAS definition for the current or specified directory from
-  <em>~/.scdalias.zsh</em>.  Use "OLD" to purge aliases to non-existent
+  <em>~/.scdalias.bsh</em>.  Use "OLD" to purge aliases to non-existent
   directories.</dd><dt>
 
 -A, --all</dt><dd>
@@ -116,14 +116,14 @@ scd xray
 ~/.scdhistory</dt><dd>
     time-stamped index of visited directories.</dd><dt>
 
-~/.scdalias.zsh</dt><dd>
+~/.scdalias.bsh</dt><dd>
     scd-generated definitions of directory aliases.</dd><dt>
 
 ~/.scdignore</dt><dd>
-    <a href="http://zsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Operators">
+    <a href="http://bsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Operators">
     glob patterns</a> for paths to be ignored in the scd search, for example,
     <code>/mnt/backup/*</code>.  The patterns are specified one per line
-    and are matched assuming the <em>extendedglob</em> zsh option.  Lines
+    and are matched assuming the <em>extendedglob</em> bsh option.  Lines
     starting with "#" are skipped as comments.  The .scdignore patterns
     are not applied in the <em>--all</em> mode.</dd>
 </dl>

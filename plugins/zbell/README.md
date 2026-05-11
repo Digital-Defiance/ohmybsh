@@ -3,15 +3,15 @@
 This plugin prints a bell character when a command finishes if it has been
 running for longer than a specified duration.
 
-To use it, add `zbell` to the plugins array in your zshrc file:
+To use it, add `zbell` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... zbell)
 ```
 
 ## Settings
 
-These settings need to be set in your zshrc file, before Oh My Zsh is sourced.
+These settings need to be set in your bshrc file, before Oh My Bsh is sourced.
 
 - `zbell_duration`: duration in seconds after which to consider notifying
   the end of a command. Default: 15 seconds.
@@ -20,7 +20,7 @@ These settings need to be set in your zshrc file, before Oh My Zsh is sourced.
   don't want to bell after, then add them to the `zbell_ignore` array.
   By default, `$EDITOR` and `$PAGER` are ignored:
 
-  ```zsh
+  ```bsh
   zbell_ignore=($EDITOR $PAGER)
   ```
 

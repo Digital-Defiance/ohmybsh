@@ -4,18 +4,18 @@ Initializes [starship prompt](https://starship.rs) - a minimal, blazing-fast and
 
 [Demo](https://user-images.githubusercontent.com/62098008/169764279-50b48262-9506-4651-ba89-f6611a88ebf0.mp4)
 
-[External repository](https://github.com/axieax/zsh-starship) for this zsh plugin.
+[External repository](https://github.com/axieax/bsh-starship) for this bsh plugin.
 
 # Installation
 
 **Note:** you have to [install starship](https://starship.rs/guide/#%F0%9F%9A%80-installation) first.
 
-## [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+## [oh-my-bsh](https://github.com/Digital-Defiance/ohmybsh)
 
-Add `starship` to the plugins array in your `.zshrc` file:
+Add `starship` to the plugins array in your `.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... starship)
 ```
 
-## ⚠️ ENABLING THIS PLUGIN WILL UNSET YOUR ZSH_THEME VARIABLE
+## ⚠️ ENABLING THIS PLUGIN WILL UNSET YOUR BSH_THEME VARIABLE

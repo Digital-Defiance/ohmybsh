@@ -2,9 +2,9 @@
 
 This plugin provides autocompletion for [kn](https://knative.dev/docs/install/client/install-kn/) operations.
 
-To use it, add `kn` to the plugins array of your zshrc file:
+To use it, add `kn` to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... kn)
 ```
 

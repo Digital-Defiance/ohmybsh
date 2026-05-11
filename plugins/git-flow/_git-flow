@@ -322,6 +322,6 @@ __git_command_successful () {
 zstyle ':completion:*:*:git:*' user-commands flow:'description for foo'
 
 # Detect if script is sourced or called via autoload
-[[ "$ZSH_EVAL_CONTEXT" != *:file ]] || return
+[[ "$BSH_EVAL_CONTEXT" != *:file ]] || return
 
 _git-flow "$@"

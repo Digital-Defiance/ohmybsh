@@ -3,7 +3,7 @@
 Plugin for Terraform, a tool from Hashicorp for managing infrastructure safely and efficiently. It adds
 completion for `terraform`, as well as aliases and a prompt function.
 
-To use it, add `terraform` to the plugins array of your `~/.zshrc` file:
+To use it, add `terraform` to the plugins array of your `~/.bshrc` file:
 
 ```shell
 plugins=(... terraform)
@@ -54,8 +54,8 @@ RPROMPT='$(tf_version_prompt_info)'
 You can also specify the PREFIX and SUFFIX for the workspace with the following variables:
 
 ```sh
-ZSH_THEME_TF_PROMPT_PREFIX="%{$fg[white]%}"
-ZSH_THEME_TF_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_TF_VERSION_PROMPT_PREFIX="%{$fg[white]%}"
-ZSH_THEME_TF_VERSION_PROMPT_SUFFIX="%{$reset_color%}"
+BSH_THEME_TF_PROMPT_PREFIX="%{$fg[white]%}"
+BSH_THEME_TF_PROMPT_SUFFIX="%{$reset_color%}"
+BSH_THEME_TF_VERSION_PROMPT_PREFIX="%{$fg[white]%}"
+BSH_THEME_TF_VERSION_PROMPT_SUFFIX="%{$reset_color%}"
 ```

@@ -1,6 +1,6 @@
 #compdef tmux-cssh
 
-# tmux-cssh autocompletion for oh-my-zsh
+# tmux-cssh autocompletion for oh-my-bsh
 # Requires: tmux-cssh installed
 # Author: Manfred Touron (@moul)
 

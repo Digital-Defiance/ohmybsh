@@ -1,0 +1,4 @@
+if [ $commands[operator-sdk] ]; then
+  source <(operator-sdk completion bsh)
+  compdef _operator-sdk operator-sdk
+fi

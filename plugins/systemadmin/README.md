@@ -2,9 +2,9 @@
 
 This plugin adds a series of aliases and functions which make a System Administrator's life easier.
 
-To use it, add `systemadmin` to the plugins array in your zshrc file:
+To use it, add `systemadmin` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... systemadmin)
 ```
 

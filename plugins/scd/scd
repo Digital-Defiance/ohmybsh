@@ -1,6 +1,6 @@
-#!/bin/zsh -f
+#!/bin/bsh -f
 
-emulate -L zsh
+emulate -L bsh
 
 local RUNNING_AS_COMMAND=
 local EXIT=return
@@ -26,9 +26,9 @@ Options:
   --unindex         remove current or specified directories from the index.
   -r, --recursive   apply options --add or --unindex recursively.
   --alias=ALIAS     create alias for the current or specified directory and
-                    store it in ~/.scdalias.zsh.
+                    store it in ~/.scdalias.bsh.
   --unalias         remove ALIAS definition for the current or specified
-                    directory from ~/.scdalias.zsh.
+                    directory from ~/.scdalias.bsh.
                     Use "OLD" to purge aliases to non-existent directories.
   -A, --all         display all directories even those excluded by patterns
                     in ~/.scdignore.  Disregard unique match for a directory
@@ -45,7 +45,7 @@ local SCD_MENUSIZE=${SCD_MENUSIZE:-20}
 local SCD_MEANLIFE=${SCD_MEANLIFE:-86400}
 local SCD_THRESHOLD=${SCD_THRESHOLD:-0.005}
 local SCD_SCRIPT=${RUNNING_AS_COMMAND:+$SCD_SCRIPT}
-local SCD_ALIAS=~/.scdalias.zsh
+local SCD_ALIAS=~/.scdalias.bsh
 local SCD_IGNORE=~/.scdignore
 
 # Minimum logarithm of probability.  Avoids out of range warning in exp().
@@ -74,9 +74,9 @@ setopt extendedglob noautonamedirs brace_ccl
 )
 
 # process command line options
-zmodload -i zsh/zutil
-zmodload -i zsh/datetime
-zmodload -i zsh/parameter
+zmodload -i bsh/zutil
+zmodload -i bsh/datetime
+zmodload -i bsh/parameter
 zparseopts -D -E -- a=opt_add -add=opt_add -unindex=opt_unindex \
     r=opt_recursive -recursive=opt_recursive \
     -alias:=opt_alias -unalias=opt_unalias \
@@ -116,7 +116,7 @@ fi
 setopt localtraps
 trap 'unfunction -m "_scd_Y19oug_*"' EXIT
 
-# works faster than the (:a) modifier and is compatible with zsh 4.2.6
+# works faster than the (:a) modifier and is compatible with bsh 4.2.6
 _scd_Y19oug_abspath() {
     set -A $1 ${(ps:\0:)"$(
         setopt pushdsilent

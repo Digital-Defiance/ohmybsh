@@ -1,10 +1,10 @@
 # 1Password
 
-This plugin adds 1Password functionality to oh-my-zsh.
+This plugin adds 1Password functionality to oh-my-bsh.
 
-To use, add `1password` to the list of plugins in your `.zshrc` file:
+To use, add `1password` to the list of plugins in your `.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... 1password)
 ```
 

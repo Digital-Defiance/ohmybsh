@@ -5,17 +5,17 @@ kubectl context (`kubectl config current-context`).
 
 You can use it to customize prompt and know if You are on prod cluster ;)
 
-To use this plugin, add `kubectx` to the plugins array in your zshrc file:
+To use this plugin, add `kubectx` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... kubectx)
 ```
 
 ### Usage
 
-Add to **.zshrc**:
+Add to **.bshrc**:
 
-```zsh
+```bsh
 # right prompt
 RPS1='$(kubectx_prompt_info)'
 # left prompt
@@ -25,12 +25,12 @@ PROMPT="$PROMPT"'$(kubectx_prompt_info)'
 ### Custom context names
 
 You can rename the default context name for better readability or additional formatting.
-These values accept [prompt expansion sequences](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html)
+These values accept [prompt expansion sequences](http://bsh.sourceforge.net/Doc/Release/Prompt-Expansion.html)
 such as `%F{color}`, `%f`, `%K{color}`, `%k`, `%B`, `%b`, `%U`, `%u`, `%S`, `%s`, `%{...%}`.
 
-**Example**: add this to your .zshrc file:
+**Example**: add this to your .bshrc file:
 
-```zsh
+```bsh
 kubectx_mapping[minikube]="mini"
 kubectx_mapping[context_name_from_kubeconfig]="$emoji[wolf_face]"
 kubectx_mapping[production_cluster]="%{$fg[yellow]%}prod!%{$reset_color%}"
@@ -42,7 +42,7 @@ kubectx_mapping["context with spaces"]="%F{red}spaces%f" # ti
 
 You can also define the whole mapping array at once:
 
-```zsh
+```bsh
 typeset -A kubectx_mapping
 kubectx_mapping=(
   minikube                      "mini"

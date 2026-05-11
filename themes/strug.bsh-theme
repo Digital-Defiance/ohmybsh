@@ -1,0 +1,25 @@
+# terminal coloring
+export CLICOLOR=1
+export LSCOLORS=dxFxCxDxBxegedabagacad
+
+local git_branch='$(git_prompt_info)%{$reset_color%}$(git_remote_status)'
+
+PROMPT="%{$fg[green]%}╭─%n@%m %{$reset_color%}%{$fg[yellow]%}in %~ %{$reset_color%}${git_branch}
+%{$fg[green]%}╰\$ %{$reset_color%}"
+
+BSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[yellow]%}on "
+BSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
+BSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}%{$fg[red]%} ✘ %{$reset_color%}"
+BSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✔ %{$reset_color%}"
+
+BSH_THEME_GIT_PROMPT_REMOTE_STATUS_DETAILED=true
+BSH_THEME_GIT_PROMPT_REMOTE_STATUS_PREFIX="%{$fg[yellow]%}("
+BSH_THEME_GIT_PROMPT_REMOTE_STATUS_SUFFIX="%{$fg[yellow]%})%{$reset_color%}"
+
+BSH_THEME_GIT_PROMPT_AHEAD_REMOTE=" +"
+BSH_THEME_GIT_PROMPT_AHEAD_REMOTE_COLOR=%{$fg[green]%}
+
+BSH_THEME_GIT_PROMPT_BEHIND_REMOTE=" -"
+BSH_THEME_GIT_PROMPT_BEHIND_REMOTE_COLOR=%{$fg[red]%}
+

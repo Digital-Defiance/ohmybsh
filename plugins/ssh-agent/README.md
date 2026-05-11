@@ -5,19 +5,19 @@ credentials you want for ssh connections.
 
 To enable it, add `ssh-agent` to your plugins:
 
-```zsh
+```bsh
 plugins=(... ssh-agent)
 ```
 
 ## Settings
 
-**IMPORTANT: put these settings _before_ the line that sources oh-my-zsh**
+**IMPORTANT: put these settings _before_ the line that sources oh-my-bsh**
 
 ### `agent-forwarding`
 
-To enable **agent forwarding support** add the following to your zshrc file:
+To enable **agent forwarding support** add the following to your bshrc file:
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
 ```
 
@@ -26,7 +26,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding yes
 To set an **external helper** to ask for the passwords and possibly store
 them in the system keychain use the `helper` style. For example:
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent helper ksshaskpass
 ```
 
@@ -35,14 +35,14 @@ zstyle :omz:plugins:ssh-agent helper ksshaskpass
 To **load multiple identities** use the `identities` style (**this has no effect
 if the `lazy` setting is enabled**). For example:
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github
 ```
 
 **NOTE:** the identities may be an absolute path if they are somewhere other than
 `~/.ssh`. For example:
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent identities ~/.config/ssh/id_rsa ~/.config/ssh/id_rsa2 ~/.config/ssh/id_github
 # which can be simplified to
 zstyle :omz:plugins:ssh-agent identities ~/.config/ssh/{id_rsa,id_rsa2,id_github}
@@ -55,7 +55,7 @@ useful when combined with the `AddKeysToAgent` setting (available since OpenSSH 
 since it allows to enter the password only on first use. _NOTE: you can know your
 OpenSSH version with `ssh -V`._
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent lazy yes
 ```
 
@@ -69,7 +69,7 @@ To **set the maximum lifetime of the identities**, use the `lifetime` style.
 The lifetime may be specified in seconds or as described in sshd_config(5)
 (see _TIME FORMATS_). If left unspecified, the default lifetime is forever.
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent lifetime 4h
 ```
 
@@ -77,7 +77,7 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 
 To silence the plugin, use the following setting:
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent quiet yes
 ```
 
@@ -86,14 +86,14 @@ zstyle :omz:plugins:ssh-agent quiet yes
 To **pass arguments to the `ssh-add` command** that adds the identities on startup,
 use the `ssh-add-args` setting. You can pass multiple arguments separated by spaces:
 
-```zsh
+```bsh
 zstyle :omz:plugins:ssh-agent ssh-add-args -K -c -a /run/user/1000/ssh-auth
 ```
 
 These will then be passed the `ssh-add` call as if written directly. The example
 above will turn into:
 
-```zsh
+```bsh
 ssh-add -K -c -a /run/user/1000/ssh-auth <identities>
 ```
 

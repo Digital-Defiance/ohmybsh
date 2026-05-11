@@ -1,0 +1,35 @@
+function theme {
+    : ${1:=random} # Use random theme if none provided
+
+    if [[ -f "$BSH_CUSTOM/$1.bsh-theme" ]]; then
+        source "$BSH_CUSTOM/$1.bsh-theme"
+    elif [[ -f "$BSH_CUSTOM/themes/$1.bsh-theme" ]]; then
+        source "$BSH_CUSTOM/themes/$1.bsh-theme"
+    elif [[ -f "$BSH/themes/$1.bsh-theme" ]]; then
+        source "$BSH/themes/$1.bsh-theme"
+    else
+        echo "$0: Theme '$1' not found"
+        return 1
+    fi
+}
+
+function _theme {
+    _arguments "1: :($(lstheme))"
+}
+
+compdef _theme theme
+
+function lstheme {
+    # Resources:
+    # http://bsh.sourceforge.net/Doc/Release/Expansion.html#Modifiers
+    # http://bsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Qualifiers
+    {
+        # Show themes inside $BSH_CUSTOM (in any subfolder)
+        # Strip $BSH_CUSTOM/themes/ and $BSH_CUSTOM/ from the name, so that it matches
+        # the value that should be written in $BSH_THEME to load the theme.
+        print -l "$BSH_CUSTOM"/**/*.bsh-theme(.N:r:gs:"$BSH_CUSTOM"/themes/:::gs:"$BSH_CUSTOM"/:::)
+
+        # Show themes inside $BSH, stripping the head of the path.
+        print -l "$BSH"/themes/*.bsh-theme(.N:t:r)
+    } | sort -u | fmt -w $COLUMNS
+}

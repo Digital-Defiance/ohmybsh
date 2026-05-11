@@ -3,9 +3,9 @@ on:
   workflow_dispatch: {}
   push:
     paths:
-      - 'tools/install.sh'
-      - '.github/workflows/installer/**'
-      - '.github/workflows/installer.yml'
+      - "tools/install.sh"
+      - ".github/workflows/installer/**"
+      - ".github/workflows/installer.yml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -17,7 +17,7 @@ permissions:
 jobs:
   test:
     name: Test installer
-    if: github.repository == 'ohmyzsh/ohmyzsh'
+    if: github.repository == 'ohmybsh/ohmybsh'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -32,9 +32,9 @@ jobs:
 
       - name: Set up git repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Install zsh
+      - name: Install bsh
         if: runner.os == 'Linux'
-        run: sudo apt-get update; sudo apt-get install zsh
+        run: sudo apt-get update; sudo apt-get install bsh
       - name: Test installer
         run: sh ./tools/install.sh
 

@@ -2,9 +2,9 @@
 
 The systemd plugin provides many useful aliases for systemd.
 
-To use it, add systemd to the plugins array of your zshrc file:
+To use it, add systemd to the plugins array of your bshrc file:
 
-```zsh
+```bsh
 plugins=(... systemd)
 ```
 
@@ -68,27 +68,27 @@ The plugin will add the following to your prompt for each `$unit`.
 
 You can control these parts with the following variables:
 
-- `<prefix>`: Set `$ZSH_THEME_SYSTEMD_PROMPT_PREFIX`.
+- `<prefix>`: Set `$BSH_THEME_SYSTEMD_PROMPT_PREFIX`.
 
-- `<suffix>`: Set `$ZSH_THEME_SYSTEMD_PROMPT_SUFFIX`.
+- `<suffix>`: Set `$BSH_THEME_SYSTEMD_PROMPT_SUFFIX`.
 
 - `<unit>`: name passed as parameter to the function. If you want it to be in ALL CAPS,
-  you can set the variable `$ZSH_THEME_SYSTEMD_PROMPT_CAPS` to a non-empty string.
+  you can set the variable `$BSH_THEME_SYSTEMD_PROMPT_CAPS` to a non-empty string.
 
 - `<active>`: shown if the systemd unit is active.
-  Set `$ZSH_THEME_SYSTEMD_PROMPT_ACTIVE`.
+  Set `$BSH_THEME_SYSTEMD_PROMPT_ACTIVE`.
 
 - `<notactive>`: shown if the systemd unit is *not* active.
-  Set `$ZSH_THEME_SYSTEMD_PROMPT_NOTACTIVE`.
+  Set `$BSH_THEME_SYSTEMD_PROMPT_NOTACTIVE`.
 
 For example, if your prompt contains `PROMPT='$(systemd_prompt_info dhcpd httpd)'` and you set the following variables:
 
 ```sh
-ZSH_THEME_SYSTEMD_PROMPT_PREFIX="["
-ZSH_THEME_SYSTEMD_PROMPT_SUFFIX="]"
-ZSH_THEME_SYSTEMD_PROMPT_ACTIVE="+"
-ZSH_THEME_SYSTEMD_PROMPT_NOTACTIVE="X"
-ZSH_THEME_SYSTEMD_PROMPT_CAPS=1
+BSH_THEME_SYSTEMD_PROMPT_PREFIX="["
+BSH_THEME_SYSTEMD_PROMPT_SUFFIX="]"
+BSH_THEME_SYSTEMD_PROMPT_ACTIVE="+"
+BSH_THEME_SYSTEMD_PROMPT_NOTACTIVE="X"
+BSH_THEME_SYSTEMD_PROMPT_CAPS=1
 ```
 
 If `dhcpd` is running, and `httpd` is not, then your prompt will look like this:

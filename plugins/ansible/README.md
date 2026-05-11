@@ -2,7 +2,7 @@
 
 The `ansible plugin` adds several aliases for useful [ansible](https://docs.ansible.com/ansible/latest/index.html) commands and [aliases](#aliases).
 
-To use it, add `ansible` to the plugins array of your zshrc file:
+To use it, add `ansible` to the plugins array of your bshrc file:
 
 ```
 plugins=(... ansible)
@@ -28,4 +28,4 @@ plugins=(... ansible)
 
 ### [Deepankumar](https://github.com/deepan10)
 
-[https://github.com/deepan10/oh-my-zsh/tree/features/ansible-plugin](https://github.com/deepan10/oh-my-zsh/tree/features/ansible-plugin)
+[https://github.com/deepan10/oh-my-bsh/tree/features/ansible-plugin](https://github.com/deepan10/oh-my-bsh/tree/features/ansible-plugin)

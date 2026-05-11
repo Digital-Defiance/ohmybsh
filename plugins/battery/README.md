@@ -2,26 +2,26 @@
 
 This plugin adds some functions you can use to display battery information in your custom theme.
 
-To use, add `battery` to the list of plugins in your `.zshrc` file:
+To use, add `battery` to the list of plugins in your `.bshrc` file:
 
 `plugins=(... battery)`
 
 Then, add the `battery_pct_prompt` function to your custom theme. For example:
 
-```zsh
+```bsh
 RPROMPT='$(battery_pct_prompt) ...'
 ```
 
 Also, you set the `BATTERY_CHARGING` variable to your favor.
 For example:
 
-```zsh
+```bsh
 BATTERY_CHARGING="⚡️"
 ```
 
 You can see the power of your charger using the following setting (MacOS only)
 
-```zsh
+```bsh
 BATTERY_SHOW_WATTS=true
 ```
 

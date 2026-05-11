@@ -3,9 +3,9 @@
 CLI support for LOCALSTACK interaction
 
 ##  Description  ##
-To use it, add `localstack` to the plugins array in your zshrc file:
+To use it, add `localstack` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... localstack)
 ```
 

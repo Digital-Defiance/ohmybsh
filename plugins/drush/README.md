@@ -3,9 +3,9 @@
 This plugin adds aliases and functions for [Drush](https://www.drush.org), a command-line shell
 and Unix scripting interface for Drupal. It also adds completion for the `drush` command.
 
-To enable it, add `drush` to the plugins array in zshrc file:
+To enable it, add `drush` to the plugins array in bshrc file:
 
-```zsh
+```bsh
 plugins=(... drush)
 ```
 

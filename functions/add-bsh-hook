@@ -1,0 +1,54 @@
+# add-bsh-hook: add or remove functions from hook arrays
+# Usage: add-bsh-hook [-d] hookname function
+#   -d  Remove the named function from the hook instead of adding it
+
+emulate -L zsh
+
+local -a hooktypes
+hooktypes=(
+  chpwd precmd preexec periodic zshaddhistory zshexit
+  zsh_directory_name
+)
+
+local remove=0 opt
+while getopts 'd' opt; do
+  case $opt in
+    d) remove=1 ;;
+    *) print -u2 "add-bsh-hook: unknown option: -$opt"; return 1 ;;
+  esac
+done
+shift $(( OPTIND - 1 ))
+
+local hookname=$1 fn=$2
+
+if [[ -z $hookname || -z $fn ]]; then
+  print -u2 'Usage: add-bsh-hook [-d] hookname function'
+  return 1
+fi
+
+if [[ ${hooktypes[(I)$hookname]} -eq 0 ]]; then
+  print -u2 "add-bsh-hook: invalid hook name: $hookname"
+  return 1
+fi
+
+local hookvar="${hookname}_functions"
+
+# Ensure the hook array exists
+if ! (( ${(P)+hookvar} )); then
+  typeset -ga $hookvar
+fi
+
+local -a arr
+arr=( "${(@P)hookvar}" )
+
+if (( remove )); then
+  # Remove all occurrences of the function from the hook array
+  arr=( "${arr[@]:#$fn}" )
+else
+  # Add function only if not already present
+  if [[ ${arr[(I)$fn]} -eq 0 ]]; then
+    arr+=( "$fn" )
+  fi
+fi
+
+set -A "$hookvar" "${arr[@]}"

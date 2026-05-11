@@ -2,9 +2,9 @@
 
 This plugin adds completion for the [Grails 2 CLI](https://grails.github.io/grails2-doc/2.5.x/guide/commandLine.html)
 
-To use it, add `grails` to the plugins array in your zshrc file:
+To use it, add `grails` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... grails)
 ```
 

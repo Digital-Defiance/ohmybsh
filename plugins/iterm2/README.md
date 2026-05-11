@@ -3,14 +3,14 @@
 This plugin adds a few functions that are useful when using [iTerm2](https://www.iterm2.com/).
 
 
-To use it, add _iterm2_ to the plugins array of your zshrc file:
+To use it, add _iterm2_ to the plugins array of your bshrc file:
 ```
 plugins=(... iterm2)
 ```
 
 Optionally, the plugin also applies the [Shell Integration Script for iTerm2](https://iterm2.com/documentation-shell-integration.html).
 You can enable the integration with zstyle. It's important to add this line
-before the line sourcing oh-my-zsh:
+before the line sourcing oh-my-bsh:
 
 ```
 zstyle :omz:plugins:iterm2 shell-integration yes

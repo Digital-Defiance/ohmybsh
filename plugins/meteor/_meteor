@@ -1,7 +1,7 @@
 #compdef meteor
 #autoload
 
-# Meteor Autocomplete plugin for Oh-My-Zsh, based on homebrew completion
+# Meteor Autocomplete plugin for Oh-My-Bsh, based on homebrew completion
 # Original author: Dimitri JORGE (https://github.com/jorge-d)
 
 _meteor_all_packages() {

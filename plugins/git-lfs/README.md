@@ -2,9 +2,9 @@
 
 The git lfs plugin provides [aliases](#aliases) and [functions](#functions) for [git-lfs](https://github.com/git-lfs/git-lfs).
 
-To use it, add `git-lfs` to the plugins array in your zshrc file:
+To use it, add `git-lfs` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... git-lfs)
 ```
 

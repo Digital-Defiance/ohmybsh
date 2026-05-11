@@ -1,43 +1,43 @@
 #!/bin/sh
 #
 # This script should be run via curl:
-#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Digital-Defiance/ohmybsh/main/tools/install.sh)"
 # or via wget:
-#   sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/Digital-Defiance/ohmybsh/main/tools/install.sh)"
 # or via fetch:
-#   sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#   sh -c "$(fetch -o - https://raw.githubusercontent.com/Digital-Defiance/ohmybsh/main/tools/install.sh)"
 #
 # As an alternative, you can first download the install script and run it afterwards:
-#   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+#   wget https://raw.githubusercontent.com/Digital-Defiance/ohmybsh/main/tools/install.sh
 #   sh install.sh
 #
 # You can tweak the install behavior by setting variables when running the script. For
-# example, to change the path to the Oh My Zsh repository:
-#   ZSH=~/.zsh sh install.sh
+# example, to change the path to the Oh My Bsh repository:
+#   BSH=~/.bsh sh install.sh
 #
 # Respects the following environment variables:
-#   ZDOTDIR - path to Zsh dotfiles directory (default: unset). See [1][2]
-#             [1] https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-ZDOTDIR
-#             [2] https://zsh.sourceforge.io/Doc/Release/Files.html#index-ZDOTDIR_002c-use-of
-#   ZSH     - path to the Oh My Zsh repository folder (default: $HOME/.oh-my-zsh)
-#   REPO    - name of the GitHub repo to install from (default: ohmyzsh/ohmyzsh)
+#   ZDOTDIR - path to Bsh dotfiles directory (default: unset). See [1][2]
+#             [1] https://bsh.sourceforge.io/Doc/Release/Parameters.html#index-ZDOTDIR
+#             [2] https://bsh.sourceforge.io/Doc/Release/Files.html#index-ZDOTDIR_002c-use-of
+#   BSH     - path to the Oh My Bsh repository folder (default: $HOME/.oh-my-bsh)
+#   REPO    - name of the GitHub repo to install from (default: ohmybsh/ohmybsh)
 #   REMOTE  - full remote URL of the git repo to install (default: GitHub via HTTPS)
 #   BRANCH  - branch to check out immediately after install (default: master)
 #
 # Other options:
 #   CHSH                   - 'no' means the installer will not change the default shell (default: yes)
-#   RUNZSH                 - 'no' means the installer will not run zsh after the install (default: yes)
-#   KEEP_ZSHRC             - 'yes' means the installer will not replace an existing .zshrc (default: no)
-#   OVERWRITE_CONFIRMATION - 'no' means the installer will not ask for confirmation to overwrite the existing .zshrc (default: yes)
+#   RUNBSH                 - 'no' means the installer will not run bsh after the install (default: yes)
+#   KEEP_BSHRC             - 'yes' means the installer will not replace an existing .bshrc (default: no)
+#   OVERWRITE_CONFIRMATION - 'no' means the installer will not ask for confirmation to overwrite the existing .bshrc (default: yes)
 #
 # You can also pass some arguments to the install script to set some these options:
 #   --skip-chsh: has the same behavior as setting CHSH to 'no'
-#   --unattended: sets both CHSH and RUNZSH to 'no'
-#   --keep-zshrc: sets KEEP_ZSHRC to 'yes'
+#   --unattended: sets both CHSH and RUNBSH to 'no'
+#   --keep-bshrc: sets KEEP_BSHRC to 'yes'
 # For example:
 #   sh install.sh --unattended
 # or:
-#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Digital-Defiance/ohmybsh/main/tools/install.sh)" "" --unattended
 #
 set -e
 
@@ -54,30 +54,30 @@ HOME="${HOME:-$(getent passwd $USER 2>/dev/null | cut -d: -f6)}"
 HOME="${HOME:-$(eval echo ~$USER)}"
 
 
-# Track if $ZSH was provided
-custom_zsh=${ZSH:+yes}
+# Track if $BSH was provided
+custom_bsh=${BSH:+yes}
 
-# Use $zdot to keep track of where the directory is for zsh dotfiles
+# Use $zdot to keep track of where the directory is for bsh dotfiles
 # To check if $ZDOTDIR was provided, explicitly check for $ZDOTDIR
 zdot="${ZDOTDIR:-$HOME}"
 
-# Default value for $ZSH
-# a) if $ZDOTDIR is supplied and not $HOME: $ZDOTDIR/ohmyzsh
-# b) otherwise, $HOME/.oh-my-zsh
+# Default value for $BSH
+# a) if $ZDOTDIR is supplied and not $HOME: $ZDOTDIR/ohmybsh
+# b) otherwise, $HOME/.oh-my-bsh
 if [ -n "$ZDOTDIR" ] && [ "$ZDOTDIR" != "$HOME" ]; then
-  ZSH="${ZSH:-$ZDOTDIR/ohmyzsh}"
+  BSH="${BSH:-$ZDOTDIR/ohmybsh}"
 fi
-ZSH="${ZSH:-$HOME/.oh-my-zsh}"
+BSH="${BSH:-$HOME/.oh-my-bsh}"
 
 # Default settings
-REPO=${REPO:-ohmyzsh/ohmyzsh}
+REPO=${REPO:-Digital-Defiance/ohmybsh}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
-BRANCH=${BRANCH:-master}
+BRANCH=${BRANCH:-main}
 
 # Other options
 CHSH=${CHSH:-yes}
-RUNZSH=${RUNZSH:-yes}
-KEEP_ZSHRC=${KEEP_ZSHRC:-no}
+RUNBSH=${RUNBSH:-yes}
+KEEP_BSHRC=${KEEP_BSHRC:-no}
 OVERWRITE_CONFIRMATION=${OVERWRITE_CONFIRMATION:-yes}
 
 
@@ -187,7 +187,7 @@ supports_hyperlinks() {
   fi
 
   # Konsole supports hyperlinks, but it's an opt-in setting that can't be detected
-  # https://github.com/ohmyzsh/ohmyzsh/issues/10964
+  # https://github.com/Digital-Defiance/ohmybsh/issues/10964
   # if [ -n "$KONSOLE_VERSION" ]; then
   #   return 0
   # fi
@@ -282,7 +282,7 @@ setup_color() {
   FMT_RESET=$(printf '\033[0m')
 }
 
-setup_ohmyzsh() {
+setup_ohmybsh() {
   # Prevent the cloned repository from having insecure permissions. Failing to do
   # so causes compinit() calls to fail with "command not found: compdef" errors
   # for users with insecure umasks (e.g., "002", allowing group writability). Note
@@ -290,7 +290,7 @@ setup_ohmyzsh() {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  echo "${FMT_BLUE}Cloning Oh My Zsh...${FMT_RESET}"
+  echo "${FMT_BLUE}Cloning Oh My Bsh...${FMT_RESET}"
 
   command_exists git || {
     fmt_error "git is not installed"
@@ -305,22 +305,22 @@ setup_ohmyzsh() {
   fi
 
   # Manual clone with git config options to support git < v1.7.2
-  git init --quiet "$ZSH" && cd "$ZSH" \
+  git init --quiet "$BSH" && cd "$BSH" \
   && git config core.eol lf \
   && git config core.autocrlf false \
   && git config fsck.zeroPaddedFilemode ignore \
   && git config fetch.fsck.zeroPaddedFilemode ignore \
   && git config receive.fsck.zeroPaddedFilemode ignore \
-  && git config oh-my-zsh.remote origin \
-  && git config oh-my-zsh.branch "$BRANCH" \
+  && git config oh-my-bsh.remote origin \
+  && git config oh-my-bsh.branch "$BRANCH" \
   && git remote add origin "$REMOTE" \
   && git fetch --depth=1 origin \
   && git checkout -b "$BRANCH" "origin/$BRANCH" || {
-    [ ! -d "$ZSH" ] || {
+    [ ! -d "$BSH" ] || {
       cd -
-      rm -rf "$ZSH" 2>/dev/null
+      rm -rf "$BSH" 2>/dev/null
     }
-    fmt_error "git clone of oh-my-zsh repo failed"
+    fmt_error "git clone of oh-my-bsh repo failed"
     exit 1
   }
   # Exit installation directory
@@ -329,66 +329,66 @@ setup_ohmyzsh() {
   echo
 }
 
-setup_zshrc() {
-  # Keep most recent old .zshrc at .zshrc.pre-oh-my-zsh, and older ones
+setup_bshrc() {
+  # Keep most recent old .bshrc at .bshrc.pre-oh-my-bsh, and older ones
   # with datestamp of installation that moved them aside, so we never actually
-  # destroy a user's original zshrc
-  echo "${FMT_BLUE}Looking for an existing zsh config...${FMT_RESET}"
+  # destroy a user's original bshrc
+  echo "${FMT_BLUE}Looking for an existing bsh config...${FMT_RESET}"
 
   # Must use this exact name so uninstall.sh can find it
-  OLD_ZSHRC="$zdot/.zshrc.pre-oh-my-zsh"
-  if [ -f "$zdot/.zshrc" ] || [ -h "$zdot/.zshrc" ]; then
-    # Skip this if the user doesn't want to replace an existing .zshrc
-    if [ "$KEEP_ZSHRC" = yes ]; then
-      echo "${FMT_YELLOW}Found ${zdot}/.zshrc.${FMT_RESET} ${FMT_GREEN}Keeping...${FMT_RESET}"
+  OLD_BSHRC="$zdot/.bshrc.pre-oh-my-bsh"
+  if [ -f "$zdot/.bshrc" ] || [ -h "$zdot/.bshrc" ]; then
+    # Skip this if the user doesn't want to replace an existing .bshrc
+    if [ "$KEEP_BSHRC" = yes ]; then
+      echo "${FMT_YELLOW}Found ${zdot}/.bshrc.${FMT_RESET} ${FMT_GREEN}Keeping...${FMT_RESET}"
       return
     fi
     
     if [ $OVERWRITE_CONFIRMATION != "no" ]; then
       # Ask user for confirmation before backing up and overwriting
-      echo "${FMT_YELLOW}Found ${zdot}/.zshrc."
-      echo "The existing .zshrc will be backed up to .zshrc.pre-oh-my-zsh if overwritten."
-      echo "Make sure your .zshrc contains the following minimal configuration if you choose not to overwrite it:${FMT_RESET}"
+      echo "${FMT_YELLOW}Found ${zdot}/.bshrc."
+      echo "The existing .bshrc will be backed up to .bshrc.pre-oh-my-bsh if overwritten."
+      echo "Make sure your .bshrc contains the following minimal configuration if you choose not to overwrite it:${FMT_RESET}"
       echo "----------------------------------------"
-      cat "$ZSH/templates/minimal.zshrc"
+      cat "$BSH/templates/minimal.bshrc"
       echo "----------------------------------------"
-      printf '%sDo you want to overwrite it with the Oh My Zsh template? [Y/n]%s ' \
+      printf '%sDo you want to overwrite it with the Oh My Bsh template? [Y/n]%s ' \
         "$FMT_YELLOW" "$FMT_RESET"
       read -r opt
       case $opt in
         [Yy]*|"") ;;
-        [Nn]*) echo "Overwrite skipped. Existing .zshrc will be kept."; return ;;
-        *) echo "Invalid choice. Overwrite skipped. Existing .zshrc will be kept."; return ;;
+        [Nn]*) echo "Overwrite skipped. Existing .bshrc will be kept."; return ;;
+        *) echo "Invalid choice. Overwrite skipped. Existing .bshrc will be kept."; return ;;
       esac
     fi
 
-    if [ -e "$OLD_ZSHRC" ]; then
-      OLD_OLD_ZSHRC="${OLD_ZSHRC}-$(date +%Y-%m-%d_%H-%M-%S)"
-      if [ -e "$OLD_OLD_ZSHRC" ]; then
-        fmt_error "$OLD_OLD_ZSHRC exists. Can't back up ${OLD_ZSHRC}"
+    if [ -e "$OLD_BSHRC" ]; then
+      OLD_OLD_BSHRC="${OLD_BSHRC}-$(date +%Y-%m-%d_%H-%M-%S)"
+      if [ -e "$OLD_OLD_BSHRC" ]; then
+        fmt_error "$OLD_OLD_BSHRC exists. Can't back up ${OLD_BSHRC}"
         fmt_error "re-run the installer again in a couple of seconds"
         exit 1
       fi
-      mv "$OLD_ZSHRC" "${OLD_OLD_ZSHRC}"
+      mv "$OLD_BSHRC" "${OLD_OLD_BSHRC}"
 
-      echo "${FMT_YELLOW}Found old .zshrc.pre-oh-my-zsh." \
-        "${FMT_GREEN}Backing up to ${OLD_OLD_ZSHRC}${FMT_RESET}"
+      echo "${FMT_YELLOW}Found old .bshrc.pre-oh-my-bsh." \
+        "${FMT_GREEN}Backing up to ${OLD_OLD_BSHRC}${FMT_RESET}"
     fi
-    echo "${FMT_GREEN}Backing up to ${OLD_ZSHRC}${FMT_RESET}"
-    mv "$zdot/.zshrc" "$OLD_ZSHRC"
+    echo "${FMT_GREEN}Backing up to ${OLD_BSHRC}${FMT_RESET}"
+    mv "$zdot/.bshrc" "$OLD_BSHRC"
   fi
 
-  echo "${FMT_GREEN}Using the Oh My Zsh template file and adding it to $zdot/.zshrc.${FMT_RESET}"
+  echo "${FMT_GREEN}Using the Oh My Bsh template file and adding it to $zdot/.bshrc.${FMT_RESET}"
 
-  # Modify $ZSH variable in .zshrc directory to use the literal $ZDOTDIR or $HOME
-  omz="$ZSH"
+  # Modify $BSH variable in .bshrc directory to use the literal $ZDOTDIR or $HOME
+  omz="$BSH"
   if [ -n "$ZDOTDIR" ] && [ "$ZDOTDIR" != "$HOME" ]; then
     omz=$(echo "$omz" | sed "s|^$ZDOTDIR/|\$ZDOTDIR/|")
   fi
   omz=$(echo "$omz" | sed "s|^$HOME/|\$HOME/|")
 
-  sed "s|^export ZSH=.*$|export ZSH=\"${omz}\"|" "$ZSH/templates/zshrc.zsh-template" > "$zdot/.zshrc-omztemp"
-  mv -f "$zdot/.zshrc-omztemp" "$zdot/.zshrc"
+  sed "s|^export BSH=.*$|export BSH=\"${omz}\"|" "$BSH/templates/bshrc.bsh-template" > "$zdot/.bshrc-omztemp"
+  mv -f "$zdot/.bshrc-omztemp" "$zdot/.bshrc"
 
   echo
 }
@@ -399,8 +399,8 @@ setup_shell() {
     return
   fi
 
-  # If this user's login shell is already "zsh", do not attempt to switch.
-  if [ "$(basename -- "$SHELL")" = "zsh" ]; then
+  # If this user's login shell is already "bsh", do not attempt to switch.
+  if [ "$(basename -- "$SHELL")" = "bsh" ]; then
     return
   fi
 
@@ -408,15 +408,15 @@ setup_shell() {
   if ! command_exists chsh; then
     cat <<EOF
 I can't change your shell automatically because this system does not have chsh.
-${FMT_BLUE}Please manually change your default shell to zsh${FMT_RESET}
+${FMT_BLUE}Please manually change your default shell to bsh${FMT_RESET}
 EOF
     return
   fi
 
-  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"
+  echo "${FMT_BLUE}Time to change your default shell to bsh:${FMT_RESET}"
 
   # Prompt for user choice on changing the default login shell
-  printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
+  printf '%sDo you want to change your default shell to bsh? [Y/n]%s ' \
     "$FMT_YELLOW" "$FMT_RESET"
   read -r opt
   case $opt in
@@ -427,7 +427,7 @@ EOF
 
   # Check if we're running on Termux
   case "$PREFIX" in
-    *com.termux*) termux=true; zsh=zsh ;;
+    *com.termux*) termux=true; bsh=bsh ;;
     *) termux=false ;;
   esac
 
@@ -442,12 +442,12 @@ EOF
       return
     fi
 
-    # Get the path to the right zsh binary
+    # Get the path to the right bsh binary
     # 1. Use the most preceding one based on $PATH, then check that it's in the shells file
-    # 2. If that fails, get a zsh path from the shells file, then check it actually exists
-    if ! zsh=$(command -v zsh) || ! grep -qx "$zsh" "$shells_file"; then
-      if ! zsh=$(grep '^/.*/zsh$' "$shells_file" | tail -n 1) || [ ! -f "$zsh" ]; then
-        fmt_error "no zsh binary found or not present in '$shells_file'"
+    # 2. If that fails, get a bsh path from the shells file, then check it actually exists
+    if ! bsh=$(command -v bsh) || ! grep -qx "$bsh" "$shells_file"; then
+      if ! bsh=$(grep '^/.*/bsh$' "$shells_file" | tail -n 1) || [ ! -f "$bsh" ]; then
+        fmt_error "no bsh binary found or not present in '$shells_file'"
         fmt_error "change your default shell manually."
         return
       fi
@@ -456,12 +456,12 @@ EOF
 
   # We're going to change the default shell, so back up the current one
   if [ -n "$SHELL" ]; then
-    echo "$SHELL" > "$zdot/.shell.pre-oh-my-zsh"
+    echo "$SHELL" > "$zdot/.shell.pre-oh-my-bsh"
   else
-    grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > "$zdot/.shell.pre-oh-my-zsh"
+    grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > "$zdot/.shell.pre-oh-my-bsh"
   fi
 
-  echo "Changing your shell to $zsh..."
+  echo "Changing your shell to $bsh..."
 
   # Check if user has sudo privileges to run `chsh` with or without `sudo`
   #
@@ -474,17 +474,17 @@ EOF
   #
   if user_can_sudo; then
     sudo -k >/dev/null 2>&1         # -k forces the password prompt
-    sudo chsh -s "$zsh" "$USER"
+    sudo chsh -s "$bsh" "$USER"
   else
-    chsh -s "$zsh" "$USER"          # run chsh normally
+    chsh -s "$bsh" "$USER"          # run chsh normally
   fi
 
   # Check if the shell change was successful
   if [ $? -ne 0 ]; then
     fmt_error "chsh command unsuccessful. Change your default shell manually."
   else
-    export SHELL="$zsh"
-    echo "${FMT_GREEN}Shell successfully changed to '$zsh'.${FMT_RESET}"
+    export SHELL="$bsh"
+    echo "${FMT_GREEN}Shell successfully changed to '$bsh'.${FMT_RESET}"
   fi
 
   echo
@@ -500,20 +500,20 @@ print_success() {
   printf '%s    %s        %s           %s /____/ %s       %s     %s          %s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
   printf '\n'
   printf '\n'
-  printf "%s %s %s\n" "Before you scream ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} look over the" \
-    "$(fmt_code "$(fmt_link ".zshrc" "file://$zdot/.zshrc" --text)")" \
+  printf "%s %s %s\n" "Before you scream ${FMT_BOLD}${FMT_YELLOW}Oh My Bsh!${FMT_RESET} look over the" \
+    "$(fmt_code "$(fmt_link ".bshrc" "file://$zdot/.bshrc" --text)")" \
     "file to select plugins, themes, and options."
   printf '\n'
-  printf '%s\n' "• Follow us on X: $(fmt_link @ohmyzsh https://x.com/ohmyzsh)"
-  printf '%s\n' "• Join our Discord community: $(fmt_link "Discord server" https://discord.gg/ohmyzsh)"
-  printf '%s\n' "• Get stickers, t-shirts, coffee mugs and more: $(fmt_link "CommitGoods Shop" https://commitgoods.com/collections/oh-my-zsh)"
+  printf '%s\n' "• Follow us on X: $(fmt_link @ohmybsh https://x.com/ohmybsh)"
+  printf '%s\n' "• Join our Discord community: $(fmt_link "Discord server" https://discord.gg/ohmybsh)"
+  printf '%s\n' "• Get stickers, t-shirts, coffee mugs and more: $(fmt_link "CommitGoods Shop" https://commitgoods.com/collections/oh-my-bsh)"
   printf '%s\n' $FMT_RESET
 }
 
 main() {
   # Run as unattended if stdin is not a tty
   if [ ! -t 0 ]; then
-    RUNZSH=no
+    RUNBSH=no
     CHSH=no
     OVERWRITE_CONFIRMATION=no
   fi
@@ -521,34 +521,34 @@ main() {
   # Parse arguments
   while [ $# -gt 0 ]; do
     case $1 in
-      --unattended) RUNZSH=no; CHSH=no; OVERWRITE_CONFIRMATION=no ;;
+      --unattended) RUNBSH=no; CHSH=no; OVERWRITE_CONFIRMATION=no ;;
       --skip-chsh) CHSH=no ;;
-      --keep-zshrc) KEEP_ZSHRC=yes ;;
+      --keep-bshrc) KEEP_BSHRC=yes ;;
     esac
     shift
   done
 
   setup_color
 
-  if ! command_exists zsh; then
-    echo "${FMT_YELLOW}Zsh is not installed.${FMT_RESET} Please install zsh first."
+  if ! command_exists bsh; then
+    echo "${FMT_YELLOW}Bsh is not installed.${FMT_RESET} Please install bsh first."
     exit 1
   fi
 
-  if [ -d "$ZSH" ]; then
-    echo "${FMT_YELLOW}The \$ZSH folder already exists ($ZSH).${FMT_RESET}"
-    if [ "$custom_zsh" = yes ]; then
+  if [ -d "$BSH" ]; then
+    echo "${FMT_YELLOW}The \$BSH folder already exists ($BSH).${FMT_RESET}"
+    if [ "$custom_bsh" = yes ]; then
       cat <<EOF
 
-You ran the installer with the \$ZSH setting or the \$ZSH variable is
+You ran the installer with the \$BSH setting or the \$BSH variable is
 exported. You have 3 options:
 
-1. Unset the ZSH variable when calling the installer:
-   $(fmt_code "ZSH= sh install.sh")
-2. Install Oh My Zsh to a directory that doesn't exist yet:
-   $(fmt_code "ZSH=path/to/new/ohmyzsh/folder sh install.sh")
+1. Unset the BSH variable when calling the installer:
+   $(fmt_code "BSH= sh install.sh")
+2. Install Oh My Bsh to a directory that doesn't exist yet:
+   $(fmt_code "BSH=path/to/new/ohmybsh/folder sh install.sh")
 3. (Caution) If the folder doesn't contain important information,
-   you can just remove it with $(fmt_code "rm -r $ZSH")
+   you can just remove it with $(fmt_code "rm -r $BSH")
 
 EOF
     else
@@ -562,18 +562,18 @@ EOF
     mkdir -p "$ZDOTDIR"
   fi
 
-  setup_ohmyzsh
-  setup_zshrc
+  setup_ohmybsh
+  setup_bshrc
   setup_shell
 
   print_success
 
-  if [ $RUNZSH = no ]; then
-    echo "${FMT_YELLOW}Run zsh to try it out.${FMT_RESET}"
+  if [ $RUNBSH = no ]; then
+    echo "${FMT_YELLOW}Run bsh to try it out.${FMT_RESET}"
     exit
   fi
 
-  exec zsh -l
+  exec bsh -l
 }
 
 main "$@"

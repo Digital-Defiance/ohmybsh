@@ -2,9 +2,9 @@
 
 This plugin adds auto-completion and aliases for [podman](https://podman.io/).
 
-To use it add `podman` to the plugins array in your zshrc file.
+To use it add `podman` to the plugins array in your bshrc file.
 
-```zsh
+```bsh
 plugins=(... podman)
 ```
 

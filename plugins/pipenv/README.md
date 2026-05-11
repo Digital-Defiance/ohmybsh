@@ -1,8 +1,8 @@
 # Pipenv
 
-This plugin provides some features to simplify the use of [Pipenv](https://pipenv.pypa.io/) while working on ZSH.
+This plugin provides some features to simplify the use of [Pipenv](https://pipenv.pypa.io/) while working on BSH.
 
-In your `.zshrc` file, add `pipenv` to the plugins section
+In your `.bshrc` file, add `pipenv` to the plugins section
 
 ```
 plugins=(... pipenv ...)
@@ -33,8 +33,8 @@ plugins=(... pipenv ...)
 
 ### Shell activation
 
-If you want to disable the shell activation and deactivation feature, add the following style to your `.zshrc` before sourcing `oh-my-zsh.sh`:
+If you want to disable the shell activation and deactivation feature, add the following style to your `.bshrc` before sourcing `oh-my-bsh.sh`:
 
-```zsh
+```bsh
 zstyle ':omz:plugins:pipenv' auto-shell no
 ```

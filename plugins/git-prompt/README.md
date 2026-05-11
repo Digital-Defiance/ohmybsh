@@ -1,19 +1,19 @@
 # git-prompt plugin
 
-A `zsh` prompt that displays information about the current git repository. In particular:
+A `bsh` prompt that displays information about the current git repository. In particular:
 the branch name, difference with remote branch, number of files staged or changed, etc.
 
-To use it, add `git-prompt` to the plugins array in your zshrc file:
+To use it, add `git-prompt` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... git-prompt)
 ```
 
-You may also need to [customize your theme](https://github.com/ohmyzsh/ohmyzsh/issues/9395#issuecomment-1027130429) 
+You may also need to [customize your theme](https://github.com/Digital-Defiance/ohmybsh/issues/9395#issuecomment-1027130429)
 to change the way the prompt is built. See the
-[OMZ wiki on customizing themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#overriding-and-adding-themes).
+[OMZ wiki on customizing themes](https://github.com/Digital-Defiance/ohmybsh/wiki/Customization#overriding-and-adding-themes).
 
-See the [original repository](https://github.com/olivierverdier/zsh-git-prompt).
+See the [original repository](https://github.com/olivierverdier/bsh-git-prompt).
 
 ## Requirements
 
@@ -63,10 +63,10 @@ The symbols are as follows:
 
 ## Customisation
 
-- Set the variable `ZSH_THEME_GIT_PROMPT_CACHE` to any value in order to enable caching.
-- Set the variable `ZSH_THEME_GIT_SHOW_UPSTREAM` to any value to display the upstream branch.
-- You may also change a number of variables (whose name start with `ZSH_THEME_GIT_PROMPT_`)
-  to change the appearance of the prompt. Take a look at the bottom of the [plugin file](git-prompt.plugin.zsh)`
+- Set the variable `BSH_THEME_GIT_PROMPT_CACHE` to any value in order to enable caching.
+- Set the variable `BSH_THEME_GIT_SHOW_UPSTREAM` to any value to display the upstream branch.
+- You may also change a number of variables (whose name start with `BSH_THEME_GIT_PROMPT_`)
+  to change the appearance of the prompt. Take a look at the bottom of the [plugin file](git-prompt.plugin.bsh)`
   to see what variables are available.
 
 **Enjoy!**

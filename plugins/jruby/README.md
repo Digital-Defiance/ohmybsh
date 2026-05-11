@@ -2,9 +2,9 @@
 
 This plugin adds aliases for [JRuby](https://www.jruby.org/).
 
-To use it, add `jruby` to the plugins array in your zshrc file:
+To use it, add `jruby` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... jruby)
 ```
 

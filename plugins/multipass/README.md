@@ -3,9 +3,9 @@
 This plugin provides completion for [multipass](https://multipass.run), as well as aliases
 for multipass commands.
 
-To use it, add `multipass` to the plugins array in your zshrc file:
+To use it, add `multipass` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... multipass)
 ```
 

@@ -6,7 +6,7 @@ connections.
 
 To enable it, add `keychain` to your plugins:
 
-```zsh
+```bsh
 plugins=(... keychain)
 ```
 
@@ -14,25 +14,25 @@ plugins=(... keychain)
 
 ## Instructions
 
-**IMPORTANT: put these settings _before_ the line that sources oh-my-zsh**
+**IMPORTANT: put these settings _before_ the line that sources oh-my-bsh**
 
 **To adjust the agents** that keychain manages, use the `agents` style as
 shown below. By default, only the `gpg` agent is managed.
 
-```zsh
+```bsh
 zstyle :omz:plugins:keychain agents gpg,ssh
 ```
 
 To **load multiple identities** use the `identities` style, For example:
 
-```zsh
+```bsh
 zstyle :omz:plugins:keychain identities id_ed25519 id_github 2C5879C2
 ```
 
 **To pass additional options** to the `keychain` program, use the
 `options` style; for example:
 
-```zsh
+```bsh
 zstyle :omz:plugins:keychain options --quiet
 ```
 

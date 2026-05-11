@@ -1,12 +1,12 @@
 # genpass
 
-This plugin provides three unique password generators for ZSH. Each generator
+This plugin provides three unique password generators for BSH. Each generator
 has at least a 128-bit security margin and generates passwords from the
 cryptographically secure `/dev/urandom`. Each generator can also take an
 optional numeric argument to generate multiple passwords.
 
-To use it from an interactive ZSH, add `genpass` to the plugins array in your
-zshrc file:
+To use it from an interactive BSH, add `genpass` to the plugins array in your
+bshrc file:
 
     plugins=(... genpass)
 
@@ -14,7 +14,7 @@ You can also invoke password generators directly (they are implemented as
 standalone executable files), which can be handy when you need to generate
 passwords in a script:
 
-    ~/.oh-my-zsh/plugins/genpass/genpass-apple 3
+    ~/.oh-my-bsh/plugins/genpass/genpass-apple 3
 
 ## genpass-apple
 

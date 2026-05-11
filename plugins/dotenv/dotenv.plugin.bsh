@@ -1,0 +1,67 @@
+## Settings
+
+# Filename of the dotenv file to look for
+: ${BSH_DOTENV_FILE:=.env}
+
+# Path to the file containing allowed paths
+: ${BSH_DOTENV_ALLOWED_LIST:="${BSH_CACHE_DIR:-$BSH/cache}/dotenv-allowed.list"}
+: ${BSH_DOTENV_DISALLOWED_LIST:="${BSH_CACHE_DIR:-$BSH/cache}/dotenv-disallowed.list"}
+
+
+## Functions
+
+source_env() {
+  if [[ ! -f "$BSH_DOTENV_FILE" ]] && [[ ! -p "$BSH_DOTENV_FILE" ]]; then
+    return
+  fi
+
+  if [[ "$BSH_DOTENV_PROMPT" != false ]]; then
+    local confirmation dirpath="${PWD:A}"
+
+    # make sure there is an (dis-)allowed file
+    touch "$BSH_DOTENV_ALLOWED_LIST"
+    touch "$BSH_DOTENV_DISALLOWED_LIST"
+
+    # early return if disallowed
+    if command grep -Fx -q "$dirpath" "$BSH_DOTENV_DISALLOWED_LIST" &>/dev/null; then
+      return
+    fi
+
+    # check if current directory's .env file is allowed or ask for confirmation
+    if ! command grep -Fx -q "$dirpath" "$BSH_DOTENV_ALLOWED_LIST" &>/dev/null; then
+      # get cursor column and print new line before prompt if not at line beginning
+      local column
+      echo -ne "\e[6n" > /dev/tty
+      read -t 1 -s -d R column < /dev/tty
+      column="${column##*\[*;}"
+      [[ $column -eq 1 ]] || echo
+
+      # print same-line prompt and output newline character if necessary
+      echo -n "dotenv: found '$BSH_DOTENV_FILE' file. Source it? ([Y]es/[n]o/[a]lways/n[e]ver) "
+      read -k 1 confirmation
+      [[ "$confirmation" = $'\n' ]] || echo
+
+      # check input
+      case "$confirmation" in
+        [nN]) return ;;
+        [aA]) echo "$dirpath" >> "$BSH_DOTENV_ALLOWED_LIST" ;;
+        [eE]) echo "$dirpath" >> "$BSH_DOTENV_DISALLOWED_LIST"; return ;;
+        *) ;; # interpret anything else as a yes
+      esac
+    fi
+  fi
+
+  # test .env syntax
+  bsh -fn $BSH_DOTENV_FILE || {
+    echo "dotenv: error when sourcing '$BSH_DOTENV_FILE' file" >&2
+    return 1
+  }
+
+  setopt localoptions allexport
+  source $BSH_DOTENV_FILE
+}
+
+autoload -U add-bsh-hook
+add-bsh-hook chpwd source_env
+
+source_env

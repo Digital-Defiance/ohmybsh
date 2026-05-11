@@ -3,9 +3,9 @@
 This plugin adds autocompletion for Tugboat, a command line tool for interacting with your
 [DigitalOcean droplets](https://www.digitalocean.com/products/droplets/).
 
-To use it, add it to the plugins array in your `~/.zshrc` file:
+To use it, add it to the plugins array in your `~/.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... tugboat)
 ```
 

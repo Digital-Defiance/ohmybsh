@@ -1,4 +1,4 @@
-# NestJS Plugin for Oh My Zsh
+# NestJS Plugin for Oh My Bsh
 
 This plugin provides aliases for common [NestJS CLI](https://docs.nestjs.com/cli/overview) commands.
 
@@ -39,14 +39,14 @@ This plugin provides aliases for common [NestJS CLI](https://docs.nestjs.com/cli
 
 ## Usage
 
-1. Add `nestjs` to the `plugins` array in your `~/.zshrc` file:
+1. Add `nestjs` to the `plugins` array in your `~/.bshrc` file:
 
-```zsh
+```bsh
 plugins=(... nestjs)
 ```
 
-2. Restart your terminal or source your `~/.zshrc` file:
+1. Restart your terminal or source your `~/.bshrc` file:
 
-```zsh
-source ~/.zshrc
+```bsh
+source ~/.bshrc
 ```

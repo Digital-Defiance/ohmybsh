@@ -2,7 +2,7 @@
 
 This plugin adds a few aliases and functions that are useful for users of the [Kitty](https://sw.kovidgoyal.net/kitty/) terminal.
 
-To use it, add _kitty_ to the plugins array of your zshrc file:
+To use it, add _kitty_ to the plugins array of your bshrc file:
 ```
 plugins=(... kitty)
 ```

@@ -1,24 +1,24 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bsh
 set +u # disable nounset
 
 local ret=0 # exit code
 
-# Protect against running with shells other than zsh
-if [ -z "$ZSH_VERSION" ]; then
-  exec zsh "$0" "$@"
+# Protect against running with shells other than bsh
+if [ -z "$BSH_VERSION" ]; then
+  exec bsh "$0" "$@"
 fi
 
 # Protect against unwanted sourcing
-case "$ZSH_EVAL_CONTEXT" in
+case "$BSH_EVAL_CONTEXT" in
   *:file) echo "error: this file should not be sourced" && return 1 ;;
 esac
 
-# Define "$ZSH" if not defined -- in theory this should be `export`ed by the calling script
-if [[ -z "$ZSH" ]]; then
-  ZSH="${0:a:h:h}"
+# Define "$BSH" if not defined -- in theory this should be `export`ed by the calling script
+if [[ -z "$BSH" ]]; then
+  BSH="${0:a:h:h}"
 fi
 
-cd "$ZSH"
+cd "$BSH"
 
 verbose_mode="default"
 interactive=false
@@ -29,8 +29,8 @@ while getopts "v:i" opt; do
       if [[ $OPTARG == default || $OPTARG == minimal || $OPTARG == silent ]]; then
         verbose_mode=$OPTARG
       else
-        echo "[oh-my-zsh] update verbosity '$OPTARG' is not valid"
-        echo "[oh-my-zsh] valid options are 'default', 'minimal' and 'silent'"
+        echo "[oh-my-bsh] update verbosity '$OPTARG' is not valid"
+        echo "[oh-my-bsh] valid options are 'default', 'minimal' and 'silent'"
       fi
       ;;
     i) interactive=true ;;
@@ -114,7 +114,7 @@ supports_hyperlinks() {
   fi
 
   # Konsole supports hyperlinks, but it's an opt-in setting that can't be detected
-  # https://github.com/ohmyzsh/ohmyzsh/issues/10964
+  # https://github.com/Digital-Defiance/ohmybsh/issues/10964
   # if [ -n "$KONSOLE_VERSION" ]; then
   #   return 0
   # fi
@@ -191,25 +191,25 @@ if is_tty; then
   RESET=$(printf '\033[0m')
 fi
 
-# Update upstream remote to ohmyzsh org
+# Update upstream remote to ohmybsh org
 git remote -v | while read remote url extra; do
   case "$url" in
-  git://github.com/robbyrussell/oh-my-zsh(|.git))
+  git://github.com/robbyrussell/oh-my-bsh(|.git))
     # Update out-of-date "unauthenticated git protocol on port 9418" to https
-    git remote set-url "$remote" "https://github.com/ohmyzsh/ohmyzsh.git" ;;
-  https://github.com/robbyrussell/oh-my-zsh(|.git))
-    git remote set-url "$remote" "https://github.com/ohmyzsh/ohmyzsh.git" ;;
-  git@github.com:robbyrussell/oh-my-zsh(|.git))
-    git remote set-url "$remote" "git@github.com:ohmyzsh/ohmyzsh.git" ;;
-  https://github.com/ohmyzsh/ohmyzsh(|.git)) ;;
-  git@github.com:ohmyzsh/ohmyzsh(|.git)) ;;
+    git remote set-url "$remote" "https://github.com/Digital-Defiance/ohmybsh.git" ;;
+  https://github.com/robbyrussell/oh-my-bsh(|.git))
+    git remote set-url "$remote" "https://github.com/Digital-Defiance/ohmybsh.git" ;;
+  git@github.com:robbyrussell/oh-my-bsh(|.git))
+    git remote set-url "$remote" "git@github.com:ohmybsh/ohmybsh.git" ;;
+  https://github.com/Digital-Defiance/ohmybsh(|.git)) ;;
+  git@github.com:ohmybsh/ohmybsh(|.git)) ;;
   *) continue ;;
   esac
 
-  # If we reach this point we have found the proper ohmyzsh upstream remote. If we don't,
-  # we'll only update from the set remote if `oh-my-zsh.remote` has been set to a remote,
+  # If we reach this point we have found the proper ohmybsh upstream remote. If we don't,
+  # we'll only update from the set remote if `oh-my-bsh.remote` has been set to a remote,
   # as when installing from a fork.
-  git config --local oh-my-zsh.remote "$remote"
+  git config --local oh-my-bsh.remote "$remote"
   break
 done
 
@@ -228,8 +228,8 @@ git config rebase.autoStash true
 local ret=0
 
 # repository settings
-remote=${"$(git config --local oh-my-zsh.remote)":-origin}
-branch=${"$(git config --local oh-my-zsh.branch)":-master}
+remote=${"$(git config --local oh-my-bsh.remote)":-origin}
+branch=${"$(git config --local oh-my-bsh.branch)":-master}
 
 # repository state
 last_head=$(git symbolic-ref --quiet --short HEAD || git rev-parse HEAD)
@@ -238,23 +238,23 @@ git checkout -q "$branch" -- || exit 1
 # branch commit before update (used in changelog)
 last_commit=$(git rev-parse "$branch")
 
-# Update Oh My Zsh
+# Update Oh My Bsh
 if [[ $verbose_mode != silent ]]; then
-  printf "${BLUE}%s${RESET}\n" "Updating Oh My Zsh"
+  printf "${BLUE}%s${RESET}\n" "Updating Oh My Bsh"
 fi
 if LANG= git pull --quiet --rebase $remote $branch; then
   # Check if it was really updated or not
   if [[ "$(git rev-parse HEAD)" = "$last_commit" ]]; then
-    message="Oh My Zsh is already at the latest version."
+    message="Oh My Bsh is already at the latest version."
   else
-    message="Hooray! Oh My Zsh has been updated!"
+    message="Hooray! Oh My Bsh has been updated!"
 
     # Save the commit prior to updating
-    git config oh-my-zsh.lastVersion "$last_commit"
+    git config oh-my-bsh.lastVersion "$last_commit"
 
     # Print changelog to the terminal
     if [[ $interactive == true && $verbose_mode == default ]]; then
-      ZSH="$ZSH" command zsh -f "$ZSH/tools/changelog.sh" HEAD "$last_commit"
+      BSH="$BSH" command bsh -f "$BSH/tools/changelog.sh" HEAD "$last_commit"
     fi
 
     if [[ $verbose_mode != silent ]]; then
@@ -271,9 +271,9 @@ if LANG= git pull --quiet --rebase $remote $branch; then
     printf '%s    %s        %s           %s /____/ %s       %s     %s          %s\n'      $RAINBOW $RESET
     printf '\n'
     printf "${BLUE}%s${RESET}\n\n" "$message"
-    printf "${BLUE}${BOLD}%s %s${RESET}\n" "To keep up with the latest news and updates, follow us on X:" "$(fmt_link @ohmyzsh https://x.com/ohmyzsh)"
-    printf "${BLUE}${BOLD}%s %s${RESET}\n" "Want to get involved in the community? Join our Discord:" "$(fmt_link "Discord server" https://discord.gg/ohmyzsh)"
-    printf "${BLUE}${BOLD}%s %s${RESET}\n" "Get your Oh My Zsh swag at:" "$(fmt_link "CommitGoods Shop" https://commitgoods.com/collections/oh-my-zsh)"
+    printf "${BLUE}${BOLD}%s %s${RESET}\n" "To keep up with the latest news and updates, follow us on X:" "$(fmt_link @ohmybsh https://x.com/ohmybsh)"
+    printf "${BLUE}${BOLD}%s %s${RESET}\n" "Want to get involved in the community? Join our Discord:" "$(fmt_link "Discord server" https://discord.gg/ohmybsh)"
+    printf "${BLUE}${BOLD}%s %s${RESET}\n" "Get your Oh My Bsh swag at:" "$(fmt_link "CommitGoods Shop" https://commitgoods.com/collections/oh-my-bsh)"
   elif [[ $verbose_mode == minimal ]]; then
     printf "${BLUE}%s${RESET}\n" "$message"
   fi

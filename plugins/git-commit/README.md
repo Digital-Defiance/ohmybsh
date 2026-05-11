@@ -4,15 +4,15 @@ The git-commit plugin adds several
 [git aliases](https://www.git-scm.com/docs/git-config#Documentation/git-config.txt-alias) for
 [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) messages.
 
-To use it, add `git-commit` to the plugins array in your zshrc file:
+To use it, add `git-commit` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... git-commit)
 ```
 
 ## Syntax
 
-```zsh
+```bsh
 git <type> [(-s, --scope) "<scope>"] [(-a, --attention)] "<message>"
 ```
 

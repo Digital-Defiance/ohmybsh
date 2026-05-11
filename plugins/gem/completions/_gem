@@ -1,7 +1,7 @@
 #compdef gem
 #autoload
 
-# gem zsh completion, based on homebrew completion
+# gem bsh completion, based on homebrew completion
 
 _gem_installed() {
   installed_gems=(${(f)"$(gem list --local --no-versions)"})

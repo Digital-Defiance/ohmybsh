@@ -2,9 +2,9 @@
 
 The git plugin provides many [aliases](#aliases) and a few useful [functions](#functions).
 
-To use it, add `git` to the plugins array in your zshrc file:
+To use it, add `git` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... git)
 ```
 
@@ -246,9 +246,9 @@ receive further support.
 
 | Command                  | Description                                                                                                    |
 | :----------------------- | :------------------------------------------------------------------------------------------------------------- |
-| `git_current_branch`     | Returns the name of the current branch (Lives in `lib/git.zsh`)                                                |
-| `git_current_user_email` | Returns the `user.email` config value (Lives in `lib/git.zsh`)                                                 |
-| `git_current_user_name`  | Returns the `user.name` config value (Lives in `lib/git.zsh`)                                                  |
+| `git_current_branch`     | Returns the name of the current branch (Lives in `lib/git.bsh`)                                                |
+| `git_current_user_email` | Returns the `user.email` config value (Lives in `lib/git.bsh`)                                                 |
+| `git_current_user_name`  | Returns the `user.name` config value (Lives in `lib/git.bsh`)                                                  |
 | `git_develop_branch`     | Returns the name of the “development” branch: `dev`, `devel`, `development` if they exist, `develop` otherwise |
 | `git_main_branch`        | Returns the name of the main branch: `main` if it exists, `master` otherwise                                   |
 | `grename <old> <new>`    | Renames branch `<old>` to `<new>`, including on the origin remote                                              |

@@ -2,9 +2,9 @@
 
 This plugin adds completion for the [ngrok](https://ngrok.com) CLI.
 
-To use it, add `ngrok` to the plugins array in your zshrc file:
+To use it, add `ngrok` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... ngrok)
 ```
 
@@ -17,4 +17,4 @@ loaded, which is usually when you start up a new terminal emulator.
 
 The cache is stored at:
 
-- `$ZSH_CACHE/completions/_ngrok` completions script
+- `$BSH_CACHE/completions/_ngrok` completions script

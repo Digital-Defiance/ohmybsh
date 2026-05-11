@@ -2,25 +2,25 @@
 
 This plugin adds auto-completion and aliases for [docker](https://www.docker.com/).
 
-To use it add `docker` to the plugins array in your zshrc file.
+To use it add `docker` to the plugins array in your bshrc file.
 
-```zsh
+```bsh
 plugins=(... docker)
 ```
 
 A copy of the completion script from the docker/cli git repo:
-https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
+<https://github.com/docker/cli/blob/master/contrib/completion/bsh/_docker>
 
 ## Settings
 
 By default, the completion doesn't allow option-stacking, meaning if you try to complete
 `docker run -it <TAB>` it won't work, because you're _stacking_ the `-i` and `-t` options.
 
-[You can enable it](https://github.com/docker/cli/commit/b10fb43048) by **adding the lines below to your zshrc
+[You can enable it](https://github.com/docker/cli/commit/b10fb43048) by **adding the lines below to your bshrc
 file**, but be aware of the side effects:
 
-> This enables Zsh to understand commands like `docker run -it ubuntu`. However, by enabling this, this also
-> makes Zsh complete `docker run -u<tab>` with `docker run -uapprox` which is not valid. The users have to put
+> This enables Bsh to understand commands like `docker run -it ubuntu`. However, by enabling this, this also
+> makes Bsh complete `docker run -u<tab>` with `docker run -uapprox` which is not valid. The users have to put
 > the space or the equal sign themselves before trying to complete.
 >
 > Therefore, this behavior is disabled by default. To enable it:
@@ -33,9 +33,9 @@ file**, but be aware of the side effects:
 ### Use old-style completion
 
 If the current completion does not work well for you, you can enable legacy completion instead with the
-following setting. See https://github.com/ohmyzsh/ohmyzsh/issues/11789 for more information.
+following setting. See <https://github.com/Digital-Defiance/ohmybsh/issues/11789> for more information.
 
-```zsh
+```bsh
 zstyle ':omz:plugins:docker' legacy-completion yes
 ```
 

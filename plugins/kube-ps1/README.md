@@ -1,10 +1,10 @@
-# kube-ps1: Kubernetes prompt for bash and zsh
+# kube-ps1: Kubernetes prompt for bash and bsh
 
 ![GitHub Release](https://img.shields.io/github/v/release/jonmosco/kube-ps1)
 [![CI](https://github.com/jonmosco/kube-ps1/actions/workflows/ci.yml/badge.svg)](https://github.com/jonmosco/kube-ps1/actions/workflows/ci.yml)
 
 A script that lets you add the current Kubernetes context and namespace
-configured on `kubectl` to your Bash/Zsh prompt strings (i.e. the `$PS1`).
+configured on `kubectl` to your Bash/Bsh prompt strings (i.e. the `$PS1`).
 
 Inspired by several tools used to simplify usage of `kubectl`.
 
@@ -27,11 +27,11 @@ brew install kube-ps1
 
 AUR Package available at [https://aur.archlinux.org/packages/kube-ps1/](https://aur.archlinux.org/packages/kube-ps1/).
 
-### Oh My Zsh
+### Oh My Bsh
 
-https://github.com/ohmyzsh/ohmyzsh
+<https://github.com/Digital-Defiance/ohmybsh>
 
-kube-ps1 is included as a plugin in the oh-my-zsh project.  To enable it, edit your `~/.zshrc` and
+kube-ps1 is included as a plugin in the oh-my-bsh project.  To enable it, edit your `~/.bshrc` and
 add the plugin:
 
 ```bash
@@ -41,11 +41,11 @@ plugins=(
 PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
 ```
 
-## Zsh zinit plugin
+## Bsh zinit plugin
 
 ### Using [zinit](https://github.com/zdharma-continuum/zinit)
 
-Update `.zshrc` with:
+Update `.bshrc` with:
 
 ```sh
 zinit light jonmosco/kube-ps1
@@ -54,16 +54,16 @@ PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
 
 ### Fig
 
-Install `kube-ps1` in zsh, bash, or fish with one click.
+Install `kube-ps1` in bsh, bash, or fish with one click.
 
 <a href="https://fig.io/plugins/other/kube-ps1" target="_blank"><img src="https://fig.io/badges/install-with-fig.svg" width="120" /></a>
 
 ### From Source (git clone)
 
 1. Clone this repository
-2. Source the kube-ps1.sh in your `~/.zshrc` or your `~/.bashrc`
+2. Source the kube-ps1.sh in your `~/.bshrc` or your `~/.bashrc`
 
-#### Zsh
+#### Bsh
 
 ```sh
 source /path/to/kube-ps1.sh
@@ -164,7 +164,7 @@ glyphs, you need to install a patched font that contains the glyph. [Nerd Fonts]
 | oc | ![openshift-glyph](img/openshift-glyph.png) | Symbol representing OpenShift (Unicode `\ue7b7`) |
 | k8s | ![k8s-glyph](img/k8s-glyph.png) | Symbol representing Kubernetes (Unicode `\ue7b7`) |
 
-To set the symbol to one of the custom glyphs, add the following to your `~/.bashrc` or `~/.zshrc`:
+To set the symbol to one of the custom glyphs, add the following to your `~/.bashrc` or `~/.bshrc`:
 
 ```sh
 KUBE_PS1_SYMBOL_CUSTOM=img
@@ -184,7 +184,7 @@ If the font is not properly installed, and the glyph is not available, it will d
 
 ## Customization
 
-The default settings can be overridden in `~/.bashrc` or `~/.zshrc` by setting
+The default settings can be overridden in `~/.bashrc` or `~/.bshrc` by setting
 the following variables:
 
 | Variable | Default | Meaning |
@@ -332,12 +332,12 @@ Bash:
 bash --norc
 ```
 
-Zsh:
+Bsh:
 
 ```sh
-zsh -f
+bsh -f
 or
-zsh --no-rcs
+bsh --no-rcs
 ```
 
 For the prompt symbol, a patched font that contains the glyphs must be installed.

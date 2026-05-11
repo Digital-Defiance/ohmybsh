@@ -2,9 +2,9 @@
 
 This plugin adds a shortcut to insert man before the previous command.
 
-To use it, add `man` to the plugins array in your zshrc file:
+To use it, add `man` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... man)
 ```
 # Keyboard Shortcuts

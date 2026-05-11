@@ -3,9 +3,9 @@
 This plugin adds a way to reference certain files or folders used frequently using
 a global alias or shortcut.
 
-To use it, add `fastfile` to the plugins array in your zshrc file:
+To use it, add `fastfile` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... fastfile)
 ```
 
@@ -15,15 +15,15 @@ Example: you access folder `/code/project/backend/database` very frequently.
 
 First, generate a shortcut with the name `pjdb`:
 
-```zsh
-$ fastfile pjdb /code/project/backend/database
+```bsh
+fastfile pjdb /code/project/backend/database
 ```
 
 Next time you want to access it, use `§pjdb`. For example:
 
-```zsh
-$ cd §pjdb
-$ subl §pjdb
+```bsh
+cd §pjdb
+subl §pjdb
 ```
 
 where § is the fastfile prefix (see [below](#options) for how to change).
@@ -67,7 +67,7 @@ a shortcut named `"hello world"` corresponds with `§hello_world`.
 ## Options
 
 These are options you can set to change certain parts of the plugin. To change
-them, add `<variable>=<value>` to your zshrc file, before Oh My Zsh is sourced.
+them, add `<variable>=<value>` to your bshrc file, before Oh My Bsh is sourced.
 For example: `fastfile_var_prefix='@'`.
 
 - `fastfile_var_prefix`: prefix for the global aliases created. Controls the prefix of the

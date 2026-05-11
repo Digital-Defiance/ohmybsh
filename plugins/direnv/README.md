@@ -2,9 +2,9 @@
 
 This plugin creates the [Direnv](https://direnv.net/) hook.
 
-To use it, add `direnv` to the plugins array in your zshrc file:
+To use it, add `direnv` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... direnv)
 ```
 

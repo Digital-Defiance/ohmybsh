@@ -11,13 +11,13 @@ Source: https://gist.github.com/pjaspers/368394#gistcomment-1016
 
 1. Enable the `pj` plugin:
 
-   ```zsh
+   ```bsh
    plugins=(... pj)
    ```
 
-2. Set `$PROJECT_PATHS` in your ~/.zshrc:
+2. Set `$PROJECT_PATHS` in your ~/.bshrc:
 
-   ```zsh
+   ```bsh
    PROJECT_PATHS=(~/src ~/work ~/"dir with spaces")
    ```
 
@@ -30,7 +30,7 @@ directories. If there are several directories named the same, the first one
 to appear in `$PROJECT_PATHS` has preference.
 
 For example:
-```zsh
+```bsh
 PROJECT_PATHS=(~/code ~/work)
 $ ls ~/code    # ~/code/blog ~/code/react
 $ ls ~/work    # ~/work/blog ~/work/project

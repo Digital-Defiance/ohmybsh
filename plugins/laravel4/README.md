@@ -2,9 +2,9 @@
 
 This plugin adds some aliases for common [Laravel 4](https://laravel.com/docs/4.2) commands.
 
-To use it, add `laravel4` to the plugins array in your zshrc file:
+To use it, add `laravel4` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... laravel4)
 ```
 

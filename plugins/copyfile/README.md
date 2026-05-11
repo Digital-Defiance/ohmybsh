@@ -4,7 +4,7 @@ Puts the contents of a file in your system clipboard so you can paste it anywher
 
 To use, add `copyfile` to your plugins array:
 
-```zsh
+```bsh
 plugins=(... copyfile)
 ```
 

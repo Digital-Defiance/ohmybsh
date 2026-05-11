@@ -3,9 +3,9 @@
 This plugin adds completion for the [Kind](https://kind.sigs.k8s.io/) tool, as well
 as a few aliases for easier use.
 
-To use it, add `kind` to the plugins array in your zshrc file:
+To use it, add `kind` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... kind)
 ```
 

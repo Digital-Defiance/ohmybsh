@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bsh
 
 # WARP DIRECTORY
 # ==============
@@ -330,7 +330,7 @@ wd_browse_widget() {
     # Call wd_browse to handle the selection
     wd_browse
 
-    # Restore the zsh buffer and cursor after running wd_browse
+    # Restore the bsh buffer and cursor after running wd_browse
     saved_buffer=$BUFFER
     saved_cursor=$CURSOR
     BUFFER=

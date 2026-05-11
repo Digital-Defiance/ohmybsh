@@ -1,0 +1,24 @@
+# vim:ft=bsh ts=2 sw=2 sts=2
+
+# Must use Powerline font, for \uE0A0 to render.
+BSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}\uE0A0 "
+BSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+BSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
+BSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+BSH_THEME_GIT_PROMPT_CLEAN=""
+
+BSH_THEME_RUBY_PROMPT_PREFIX="%{$fg_bold[red]%}‹"
+BSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
+
+PROMPT='
+%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)$(virtualenv_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+$ '
+
+RPROMPT='$(ruby_prompt_info)'
+
+VIRTUAL_ENV_DISABLE_PROMPT=0
+BSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX=" %{$fg[green]%}🐍 "
+BSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="%{$reset_color%}"
+BSH_THEME_VIRTUALENV_PREFIX=$BSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX
+BSH_THEME_VIRTUALENV_SUFFIX=$BSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX
+

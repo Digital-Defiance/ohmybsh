@@ -2,9 +2,9 @@
 
 This plugin adds quotes from The Hitchhiker's Guide to the Galaxy, from Douglas Adams.
 
-To use it, add `hitchhiker` to the plugins array in your zshrc file:
+To use it, add `hitchhiker` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... hitchhiker)
 ```
 

@@ -3,9 +3,9 @@
 This plugin provides host completion based off of your `~/.ssh/config` file, and adds
 some utility functions to work with SSH keys.
 
-To use it, add `ssh` to the plugins array in your zshrc file:
+To use it, add `ssh` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... ssh)
 ```
 

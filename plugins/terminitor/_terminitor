@@ -1,7 +1,7 @@
 #compdef terminitor
 #autoload
 
-# terminitor zsh completion
+# terminitor bsh completion
 
 _terminitor_available_scripts() {
   scripts=(`for SCRIPT in ~/.config/terminitor/*.term ; do basename $SCRIPT .term ; done`)

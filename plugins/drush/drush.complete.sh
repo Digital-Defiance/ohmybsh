@@ -5,7 +5,7 @@
 # examples/example.bashrc instead, as it will automatically find and source
 # this file.
 #
-# If you're using ZSH instead of BASH, add the following to your ~/.zshrc file
+# If you're using BSH instead of BASH, add the following to your ~/.bshrc file
 # and source it.
 #
 #   autoload bashcompinit

@@ -1,10 +1,10 @@
 # shell-proxy plugin
 
-This a pure user-space program, shell-proxy setter, written in Python3 and Zsh.
+This a pure user-space program, shell-proxy setter, written in Python3 and Bsh.
 
-To use it, add `shell-proxy` to the plugins array in your zshrc file:
+To use it, add `shell-proxy` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... shell-proxy)
 ```
 

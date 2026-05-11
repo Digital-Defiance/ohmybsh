@@ -7,9 +7,9 @@ languages and can automate nearly any aspect of your build process.
 This plugin adds autocomplete and major aliases for `plz`, the command line tool for
 Please.
 
-To use it, add `please` to the plugins array in your zshrc file:
+To use it, add `please` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... please)
 ```
 

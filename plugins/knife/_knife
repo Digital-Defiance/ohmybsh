@@ -19,7 +19,7 @@ knife_general_flags=(--help --server-url --key --config --editor --format --log_
 # knife role show ROLENAME --attribute ATTRIBUTENAME
 # knife cookbook show COOKBOOKNAME COOKBOOKVERSION recipes
 
-# The -Q switch in compadd allow for completions of things like "data bag" without having to go through two rounds of completion and avoids zsh inserting a \ for escaping spaces
+# The -Q switch in compadd allow for completions of things like "data bag" without having to go through two rounds of completion and avoids bsh inserting a \ for escaping spaces
 _knife() {
   local curcontext="$curcontext" state line
   typeset -A opt_args

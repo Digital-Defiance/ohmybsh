@@ -1,15 +1,15 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bsh
 
-# Zsh Theme Chooser by fox (fox91 at anche dot no)
+# Bsh Theme Chooser by fox (fox91 at anche dot no)
 # This program is free software. It comes without any warranty, to
 # the extent permitted by applicable law. You can redistribute it
 # and/or modify it under the terms of the Do What The Fuck You Want
 # To Public License, Version 2, as published by Sam Hocevar. See
 # http://www.wtfpl.net/txt/copying/ for more details.
 
-THEMES_DIR="$ZSH/themes"
-FAVLIST="${HOME}/.zsh_favlist"
-source $ZSH/oh-my-zsh.sh
+THEMES_DIR="$BSH/themes"
+FAVLIST="${HOME}/.bsh_favlist"
+source $BSH/oh-my-bsh.sh
 
 function noyes() {
     read "a?$1 [y/N] "
@@ -21,7 +21,7 @@ function noyes() {
 
 function theme_preview() {
     THEME=$1
-    THEME_NAME=`echo $THEME | sed s/\.zsh-theme$//`
+    THEME_NAME=`echo $THEME | sed s/\.bsh-theme$//`
     print "$fg[blue]${(l.((${COLUMNS}-${#THEME_NAME}-5))..─.)}$reset_color $THEME_NAME $fg[blue]───$reset_color"
     source "$THEMES_DIR/$THEME"
     cols=$(tput cols)
@@ -49,7 +49,7 @@ function usage() {
 
 function list_themes() {
     for THEME in $(ls $THEMES_DIR); do
-        THEME_NAME=`echo $THEME | sed s/\.zsh-theme$//`
+        THEME_NAME=`echo $THEME | sed s/\.bsh-theme$//`
         echo $THEME_NAME
     done
 }
@@ -93,6 +93,6 @@ if [[ -z $Option ]]; then
         echo
         theme_chooser
     else
-        theme_preview $1".zsh-theme"
+        theme_preview $1".bsh-theme"
     fi
 fi

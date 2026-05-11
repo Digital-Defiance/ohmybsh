@@ -2,7 +2,7 @@
 
 This plugin provides completion and useful aliases for [.NET CLI](https://dotnet.microsoft.com/).
 
-To use it, add `dotnet` to the plugins array in your zshrc file.
+To use it, add `dotnet` to the plugins array in your bshrc file.
 
 ```
 plugins=(... dotnet)

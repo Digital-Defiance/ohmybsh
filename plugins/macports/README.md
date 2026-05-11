@@ -3,9 +3,9 @@
 This plugin adds completion for the package manager [Macports](https://macports.com/),
 as well as some aliases for common Macports commands.
 
-To use it, add `macports` to the plugins array in your zshrc file:
+To use it, add `macports` to the plugins array in your bshrc file:
 
-```zsh
+```bsh
 plugins=(... macports)
 ```
 
