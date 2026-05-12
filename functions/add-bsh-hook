@@ -2,7 +2,7 @@
 # Usage: add-bsh-hook [-d] hookname function
 #   -d  Remove the named function from the hook instead of adding it
 
-emulate -L zsh
+emulate -L bsh
 
 local -a hooktypes
 hooktypes=(
